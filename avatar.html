@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avatar Page</title>
+  <script src="/js/script.js"></script>
+  <link rel="stylesheet" href="/Css/reset.css">
+  <link rel="stylesheet" href="/Css/avatar.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+  <!-- Nav -->
+  <header class="navbar">
+    <nav>
+        <img class="logo" src="/Assets/_c329f736-c0ec-4f70-b64f-db3066f2d096.jpg" alt="logo">
+        <ul>
+            <a href="index.html"><i class='bx bxs-home' ></i> Double Pump</a>
+            <a href="avatar.html"><i class='bx bx-male-female' ></i> Personages</a>
+            <a href=""><i class='bx bxs-heart' ></i> Favorieten</a>
+            <a href=""><i class='bx bxs-x-circle' ></i> Zwarte lijst</a>
+            <a href="contact.html"><i class='bx bxs-contact' ></i> Contact</a>
+            <a href="faq.html"><i class='bx bx-question-mark' ></i>FAQ</a>
+        </ul>
+    </nav>
+</header>
+
+  <section class="container">
+    <article class="avatar"
+      onclick="openModal('Aang', 'The Last Airbender', 'Aang is the protagonist of the Nickelodeon animated television series Avatar: The Last Airbender.')">
+      <img src="https://via.placeholder.com/150" alt="Aang">
+      <p>Aang</p>
+    </article>
+    <article class="avatar"
+      onclick="openModal('Korra', 'The Legend of Korra', 'Korra is the title character of the animated television series The Legend of Korra.')">
+      <img src="https://via.placeholder.com/150" alt="Korra">
+      <p>Korra</p>
+    </article>
+    <article class="avatar"
+      onclick="openModal('Zuko', 'The Last Airbender', 'Zuko is a fictional character in Nickelodeon\'s animated television series Avatar: The Last Airbender.')">
+      <img src="https://via.placeholder.com/150" alt="Zuko">
+      <p>Zuko</p>
+    </article>
+  </section>
+
+  <article id="myModal" class="modal">
+    <section class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2 id="modal-title"></h2>
+      <img id="modal-image" src="" alt="">
+      <p id="modal-description"></p>
+      <button class="btn btn-primary" onclick="setActiveAvatar()">Set as Active Avatar</button>
+      <button class="btn btn-secondary" onclick="addToFavorites()">Add to Favorites</button>
+      <button class="btn btn-danger" onclick="addToBlacklist()">Add to Blacklist</button>
+    </section>
+  </article>
+
+  <footer class="footer">
+    <p>© 2024  <a href="https://www.ap.be" class="footer-link">AP hogeschool</a></p>
+    
+    <ul class="socials">
+        <a href="https://www.instagram.com" class="social-link"><i class='bx bxl-instagram-alt'></i></a>
+        <a href="https://www.facebook.com" class="social-link"><i class='bx bxl-facebook-square'></i></a>
+        <a href="https://twitter.com" class="social-link"><i class='bx bxl-twitter'></i></a>
+    </ul>
+  </footer>
+
+  <button onclick="topFunction()" id="myBtn" title="Go to top"><i class='bx bxs-up-arrow'></i></button>
+
+</body>
+
+</html>
