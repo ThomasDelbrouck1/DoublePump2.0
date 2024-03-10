@@ -86,3 +86,30 @@ document.addEventListener('DOMContentLoaded', function () {
         popup.style.display = 'none';
     });
 });
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Plaats hier je JavaScript-code
+    var modal = document.getElementById("myModal");
+    var img = document.getElementById("gameLogo");
+
+    img.onclick = function () {
+        modal.style.display = "block";
+    }
+
+    function closeModal() {
+        modal.style.display = "none";
+    }
+
+    // Sluit het modale venster wanneer er buiten geklikt wordt
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            closeModal();
+        }
+    }
+});
