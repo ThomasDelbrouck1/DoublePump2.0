@@ -67,7 +67,7 @@ function addToBlacklist() {
 
 
 //POP UP
-document.addEventListener('DOMContentLoaded', function () {
+/*document.addEventListener('DOMContentLoaded', function () {
     const gameBlocks = document.querySelectorAll('.game');
     const popup = document.getElementById('popup');
     const closeBtn = document.querySelector('.close-btn');
@@ -85,15 +85,15 @@ document.addEventListener('DOMContentLoaded', function () {
     closeBtn.addEventListener('click', () => {
         popup.style.display = 'none';
     });
-});
+});*/
 
 
 
 
 
+let fortnite = document.getElementById('fortnite');
 
-
-document.addEventListener("DOMContentLoaded", function () {
+fortnite.addEventListener('click', function () {
     // Plaats hier je JavaScript-code
     var modal = document.getElementById("myModal");
     var img = document.getElementById("gameLogo");

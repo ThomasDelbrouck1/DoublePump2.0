@@ -1,6 +1,22 @@
 body {
   font-family: Arial, sans-serif;
   background-color: gray;
+  height: 100vh;
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-rows: 1fr 4fr .5fr;
+}
+header {
+  grid-area: header;
+}
+main {
+  grid-area: main;
+}
+footer {
+  grid-area: footer;
 }
 button {
   background-color: #ac5aff;
@@ -55,7 +71,6 @@ nav {
 }
 
 .navbar {
-  background-color: bisque;
   padding: 10px 20px;
   border-radius: 25px;
 }
@@ -89,11 +104,14 @@ nav {
 .games article {
   position: relative;
   border-radius: 25px;
+  transition: .5s;
+  cursor: pointer;
 }
 
 .games article:hover {
-  transform: translateY(-5px);
+  transform: translateY(-15px);
   box-shadow: 0 8px 16px bisque;
+  transition: .5s;
 }
 
 .games article:hover {
