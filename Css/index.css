@@ -224,7 +224,6 @@ body {
 
 
 
-
   .modal {
     display: none; /* Verborgen standaard */
     position: fixed; /* Blijf op plaats */
@@ -276,3 +275,4 @@ body {
     color: black;
     text-decoration: none;
   }
+  
