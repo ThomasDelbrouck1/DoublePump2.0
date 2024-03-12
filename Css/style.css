@@ -538,3 +538,29 @@ footer a {
     "footer";
   grid-template-rows: 1fr 4fr .5fr;
 }
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+  /* Adjustments for smaller screens */
+  .games abbr,
+  .games article,
+  #gameLogo,
+  #fortimg {
+    width: 100%; /* Adjust width for smaller screens */
+  }
+
+  .logo,
+  .avatar img {
+    width: 80px; /* Adjust width for smaller screens */
+    height: 80px; /* Adjust height for smaller screens */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Further adjustments for even smaller screens */
+  .logo,
+  .avatar img {
+    width: 60px; /* Adjust width for smaller screens */
+    height: 60px; /* Adjust height for smaller screens */
+  }
+}
