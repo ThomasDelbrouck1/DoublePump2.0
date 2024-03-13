@@ -1,6 +1,6 @@
 .landingbody {
   font-family: Arial, sans-serif;
-  background-color: lightgrey;
+  background-color: black;
   height: 100vh;
   display: grid;
   grid-template-areas:
@@ -8,7 +8,9 @@
     "footer";
   grid-template-rows: auto 87.5px;
 }
-
+#gamehubimg{
+  
+}
 main {
   grid-area: main;
 }
@@ -159,7 +161,7 @@ nav img {
   width: 500px;
   height: 270px;
   border-radius: 25px;
-  box-shadow: 0 4px 8px bisque;
+  box-shadow: 0 4px 8px #FF9900;
 }
 
 #fortimg:hover {
@@ -172,14 +174,14 @@ nav img {
 }
 
 .welcome-title {
-  color: black;
+  color: #FF9900;
   font-size: 36px;
   text-align: center;
   margin-bottom: 10px;
 }
 
 .welcome-text {
-  color: black;
+  color: #FF9900;
   font-size: 18px;
   line-height: 1.5;
   text-align: center;
