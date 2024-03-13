@@ -12,9 +12,11 @@
 main {
   grid-area: main;
 }
+
 footer {
   grid-area: footer;
 }
+
 button {
   background-color: #ac5aff;
   color: white;
@@ -59,6 +61,10 @@ button:hover {
   text-align: center;
   padding: 10px;
   margin-top: 10px;
+}
+
+.navbar-nav {
+  gap: 20px;
 }
 
 nav {
@@ -115,11 +121,11 @@ nav img {
   flex-wrap: wrap;
 }
 
-.games abbr{
+.games abbr {
   display: flex;
   justify-content: center;
   align-items: center;
-  width : 500px;
+  width: 500px;
   height: 270px;
 }
 
@@ -128,7 +134,7 @@ nav img {
   border-radius: 25px;
   transition: .5s;
   cursor: pointer;
-  width : 500px;
+  width: 500px;
   height: 270px;
 }
 
@@ -141,14 +147,15 @@ nav img {
   border-color: bisque;
 }
 
-#gameLogo, #fortimg {
-  width : 500px;
+#gameLogo,
+#fortimg {
+  width: 500px;
   height: 270px;
   border-radius: 25px;
   box-shadow: 0 4px 8px bisque;
 }
 
-#fortimg:hover{
+#fortimg:hover {
   box-shadow: 0 8px 16px green;
 
 }
@@ -254,21 +261,26 @@ nav img {
 }
 
 .landingmodal {
-  display: none; /* Verborgen standaard */
-  position: fixed; /* Blijf op plaats */
-  z-index: 1; /* Zit bovenop */
+  display: none;
+  /* Verborgen standaard */
+  position: fixed;
+  /* Blijf op plaats */
+  z-index: 1;
+  /* Zit bovenop */
   left: 0;
   top: 0;
-  width: 40%; /* Volledige breedte */
+  width: 40%;
+  /* Volledige breedte */
   height: auto;
-  overflow: auto; /* Maak scrollbaar indien nodig */
-  background-color: rgb(0, 0, 0); /* Zwarte achtergrondkleur */
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.4
-  ); /* Zwarte achtergrondkleur met wat doorzichtigheid */
+  overflow: auto;
+  /* Maak scrollbaar indien nodig */
+  background-color: rgb(0, 0, 0);
+  /* Zwarte achtergrondkleur */
+  background-color: rgba(0,
+      0,
+      0,
+      0.4);
+  /* Zwarte achtergrondkleur met wat doorzichtigheid */
 }
 
 .landingmodal {
@@ -290,8 +302,10 @@ nav img {
   background-color: #fefefe;
   padding: 20px;
   border: 1px solid #888;
-  width: 50%; /* Maximale breedte van 50% */
-  max-width: 400px; /* Maximale breedte in pixels, optioneel */
+  width: 50%;
+  /* Maximale breedte van 50% */
+  max-width: 400px;
+  /* Maximale breedte in pixels, optioneel */
 }
 
 .close {
@@ -348,6 +362,7 @@ nav img {
   border-radius: 50%;
   transition: transform 0.3s ease;
 }
+
 .avatar p {
   text-align: center;
 }
@@ -357,12 +372,14 @@ nav img {
   align-items: center;
   padding: 10px;
 }
+
 .avatar-info img {
   width: 100px;
   height: 100px;
   border-radius: 50%;
   margin-right: 20px;
 }
+
 .avatar-text h3 {
   margin: 0;
 }
@@ -370,6 +387,7 @@ nav img {
 .avatar-description {
   padding: 0 10px;
 }
+
 .avatar:hover img {
   transform: scale(1.1);
 }
@@ -492,7 +510,7 @@ footer a {
   transform: scale(1.2);
 }
 
-.favobody{
+.favobody {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -509,7 +527,7 @@ footer a {
   grid-template-rows: 1fr 4fr .5fr;
 }
 
-.pagesfooter{
+.pagesfooter {
   background-color: rgba(172, 90, 255, 0.5);
   color: #fff;
   text-align: center;
@@ -522,7 +540,7 @@ footer a {
   padding: 10px;
 }
 
-.zwartelijstbody{
+.zwartelijstbody {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -541,26 +559,33 @@ footer a {
 
 /* Media queries for responsiveness */
 @media screen and (max-width: 768px) {
+
   /* Adjustments for smaller screens */
   .games abbr,
   .games article,
   #gameLogo,
   #fortimg {
-    width: 100%; /* Adjust width for smaller screens */
+    width: 100%;
+    /* Adjust width for smaller screens */
   }
 
   .logo,
   .avatar img {
-    width: 80px; /* Adjust width for smaller screens */
-    height: 80px; /* Adjust height for smaller screens */
+    width: 80px;
+    /* Adjust width for smaller screens */
+    height: 80px;
+    /* Adjust height for smaller screens */
   }
 }
 
 @media screen and (max-width: 480px) {
+
   /* Further adjustments for even smaller screens */
   .logo,
   .avatar img {
-    width: 60px; /* Adjust width for smaller screens */
-    height: 60px; /* Adjust height for smaller screens */
+    width: 60px;
+    /* Adjust width for smaller screens */
+    height: 60px;
+    /* Adjust height for smaller screens */
   }
 }
