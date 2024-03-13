@@ -1,6 +1,6 @@
 .landingbody {
   font-family: Arial, sans-serif;
-  background-color: gray;
+  background-color: lightgrey;
   height: 100vh;
   display: grid;
   grid-template-areas:
@@ -51,7 +51,7 @@ button:hover {
 }
 
 #myBtn:hover {
-  background-color: #6f93ff;
+  background-color: #FF9900;
 }
 
 .signin {
@@ -205,8 +205,8 @@ nav img {
 }
 
 .landingfooter {
-  background-color: bisque;
-  color: grey;
+  background-color: #FF9900;
+  color: black;
   text-align: center;
   bottom: 0;
   width: 100%;
@@ -224,19 +224,19 @@ nav img {
 
 .landingfooter a {
   text-decoration: none;
-  color: gray;
+  color: black;
 }
 
 .landingfooter-link {
   text-decoration: none;
-  color: gray;
+  color: black;
   transition: all 0.3s ease;
   font-size: 18px;
 }
 
 .landingfooter-link:hover {
-  background-color: #6f93ff;
-  color: #09d2e1;
+  background-color: white;
+  color: black ;
   border-radius: 4rem;
   padding: 5px;
 }
