@@ -69,7 +69,7 @@ button:hover {
 
 nav {
   width: 100%;
-  background-color: rgba(172, 90, 255, 0.5);
+  background-color: rgba(173, 90, 255, 0.8);
   border-radius: 25px;
 }
 
@@ -89,9 +89,16 @@ nav a {
 nav a:hover {
   border-radius: 4rem;
   background-color: #6f93ff;
-  color: hotpink;
+  color: rgb(194, 37, 115);
   transform: translateY(-3px);
   padding: 5px;
+}
+
+nav a:active {
+  background-color: initial;
+  /* Stel hier de gewenste kleur in */
+  color: purple;
+  /* Stel hier de gewenste kleur in */
 }
 
 nav img {
@@ -329,7 +336,7 @@ nav img {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-image: url('/assets/neon-grid-background_53876-91657.jpg');
+  background-image: url('/assets/fornite_characters2.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -514,7 +521,7 @@ footer a {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-image: url('/assets/neon-grid-background_53876-91657.jpg');
+  background-image: url('/assets/favohearts.jpeg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -544,7 +551,7 @@ footer a {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-image: url('/assets/neon-grid-background_53876-91657.jpg');
+  background-image: url('/assets/blacklist.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
