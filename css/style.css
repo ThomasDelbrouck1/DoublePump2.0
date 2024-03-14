@@ -13,6 +13,7 @@
   border-radius: 25px;
   width: 5rem;
 }
+
 .landingbody .modal-content {
   background-color: rgb(48, 47, 47);
   text-align: center;
@@ -22,9 +23,11 @@
 #gamehubimg {
   width: 40rem;
 }
+
 .imgContainer {
   text-align: center;
 }
+
 main {
   grid-area: main;
 }
@@ -89,7 +92,7 @@ nav {
   border-radius: 25px;
 }
 
-nav > div {
+nav>div {
   display: flex;
   flex-direction: column;
 }
@@ -109,6 +112,7 @@ nav a:hover {
   transform: translateY(-3px);
   padding: 5px;
 }
+
 nav li:nth-child(1) a:hover {
   background-color: #ff9900;
   color: black;
@@ -337,6 +341,7 @@ nav img {
   color: black;
   text-decoration: none;
 }
+
 .avatarbody header {
   grid-area: header;
   padding: 0;
@@ -646,6 +651,7 @@ input[type="submit"]:hover {
 
 /* Media queries for responsiveness */
 @media screen and (max-width: 768px) {
+
   /* Adjustments for smaller screens */
   .games abbr,
   .games article,
@@ -662,15 +668,18 @@ input[type="submit"]:hover {
     height: 80px;
     /* Adjust height for smaller screens */
   }
+
   .avatarbody .container {
     gap: 50px;
   }
+
   .favobody .container {
     gap: 50px;
   }
 }
 
 @media screen and (max-width: 480px) {
+
   /* Further adjustments for even smaller screens */
   .logo,
   .avatar img {
@@ -679,12 +688,15 @@ input[type="submit"]:hover {
     height: 60px;
     /* Adjust height for smaller screens */
   }
+
   .avatarbody {
     background-image: url("/assets/avatar_portrait_img.jpg");
   }
+
   .avatarbody .container {
     gap: 50px;
   }
+
   .favobody .container {
     background-image: url("/assets/favo_portrait_img.jpg");
     gap: 40px;
