@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-let fortnite = document.getElementById('fortnite');
+/*let fortnite = document.getElementById('fortnite');
 
 fortnite.addEventListener('click', function () {
     // Plaats hier je JavaScript-code
@@ -112,4 +112,4 @@ fortnite.addEventListener('click', function () {
             closeModal();
         }
     }
-});
+});*/
