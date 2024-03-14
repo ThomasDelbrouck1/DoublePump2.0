@@ -1,6 +1,6 @@
 .landingbody {
   font-family: Arial, sans-serif;
-  background-color: lightgrey;
+  background-color: black;
   height: 100vh;
   display: grid;
   grid-template-areas:
@@ -9,6 +9,22 @@
   grid-template-rows: auto 87.5px;
 }
 
+.landingbody .modal-body img {
+  border-radius: 25px;
+  width: 5rem;
+}
+.landingbody .modal-content {
+  background-color: rgb(48, 47, 47);
+  text-align: center;
+  color: white;
+}
+
+#gamehubimg {
+  width: 40rem;
+}
+.imgContainer {
+  text-align: center;
+}
 main {
   grid-area: main;
 }
@@ -69,7 +85,7 @@ button:hover {
 
 nav {
   width: 100%;
-  background-color: rgba(172, 90, 255, 0.5);
+  background-color: rgba(173, 90, 255, 0.8);
   border-radius: 25px;
 }
 
@@ -89,8 +105,19 @@ nav a {
 nav a:hover {
   border-radius: 4rem;
   background-color: #6f93ff;
-  color: hotpink;
+  color: rgb(194, 37, 115);
   transform: translateY(-3px);
+  padding: 5px;
+}
+nav li:nth-child(1) a:hover {
+  background-color: #ff9900;
+  color: black;
+}
+
+.navbar-nav li a.active {
+  background-color: rgb(57, 57, 219);
+  color: white;
+  border-radius: 4rem;
   padding: 5px;
 }
 
@@ -123,7 +150,7 @@ nav img {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 500px;
+  width: 450px;
   height: 270px;
 }
 
@@ -132,7 +159,7 @@ nav img {
   border-radius: 25px;
   transition: 0.5s;
   cursor: pointer;
-  width: 500px;
+  width: 450px;
   height: 270px;
 }
 
@@ -147,10 +174,10 @@ nav img {
 
 #gameLogo,
 #fortimg {
-  width: 500px;
+  width: 450px;
   height: 270px;
   border-radius: 25px;
-  box-shadow: 0 4px 8px bisque;
+  box-shadow: 0 4px 8px #ff9900;
 }
 
 #fortimg:hover {
@@ -162,14 +189,14 @@ nav img {
 }
 
 .welcome-title {
-  color: black;
+  color: #ff9900;
   font-size: 36px;
   text-align: center;
   margin-bottom: 10px;
 }
 
 .welcome-text {
-  color: black;
+  color: #ff9900;
   font-size: 18px;
   line-height: 1.5;
   text-align: center;
@@ -310,12 +337,25 @@ nav img {
   color: black;
   text-decoration: none;
 }
+.avatarbody header {
+  grid-area: header;
+  padding: 0;
+  margin: 0;
+}
+
+.avatarbody main {
+  grid-area: main;
+}
+
+.avatarbody footer {
+  grid-area: footer;
+}
 
 .avatarbody {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-image: url("/assets/neon-grid-background_53876-91657.jpg");
+  background-image: url("/assets/fornite_characters2.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -333,6 +373,8 @@ nav img {
   flex-wrap: wrap;
   justify-content: center;
   padding: 20px;
+  gap: 200px;
+  row-gap: 1rem;
 }
 
 .avatar {
@@ -386,7 +428,7 @@ nav img {
   margin: 5px 0;
 }
 
-.modal-content {
+.avatarbody .modal-content {
   background-color: #fefefe;
   margin: 10% auto;
   padding: 20px;
@@ -419,7 +461,7 @@ nav img {
 }
 
 .avatarfooter {
-  background-color: rgba(172, 90, 255, 0.5);
+  background-color: rgba(173, 90, 255, 0.8);
   color: #fff;
   text-align: center;
   display: flex;
@@ -472,7 +514,7 @@ footer a {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-image: url("/assets/neon-grid-background_53876-91657.jpg");
+  background-image: url("/assets/fortnite\ favourite.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -486,7 +528,7 @@ footer a {
 }
 
 .pagesfooter {
-  background-color: rgba(172, 90, 255, 0.5);
+  background-color: rgba(173, 90, 255, 0.8);
   color: #fff;
   text-align: center;
   display: flex;
@@ -502,7 +544,7 @@ footer a {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-image: url("/assets/neon-grid-background_53876-91657.jpg");
+  background-image: url("/assets/fortnite\ blacklist.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -515,39 +557,58 @@ footer a {
   grid-template-rows: 1fr 4fr 0.5fr;
 }
 
-.indexModal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  padding-top: 100px;
-  left: 0;
-  top: 0;
-  width: 30%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.4);
-}
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
+#fifa img:hover,
+#lotr img:hover,
+#pokemon img:hover,
+#mtg img:hover,
+#legoMaster img:hover {
+  opacity: 0.5;
 }
 
-.registerbtn {
+.register-main {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+}
+
+.register-container {
+  width: 350px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
   background-color: #4caf50;
   color: white;
-  padding: 16px 20px;
-  margin: 8px 0;
   border: none;
   cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
 }
 
-.registerbtn:hover {
-  opacity: 1;
+input[type="submit"]:hover {
+  background-color: #45a049;
 }
 
 /* Media queries for responsiveness */
@@ -557,7 +618,7 @@ footer a {
   .games article,
   #gameLogo,
   #fortimg {
-    width: 100%;
+    width: 500px;
     /* Adjust width for smaller screens */
   }
 
@@ -567,6 +628,12 @@ footer a {
     /* Adjust width for smaller screens */
     height: 80px;
     /* Adjust height for smaller screens */
+  }
+  .avatarbody .container {
+    gap: 50px;
+  }
+  .favobody .container {
+    gap: 50px;
   }
 }
 
@@ -578,5 +645,15 @@ footer a {
     /* Adjust width for smaller screens */
     height: 60px;
     /* Adjust height for smaller screens */
+  }
+  .avatarbody {
+    background-image: url("/assets/avatar_portrait_img.jpg");
+  }
+  .avatarbody .container {
+    gap: 50px;
+  }
+  .favobody .container {
+    background-image: url("/assets/favo_portrait_img.jpg");
+    gap: 40px;
   }
 }

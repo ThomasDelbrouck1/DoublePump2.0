@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl-be">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,12 +21,16 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <title>index</title>
+    <title>Document</title>
   </head>
 
   <body class="landingbody">
-    <header></header>
+    <!-- Nav -->
+
     <main>
+      <section class="imgContainer">
+        <img src="assets/Game_Hub_Background.png" alt="" id="gamehubimg" />
+      </section>
       <h1 class="welcome-title">Welkom!</h1>
       <p class="welcome-text">
         Welkom op onze game hub Double Pump! <br />
@@ -38,7 +42,7 @@
       <section class="games">
         <abbr title="Fortnite">
           <article class="game" id="fortnite">
-            <a href="#" onclick="openModal()"
+            <a href="#" data-bs-target="#login" data-bs-toggle="modal"
               ><img id="fortimg" src="/assets/fortnite.jpeg" alt="Game Image"
             /></a>
           </article>
@@ -81,34 +85,60 @@
         </article>
       </article>
 
-      <!-- Login Modal -->
-      <aside id="indexModal" class="indexModal">
-        <article class="modal-content">
-          <header>
-            <span class="close">&times;</span>
-          </header>
-          <form>
-            <label for="uname"><b>Gebruikersnaam/Email</b></label>
-            <input
-              type="text"
-              placeholder="Voer Gebruikersnaam/Email in"
-              name="uname"
-              required
-            />
-
-            <label for="psw"><b>Wachtwoord</b></label>
-            <input
-              type="password"
-              placeholder="Voer Wachtwoord in"
-              name="psw"
-              required
-            />
-
-            <button type="submit">Login</button>
-            <button type="button" class="registerbtn">Registreren</button>
-          </form>
-        </article>
-      </aside>
+      <section
+        class="modal fade"
+        id="login"
+        tabindex="-1"
+        aria-labelledby="loginLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="loginLabel">Login</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <img
+                class="mb-5"
+                src="/assets/_c329f736-c0ec-4f70-b64f-db3066f2d096.jpg"
+                alt=""
+              />
+              <p class="mb-2">Login op je DoublePump Account!</p>
+              <input
+                type="email"
+                class="form-control mb-4"
+                id="emailInput"
+                placeholder="naam@voorbeeld.com"
+                autocomplete="email"
+              />
+              <input
+                type="password"
+                class="form-control mb-4"
+                id="passwordInput"
+                placeholder="Wachtwoord"
+                autocomplete="current-password"
+              />
+              Heeft u nog geen account?
+              <a href="registratiepagina.html">Registreer hier!</a>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+              >
+                Inloggen
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="landingfooter">

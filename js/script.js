@@ -74,13 +74,15 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-document.addEventListener("DOMContentLoaded", function () {
 
-    var image = document.getElementById("fortimg");
 
-    var modal = document.getElementById("indexModal");
 
-    var closeButton = document.querySelector(".modal-content .close");
+/*let fortnite = document.getElementById('fortnite');
+
+fortnite.addEventListener('click', function () {
+    // Plaats hier je JavaScript-code
+    var modal = document.getElementById("myModal");
+    var img = document.getElementById("fortimg");
 
     function openModal() {
         modal.style.display = "block";
@@ -90,7 +92,10 @@ document.addEventListener("DOMContentLoaded", function () {
         modal.style.display = "none";
     }
 
-    image.addEventListener("click", openModal);
-
-    closeButton.addEventListener("click", closeModal);
-});
+    // Sluit het modale venster wanneer er buiten geklikt wordt
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            closeModal();
+        }
+    }
+});*/
