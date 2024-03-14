@@ -15,19 +15,8 @@ function topFunction() {
     document.documentElement.scrollTop = 0;
 }
 
-//Faq
-function toggleAnswer(question) {
-    var answer = question.querySelector('.answer');
-    if (answer.style.display === "none") {
-        answer.style.display = "block";
-    } else {
-        answer.style.display = "none";
-    }
-}
-
-
 //Avatar
-var selectedCharacter;
+let selectedCharacter;
 
 function openModal(name, series, description) {
     selectedCharacter = { name: name, series: series, description: description };
@@ -42,7 +31,7 @@ function closeModal() {
 }
 
 window.onclick = function (event) {
-    var modal = document.getElementById('myModal');
+    let modal = document.getElementById('myModal');
     if (event.target == modal) {
         modal.style.display = "none";
     }
@@ -62,9 +51,6 @@ function addToBlacklist() {
 
     console.log('Adding', selectedCharacter.name, 'to blacklist...');
 }
-
-
-
 
 //POP UP
 document.addEventListener('DOMContentLoaded', function () {
@@ -88,17 +74,15 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+document.addEventListener("DOMContentLoaded", function () {
 
+    var image = document.getElementById("fortimg");
 
+    var modal = document.getElementById("indexModal");
 
-let fortnite = document.getElementById('fortnite');
+    var closeButton = document.querySelector(".modal-content .close");
 
-fortnite.addEventListener('click', function () {
-    // Plaats hier je JavaScript-code
-    var modal = document.getElementById("myModal");
-    var img = document.getElementById("fortimg");
-
-    img.onclick = function () {
+    function openModal() {
         modal.style.display = "block";
     }
 
@@ -106,10 +90,7 @@ fortnite.addEventListener('click', function () {
         modal.style.display = "none";
     }
 
-    // Sluit het modale venster wanneer er buiten geklikt wordt
-    window.onclick = function (event) {
-        if (event.target == modal) {
-            closeModal();
-        }
-    }
+    image.addEventListener("click", openModal);
+
+    closeButton.addEventListener("click", closeModal);
 });
