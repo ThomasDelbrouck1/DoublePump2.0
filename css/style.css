@@ -1,13 +1,23 @@
+main {
+  grid-area: main;
+}
+
+footer {
+  grid-area: footer;
+}
+
 .landingbody {
   font-family: Arial, sans-serif;
   background-color: black;
-  height: 100vh;
+  height: 100%;
+  width: 100%;
   display: grid;
   grid-template-areas:
     "main"
     "footer";
   grid-template-rows: auto 87.5px;
 }
+
 
 .landingbody .modal-body img {
   border-radius: 25px;
@@ -32,9 +42,6 @@ main {
   grid-area: main;
 }
 
-footer {
-  grid-area: footer;
-}
 
 button {
   background-color: #ff9900;
@@ -73,13 +80,6 @@ button:hover {
 
 #myBtn:hover {
   background-color: #ff9900;
-}
-
-.signin {
-  background-color: #f2f2f2;
-  text-align: center;
-  padding: 10px;
-  margin-top: 10px;
 }
 
 .navbar-nav {
@@ -364,7 +364,8 @@ nav img {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 100%;
+  width: 100%;
   display: grid;
   grid-template-areas:
     "header"
@@ -523,7 +524,8 @@ footer a {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 100%;
+  width: 100%;
   display: grid;
   grid-template-areas:
     "header"
@@ -553,7 +555,8 @@ footer a {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 100%;
+  width: 100%;
   display: grid;
   grid-template-areas:
     "header"
@@ -569,6 +572,7 @@ footer a {
 #legoMaster img:hover {
   opacity: 0.5;
 }
+
 .registratiebody {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -581,6 +585,7 @@ footer a {
     "footer";
   grid-template-rows: 1fr 4fr 0.5fr;
 }
+
 .register-main {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -627,6 +632,7 @@ input[type="submit"]:hover {
   background-color: #ff9900;
   color: black;
 }
+
 .registratie-footer-link {
   text-decoration: none;
   color: white;
