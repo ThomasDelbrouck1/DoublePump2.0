@@ -679,14 +679,6 @@ input[type="submit"]:hover {
     height: 60px;
     /* Adjust height for smaller screens */
   }
-  .landingbody {
-    width: 100vw;
-    height: 100vh;
-  }
-  .games {
-    gap: 20px;
-    row-gap: 1rem;
-  }
   .avatarbody {
     background-image: url("/assets/avatar_portrait_img.jpg");
   }
