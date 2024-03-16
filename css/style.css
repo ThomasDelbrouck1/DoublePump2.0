@@ -127,7 +127,7 @@ footer {
 }
 
 .popup {
-    display: none;
+  display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -525,4 +525,44 @@ input[type="submit"]:hover {
     }
 }
 
-@media (min-width: 376px) and (max-width: 768px) {}
+
+@media screen and (max-width: 768px) {.logo,
+    .avatar img {
+      width: 80px;
+      /* Adjust width for smaller screens */
+      height: 80px;
+      /* Adjust height for smaller screens */
+    }
+  
+    .avatarbody .container {
+      gap: 50px;
+    }
+  
+    .favobody .container {
+      gap: 50px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+
+    /* Further adjustments for even smaller screens */
+    .logo,
+    .avatar img {
+      width: 60px;
+      /* Adjust width for smaller screens */
+      height: 60px;
+      /* Adjust height for smaller screens */
+    }
+  
+    .avatarbody {
+      background-image: url("/assets/avatar_portrait_img.jpg");
+    }
+  
+    .avatarbody .container {
+      gap: 50px;
+    }
+  
+    .favobody .container {
+      background-image: url("/assets/favo_portrait_img.jpg");
+      gap: 40px;
+    }
+  }
