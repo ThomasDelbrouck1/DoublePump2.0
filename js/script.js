@@ -74,17 +74,10 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-<<<<<<< HEAD:js/script.js
-<<<<<<< HEAD:js/script.js
 
 
 
 /*let fortnite = document.getElementById('fortnite');
-=======
-=======
->>>>>>> main:Js/script.js
-let fortnite = document.getElementById('fortnite');
->>>>>>> 89274cc (yuur):Js/script.js
 
 fortnite.addEventListener('click', function () {
     // Plaats hier je JavaScript-code
