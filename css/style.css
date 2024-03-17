@@ -18,7 +18,7 @@ footer {
     bottom: 0;
     width: 100%;
     height: 100%;
-    padding: 1rem;
+    padding: 0.5rem;
     border-radius: 25px;
     margin-top: 4rem;
 }
@@ -47,13 +47,22 @@ footer {
 .registratiebody {
     font-family: Arial, sans-serif;
     background-color: black;
-    height: 100vh;
-    width: 100%;
     display: grid;
     grid-template-areas:
         "main"
         "footer";
     grid-template-rows: auto 87.5px;
+}
+
+.landingbody{
+    height: 100vh;
+    width: 100%;
+}
+
+.registratiebody{
+    height: 100vh;
+    width: 98vw;
+
 }
 
 .landingbody section:nth-child(1) {
@@ -181,6 +190,7 @@ footer {
 .registratiebody .socials {
     font-size: 25px;
     padding: 0;
+    margin: 0;
 }
 
 .landingfooter a,
@@ -202,7 +212,7 @@ footer {
     background-color: white;
     color: black;
     border-radius: 4rem;
-    padding: 5px;
+    padding: 2px;
 }
 
 .landingsocial-link,
@@ -270,10 +280,6 @@ footer {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url("/assets/fornite_characters2.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     height: 100vh;
     width: 100%;
     display: grid;
@@ -282,14 +288,29 @@ footer {
         "main"
         "footer";
     grid-template-rows: 1fr 4fr 87.5px;
+    gap: 0;
+    row-gap: 0;
+}
+
+.avatarbody {
+    background-image: url("/assets/fornite_characters2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .favobody {
     background-image: url("/assets/fortnite\ favourite.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .zwartelijstbody {
     background-image: url("/assets/fortnite\ blacklist.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .avatar {
@@ -343,13 +364,111 @@ footer {
     margin: 5px 0;
 }
 
+.avatarbody .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 .avatarbody .modal-content {
-    background-color: #fefefe;
-    margin: 10% auto;
+    background-color: rosybrown;
+    margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 70%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avatarbody.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.avatarbody.close:hover,
+.avatarbody.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.avatarbody #modal-image {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+}
+
+.avatarbody .modal-text {
     text-align: center;
+    margin-bottom: 20px;
+}
+
+.avatarbody .modal-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.avatarbody .modal-buttons .btn {
+    margin: 0 5px;
+    transition: transform 0.3s ease;
+}
+
+.avatarbody .modal-buttons .btn:hover {
+    background-color: #6f93ff;
+    color: rgb(194, 37, 115);
+    margin: -3px 5px 3px
+}
+
+.avatarbody .btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.avatarbody .btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.avatarbody .btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.avatarbody .modal-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatarbody .modal-info>.modal-text {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.avatarbody .bi {
+    font-size: 24px;
+}
+
+.avatarbody .blacklist-icon {
+    color: black;
+    font-size: 24px;
+}
+
+.avatarbody .blacklist-icon {
+    color: black;
+    font-size: 24px;
 }
 
 .avatarfooter {
@@ -360,9 +479,9 @@ footer {
     bottom: 0;
     width: 100%;
     height: 100%;
-    padding: 1rem;
+    padding: 0.5rem;
     border-radius: 25px;
-    margin-top: .1rem;
+    margin-top: 0.05rem;
 
 }
 
@@ -556,6 +675,10 @@ input[type="submit"]:hover {
         /* Adjust height for smaller screens */
     }
 
+    .games img {
+        height: 200px;
+    }
+
     .avatarbody {
         background-image: url("/assets/avatar_portrait_img.jpg");
     }
@@ -564,8 +687,23 @@ input[type="submit"]:hover {
         gap: 50px;
     }
 
-    .favobody .container {
+    .favobody {
         background-image: url("/assets/favo_portrait_img.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .favobody .container,
+    .zwartelijstbody .container,
+    .avatarbody .container {
         gap: 40px;
+    }
+
+    .zwartelijstbody {
+        background-image: url("/assets/blacklist_portrait.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
     }
 }
