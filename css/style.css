@@ -336,8 +336,8 @@ footer {
 }
 
 .avatar-info img {
-    width: 100px;
-    height: 100px;
+    width: 450px;
+    height: 450px;
     border-radius: 50%;
     margin-right: 20px;
 }
@@ -374,6 +374,7 @@ footer {
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1050;
 }
 
 .avatarbody .modal-content {
@@ -381,8 +382,8 @@ footer {
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 70%;
-    max-width: 600px;
+    width: 100%;
+    max-width: 1800px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -402,9 +403,13 @@ footer {
     cursor: pointer;
 }
 
+.avatarbody .modal-backdrop {
+    display: none !important;
+}
+
 .avatarbody #modal-image {
-    width: 150px;
-    height: 150px;
+    width: 450px;
+    height: 450px;
     margin-bottom: 20px;
 }
 
@@ -413,17 +418,17 @@ footer {
     margin-bottom: 20px;
 }
 
-.avatarbody .modal-buttons {
+.avatarbody .modal-footer {
     display: flex;
     justify-content: center;
 }
 
-.avatarbody .modal-buttons .btn {
+.avatarbody .modal-footer .btn {
     margin: 0 5px;
     transition: transform 0.3s ease;
 }
 
-.avatarbody .modal-buttons .btn:hover {
+.avatarbody .modal-footer .btn:hover {
     background-color: #6f93ff;
     color: rgb(194, 37, 115);
     margin: -3px 5px 3px
@@ -444,7 +449,7 @@ footer {
     color: white;
 }
 
-.avatarbody .modal-info {
+.avatarbody .modal-body {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -452,12 +457,17 @@ footer {
     justify-content: center;
 }
 
-.avatarbody .modal-info>.modal-text {
+.avatarbody .modal-body>.modal-text {
     flex: 1;
     margin-left: 20px;
 }
 
 .avatarbody .bi {
+    font-size: 24px;
+}
+
+.avatarbody .blacklist-icon {
+    color: black;
     font-size: 24px;
 }
 
