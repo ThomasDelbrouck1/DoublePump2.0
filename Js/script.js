@@ -88,9 +88,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-
-
-
 let fortnite = document.getElementById('fortnite');
 
 fortnite.addEventListener('click', function () {
