@@ -314,8 +314,9 @@ footer {
 .avatar:hover p {
   bottom: 10px;
   background-color: plum;
-  color: darkblue;
+  color: #112055;
   border-radius: 25px;
+  margin-top: 15px;
 }
 
 .avatar img {
@@ -328,6 +329,7 @@ footer {
 .avatar p {
   text-align: center;
   font-size: 18px;
+  color: #112055;
 }
 
 .avatar-info {
