@@ -9,8 +9,8 @@ footer {
 
 /* Landing Page */
 
-.landingfooter,
-.registratiefooter {
+.landingfooter
+{
   grid-area: footer;
   background-color: #ff9900;
   color: black;
@@ -61,6 +61,7 @@ footer {
 .registratiebody {
   height: 100vh;
   width: 98vw;
+  overflow: hidden;
 }
 
 .landingbody section:nth-child(1) {
@@ -312,6 +313,7 @@ footer {
   background-repeat: no-repeat;
 }
 
+
 .avatar:hover p {
   bottom: 10px;
   background-color: plum;
@@ -331,6 +333,7 @@ footer {
   text-align: center;
   font-size: 18px;
   color: #112055;
+  margin: 5px 0;
 }
 
 .avatar-info {
@@ -354,18 +357,8 @@ footer {
   padding: 0 10px;
 }
 
-.avatar:hover img {
+.avatar:hover img, .avatar:hover p {
   transform: scale(1.1);
-}
-
-.avatar img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-}
-
-.avatar p {
-  margin: 5px 0;
 }
 
 .avatarbody .modal, .zwartelijstbody .modal, .favobody .modal {
@@ -624,6 +617,7 @@ input[type="submit"] {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  background-color: white;
 }
 
 input[type="submit"] {
