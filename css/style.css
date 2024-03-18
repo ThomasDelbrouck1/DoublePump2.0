@@ -367,7 +367,7 @@ footer {
   margin: 5px 0;
 }
 
-.avatarbody .modal {
+.avatarbody .modal, .zwartelijstbody .modal, .favobody .modal {
   display: none;
   position: fixed;
   z-index: 1;
@@ -380,7 +380,7 @@ footer {
   z-index: 1050;
 }
 
-.avatarbody .modal-content {
+.avatarbody .modal-content, .zwartelijstbody .modal-content, .favobody .modal-content {
   background-color: rosybrown;
   margin: 15% auto;
   padding: 20px;
@@ -406,7 +406,7 @@ footer {
   cursor: pointer;
 }
 
-.avatarbody .modal-backdrop {
+.avatarbody .modal-backdrop, .zwartelijstbody .modal-backdrop, .favobody .modal-backdrop {
   display: none !important;
 }
 
