@@ -288,6 +288,7 @@ footer {
   grid-template-rows: 1fr 4fr 87.5px;
   gap: 0;
   row-gap: 0;
+  overflow: hidden;
 }
 
 .avatarbody {
@@ -323,7 +324,7 @@ footer {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  transition: transform 0.3s ease;
+  transition: transform 1s ease;
 }
 
 .avatar p {
