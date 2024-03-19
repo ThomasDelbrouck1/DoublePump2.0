@@ -326,7 +326,7 @@ footer {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  transition: transform 1s ease;
+  transition: transform 0.3s ease;
 }
 
 .avatar p {
@@ -710,3 +710,33 @@ input[type="submit"]:hover {
     background-repeat: no-repeat;
   }
 }
+
+@media screen and (min-width: 481px) and (max-width: 1400px) {
+  /* Adjustments for screens between 769px and 1400px */
+
+  /* Adding overflow hidden */
+  .landingbody,
+  .registratiebody,
+  .avatarbody,
+  .zwartelijstbody,
+  .favobody {
+    overflow: hidden;
+  }
+
+  /* Example rule: */
+  .container {
+    gap: 30px; /* Adjust the gap between elements */
+  }
+
+  /* Remove overflow hidden */
+  .landingbody,
+  .registratiebody,
+  .avatarbody,
+  .zwartelijstbody,
+  .favobody {
+    overflow: visible;
+  }
+
+  /* Add more CSS rules as needed for this screen size range */
+}
+
