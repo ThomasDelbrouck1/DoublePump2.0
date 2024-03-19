@@ -361,7 +361,6 @@ footer {
 }
 
 .avatarbody .modal,
-.zwartelijstbody .modal,
 .favobody .modal {
   display: none;
   position: fixed;
@@ -373,7 +372,9 @@ footer {
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1050;
+  color: white;
 }
+
 
 .avatarbody .modal-content,
 .zwartelijstbody .modal-content,
@@ -387,6 +388,18 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.zwartelijstbody .modal-content {
+  background-color: rgb(36, 35, 35);
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 100%;
+  max-width: 1800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
 }
 
 .avatarbody.close {
