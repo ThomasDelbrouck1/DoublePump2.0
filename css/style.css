@@ -738,3 +738,42 @@ input[type="submit"]:hover {
     overflow: visible;
   }
 }
+
+
+@media screen and (max-width: 480px) {
+  .avatarbody p {
+    font-size: 10px; 
+  }
+}
+
+@media screen and (max-width: 315px) {
+  .avatarbody p {
+    font-size: 8px; 
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  .zwartelijstbody p {
+    font-size: 10px; 
+  }
+}
+
+@media screen and (max-width: 315px) {
+  .zwartelijstbody p {
+    font-size: 8px; 
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  .favobody p {
+    font-size: 10px; 
+  }
+}
+
+@media screen and (max-width: 315px) {
+  .favobody p {
+    font-size: 8px; 
+  }
+}
