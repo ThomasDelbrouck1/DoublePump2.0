@@ -9,8 +9,7 @@ footer {
 
 /* Landing Page */
 
-.landingfooter
-{
+.landingfooter {
   grid-area: footer;
   background-color: #ff9900;
   color: black;
@@ -313,7 +312,6 @@ footer {
   background-repeat: no-repeat;
 }
 
-
 .avatar:hover p {
   bottom: 10px;
   background-color: plum;
@@ -357,11 +355,14 @@ footer {
   padding: 0 10px;
 }
 
-.avatar:hover img, .avatar:hover p {
+.avatar:hover img,
+.avatar:hover p {
   transform: scale(1.1);
 }
 
-.avatarbody .modal, .zwartelijstbody .modal, .favobody .modal {
+.avatarbody .modal,
+.zwartelijstbody .modal,
+.favobody .modal {
   display: none;
   position: fixed;
   z-index: 1;
@@ -374,7 +375,9 @@ footer {
   z-index: 1050;
 }
 
-.avatarbody .modal-content, .zwartelijstbody .modal-content, .favobody .modal-content {
+.avatarbody .modal-content,
+.zwartelijstbody .modal-content,
+.favobody .modal-content {
   background-color: rosybrown;
   margin: 15% auto;
   padding: 20px;
@@ -400,7 +403,9 @@ footer {
   cursor: pointer;
 }
 
-.avatarbody .modal-backdrop, .zwartelijstbody .modal-backdrop, .favobody .modal-backdrop {
+.avatarbody .modal-backdrop,
+.zwartelijstbody .modal-backdrop,
+.favobody .modal-backdrop {
   display: none !important;
 }
 
@@ -415,17 +420,23 @@ footer {
   margin-bottom: 20px;
 }
 
-.avatarbody .modal-footer, .zwartelijstbody .modal-footer, .favobody .modal-footer {
+.avatarbody .modal-footer,
+.zwartelijstbody .modal-footer,
+.favobody .modal-footer {
   display: flex;
   justify-content: center;
 }
 
-.avatarbody .modal-footer .btn, .zwartelijstbody .modal-footer .btn, .favobody .modal-footer .btn {
+.avatarbody .modal-footer .btn,
+.zwartelijstbody .modal-footer .btn,
+.favobody .modal-footer .btn {
   margin: 0 5px;
   transition: transform 0.3s ease;
 }
 
-.avatarbody .modal-footer .btn:hover, .zwartelijstbody .modal-footer .btn:hover, .favobody .modal-footer .btn:hover {
+.avatarbody .modal-footer .btn:hover,
+.zwartelijstbody .modal-footer .btn:hover,
+.favobody .modal-footer .btn:hover {
   background-color: #6f93ff;
   color: rgb(194, 37, 115);
   margin: -3px 5px 3px;
@@ -654,9 +665,7 @@ input[type="submit"]:hover {
   .logo,
   .avatar img {
     width: 80px;
-    /* Adjust width for smaller screens */
     height: 80px;
-    /* Adjust height for smaller screens */
   }
 
   .avatarbody .container {
@@ -669,13 +678,10 @@ input[type="submit"]:hover {
 }
 
 @media screen and (max-width: 480px) {
-  /* Further adjustments for even smaller screens */
   .logo,
   .avatar img {
     width: 60px;
-    /* Adjust width for smaller screens */
     height: 60px;
-    /* Adjust height for smaller screens */
   }
 
   .games img {
@@ -712,9 +718,6 @@ input[type="submit"]:hover {
 }
 
 @media screen and (min-width: 481px) and (max-width: 1400px) {
-  /* Adjustments for screens between 769px and 1400px */
-
-  /* Adding overflow hidden */
   .landingbody,
   .registratiebody,
   .avatarbody,
@@ -723,12 +726,10 @@ input[type="submit"]:hover {
     overflow: hidden;
   }
 
-  /* Example rule: */
   .container {
-    gap: 30px; /* Adjust the gap between elements */
+    gap: 30px;
   }
 
-  /* Remove overflow hidden */
   .landingbody,
   .registratiebody,
   .avatarbody,
@@ -736,7 +737,4 @@ input[type="submit"]:hover {
   .favobody {
     overflow: visible;
   }
-
-  /* Add more CSS rules as needed for this screen size range */
 }
-
