@@ -376,6 +376,7 @@ footer {
 }
 
 
+
 .avatarbody .modal-content,
 .zwartelijstbody .modal-content,
 .favobody .modal-content {
@@ -389,6 +390,7 @@ footer {
   flex-direction: column;
   align-items: center;
 }
+
 .zwartelijstbody .modal-content {
   background-color: rgb(36, 35, 35);
   margin: 15% auto;
@@ -469,19 +471,23 @@ footer {
   background-color: #dc3545;
   color: white;
 }
-.favobody .modal-body{
+
+.favobody .modal-body {
   text-align: center;
 }
-.avatarbody .modal-body{
+
+.avatarbody .modal-body {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.modal-description{
+
+.modal-description {
   text-align: center;
 }
+
 .avatarbody .modal-body>.modal-text {
   flex: 1;
   margin-left: 20px;
@@ -728,6 +734,7 @@ input[type="submit"]:hover {
 }
 
 @media screen and (max-width: 480px) {
+
   .logo,
   .avatar img {
     width: 60px;
@@ -768,6 +775,7 @@ input[type="submit"]:hover {
 }
 
 @media screen and (min-width: 481px) and (max-width: 1400px) {
+
   .landingbody,
   .registratiebody,
   .avatarbody,
@@ -792,38 +800,38 @@ input[type="submit"]:hover {
 
 @media screen and (max-width: 480px) {
   .avatarbody p {
-    font-size: 10px; 
+    font-size: 10px;
   }
 }
 
 @media screen and (max-width: 315px) {
   .avatarbody p {
-    font-size: 8px; 
+    font-size: 8px;
   }
 }
 
 
 @media screen and (max-width: 480px) {
   .zwartelijstbody p {
-    font-size: 10px; 
+    font-size: 10px;
   }
 }
 
 @media screen and (max-width: 315px) {
   .zwartelijstbody p {
-    font-size: 8px; 
+    font-size: 8px;
   }
 }
 
 
 @media screen and (max-width: 480px) {
   .favobody p {
-    font-size: 10px; 
+    font-size: 10px;
   }
 }
 
 @media screen and (max-width: 315px) {
   .favobody p {
-    font-size: 8px; 
+    font-size: 8px;
   }
 }

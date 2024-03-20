@@ -16,41 +16,7 @@ function topFunction() {
 }
 
 //Avatar
-let selectedCharacter;
 
-function openModal(name, series, description) {
-    selectedCharacter = { name: name, series: series, description: description };
-    document.getElementById('modal-title').innerText = name + ' - ' + series;
-    document.getElementById('modal-image').src = 'https://via.placeholder.com/150';
-    document.getElementById('modal-description').innerText = description;
-    document.getElementById('myModal').style.display = 'block';
-}
-
-function closeModal() {
-    document.getElementById('myModal').style.display = 'none';
-}
-
-window.onclick = function (event) {
-    let modal = document.getElementById('myModal');
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-
-function setActiveAvatar() {
-
-    console.log('Setting', selectedCharacter.name, 'as active avatar...');
-}
-
-function addToFavorites() {
-
-    console.log('Adding', selectedCharacter.name, 'to favorites...');
-}
-
-function addToBlacklist() {
-
-    console.log('Adding', selectedCharacter.name, 'to blacklist...');
-}
 
 //POP UP
 document.addEventListener('DOMContentLoaded', function () {
