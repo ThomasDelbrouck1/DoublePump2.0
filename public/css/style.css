@@ -355,10 +355,7 @@ footer {
 }
 
 .favobody {
-  background-image: url("/assets/fortnite\ favourite.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: rgb(48, 47, 47);
 }
 
 .zwartelijstbody {
@@ -484,6 +481,8 @@ footer {
   width: 450px;
   height: 450px;
   margin-bottom: 20px;
+  float: left;
+
 }
 
 .avatarbody .modal-text {
