@@ -1,32 +1,30 @@
-
-
 {
   "name": "doublepump",
   "version": "1.0.0",
   "description": "",
   "main": "index.ts",
   "scripts": {
-      "test": "Dit is een test",
-      "start": "nodemon index.ts"
+    "test": "Dit is een test",
+    "start": "nodemon index.ts"
   },
   "author": "DoublePump",
   "license": "ISC",
   "devDependencies": {
-      "@types/ejs": "^3.1.5",
-      "@types/express": "^4.17.21",
-      "@types/jest": "^29.5.12",
-      "@types/node": "^20.11.16",
-      "jest": "^29.7.0",
-      "nodemon": "^3.1.0",
-      "ts-jest": "^29.1.2",
-      "ts-node": "^10.9.2",
-      "typescript": "^5.3.3"
+    "@types/ejs": "^3.1.5",
+    "@types/express": "^4.17.21",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.11.16",
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.0",
+    "ts-jest": "^29.1.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
   },
   "dependencies": {
-      "dotenv": "^16.4.5",
-      "ejs": "^3.1.9",
-      "express": "^4.19.2",
-      "bootstrap": "^5.3.3",
-    "bootstrap-icons": "^1.11.3"
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.9",
+    "express": "^4.19.2"
   }
 }
