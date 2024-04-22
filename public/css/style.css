@@ -32,8 +32,8 @@ footer {
   align-items: center;
   padding: 0;
   margin: 0;
-  background-color: rgb(48, 47, 47);
-  border-bottom: 2px solid white;
+  background-color: rgb(21, 21, 21);
+  border-bottom: 1px solid rgb(21, 21, 21);
 }
 
 .navContainer section:nth-child(1) {
@@ -312,17 +312,20 @@ footer {
 
 /* Avatar Page */
 
-.avatarbody header {
+.avatarbody header,  
+.favobody header{
   grid-area: header;
   padding: 0;
   margin: 0;
 }
 
-.avatarbody main {
+.avatarbody main,  
+.favobody header {
   grid-area: main;
 }
 
-.avatarbody footer {
+.avatarbody footer,  
+.favobody header {
   grid-area: footer;
 }
 
@@ -345,26 +348,13 @@ footer {
   /*overflow: hidden;*/
 }
 
-.avatarbody {
-  /*background-image: url("/assets/fornite_characters2.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;*/
+.avatarbody,  
+.favobody,  
+.zwartelijstbody{
   background-color: rgb(48, 47, 47);
 }
 
-.favobody {
-  background-color: rgb(48, 47, 47);
-}
-
-.zwartelijstbody {
-  background-image: url("/assets/fortnite\ blacklist.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.avatar:hover p {
+.avatar:hover p{
   bottom: 10px;
   background-color: rgb(57, 57, 219);
   color: white;
@@ -372,14 +362,14 @@ footer {
   margin-top: 15px;
 }
 
-.avatar img {
+.avatar img, .favobody img {
   width: 150px;
   height: 150px;
   border-radius: 50%;
   transition: transform 0.3s ease;
 }
 
-.avatar p {
+.avatar p, .favobody p {
   text-align: center;
   font-size: 18px;
   color: white;
@@ -599,7 +589,6 @@ footer {
 
 nav {
   width: 100%;
-  background-color: rgba(173, 90, 255, 0.8);
   border-radius: 25px;
 }
 
