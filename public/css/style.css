@@ -503,6 +503,12 @@ footer {
   color: white;
 }
 
+.modal-dialog {
+  width: 90%; 
+  max-width: 800px; 
+  margin: 30px auto;
+}
+
 .avatarbody .btn-danger {
   background-color: #dc3545;
   color: white;
