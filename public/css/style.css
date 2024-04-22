@@ -426,7 +426,7 @@ footer {
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 1500px;
+  width: 100%;
   max-width: 1800px;
   display: flex;
   flex-direction: column;
@@ -438,7 +438,7 @@ footer {
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 1500px;
+  width: 100%;
   max-width: 1800px;
   display: flex;
   flex-direction: column;
