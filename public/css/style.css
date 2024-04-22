@@ -312,19 +312,19 @@ footer {
 
 /* Avatar Page */
 
-.avatarbody header,  
-.favobody header{
+.avatarbody header,
+.favobody header {
   grid-area: header;
   padding: 0;
   margin: 0;
 }
 
-.avatarbody main,  
+.avatarbody main,
 .favobody header {
   grid-area: main;
 }
 
-.avatarbody footer,  
+.avatarbody footer,
 .favobody header {
   grid-area: footer;
 }
@@ -348,13 +348,13 @@ footer {
   /*overflow: hidden;*/
 }
 
-.avatarbody,  
-.favobody,  
-.zwartelijstbody{
+.avatarbody,
+.favobody,
+.zwartelijstbody {
   background-color: rgb(48, 47, 47);
 }
 
-.avatar:hover p{
+.avatar:hover p {
   bottom: 10px;
   background-color: rgb(57, 57, 219);
   color: white;
@@ -362,14 +362,16 @@ footer {
   margin-top: 15px;
 }
 
-.avatar img, .favobody img {
+.avatar img,
+.favobody img {
   width: 150px;
   height: 150px;
   border-radius: 50%;
   transition: transform 0.3s ease;
 }
 
-.avatar p, .favobody p {
+.avatar p,
+.favobody p {
   text-align: center;
   font-size: 18px;
   color: white;
