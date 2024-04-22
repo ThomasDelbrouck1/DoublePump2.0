@@ -1,11 +1,11 @@
 @font-face {
-  font-family: 'Fortnite';
+  font-family: "Fortnite";
   src: url("/assets/Burbank Big Condensed Black.otf") format("opentype");
 }
 
 /* Algemeen */
-body{
-  font-family: 'Fortnite', sans-serif;
+body {
+  font-family: "Fortnite", sans-serif;
   letter-spacing: 1.5px;
 }
 main {
@@ -16,16 +16,15 @@ footer {
   grid-area: footer;
 }
 
-.navbar{
+.navbar {
   width: 100%;
   height: 100px;
-
 }
 
-.navbar .logo{
+.navbar .logo {
   margin: 0;
 }
-.navContainer{
+.navContainer {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -37,7 +36,7 @@ footer {
   border-bottom: 2px solid white;
 }
 
-.navContainer section:nth-child(1){
+.navContainer section:nth-child(1) {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -47,7 +46,7 @@ footer {
   color: white;
   gap: 1.5rem;
 }
-.navContainer section:nth-child(1) p{
+.navContainer section:nth-child(1) p {
   margin: 0;
   padding: 0;
   /*font-size: 1.5rem;*/
@@ -428,8 +427,6 @@ footer {
   color: white;
 }
 
-
-
 .avatarbody .modal-content,
 .zwartelijstbody .modal-content,
 .favobody .modal-content {
@@ -475,14 +472,6 @@ footer {
 .zwartelijstbody .modal-backdrop,
 .favobody .modal-backdrop {
   display: none !important;
-}
-
-.avatarbody #modal-image {
-  width: 450px;
-  height: 450px;
-  margin-bottom: 20px;
-  float: left;
-
 }
 
 .avatarbody .modal-text {
@@ -539,11 +528,7 @@ footer {
   justify-content: center;
 }
 
-.modal-description {
-  text-align: center;
-}
-
-.avatarbody .modal-body>.modal-text {
+.avatarbody .modal-body > .modal-text {
   flex: 1;
   margin-left: 20px;
 }
@@ -618,7 +603,7 @@ nav {
   border-radius: 25px;
 }
 
-nav>div {
+nav > div {
   display: flex;
   flex-direction: column;
 }
@@ -698,7 +683,7 @@ footer a {
   transform: scale(1.2);
 }
 
-.tools{
+.tools {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -709,9 +694,9 @@ footer a {
   margin-top: 2rem;
 }
 
-.tools > section{
+.tools > section {
   width: 75px;
-  /*width: fit-content; remove after adding content*/ 
+  /*width: fit-content; remove after adding content*/
   height: 75px;
   background-color: blanchedalmond;
   border-radius: 10px;
@@ -726,15 +711,37 @@ footer a {
   margin: 3rem 20rem 0 20rem;
 }
 
-.avatars .avatar{
+.avatars .avatar {
   width: 150px;
   height: 150px;
   border-radius: 30px;
 }
 
-.avatars .avatar img{
+.avatars .avatar img {
   border-radius: 30px;
 }
+
+#myModal .modal-body section {
+  width: 100%;
+}
+/*venster horizontaal*/
+#myModal .modal-body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#modal-image {
+  width: 450px;
+  height: 450px;
+  margin-bottom: 20px;
+}
+#modal-description {
+  text-align: center;
+}
+
 /*registratie*/
 
 .register-main {
@@ -806,7 +813,6 @@ input[type="submit"]:hover {
 }
 
 @media screen and (max-width: 768px) {
-
   .logo,
   .avatar img {
     width: 80px;
@@ -823,7 +829,6 @@ input[type="submit"]:hover {
 }
 
 @media screen and (max-width: 480px) {
-
   .logo,
   .avatar img {
     width: 60px;
@@ -833,7 +838,6 @@ input[type="submit"]:hover {
   .games img {
     height: 200px;
   }
-
 
   .avatarbody .container {
     gap: 50px;
@@ -861,7 +865,6 @@ input[type="submit"]:hover {
 }
 
 @media screen and (min-width: 481px) and (max-width: 1400px) {
-
   .landingbody,
   .registratiebody,
   .avatarbody,
@@ -883,7 +886,6 @@ input[type="submit"]:hover {
   }
 }
 
-
 @media screen and (max-width: 480px) {
   .avatarbody p {
     font-size: 10px;
@@ -896,7 +898,6 @@ input[type="submit"]:hover {
   }
 }
 
-
 @media screen and (max-width: 480px) {
   .zwartelijstbody p {
     font-size: 10px;
@@ -908,7 +909,6 @@ input[type="submit"]:hover {
     font-size: 8px;
   }
 }
-
 
 @media screen and (max-width: 480px) {
   .favobody p {
