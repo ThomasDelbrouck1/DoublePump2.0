@@ -504,8 +504,8 @@ footer {
 }
 
 .modal-dialog {
-  width: 90%; 
-  max-width: 800px; 
+  width: 900px;
+  max-width: 1800px;
   margin: 30px auto;
 }
 
@@ -725,6 +725,7 @@ footer a {
 #myModal .modal-body {
   display: flex;
   flex-direction: row;
+
   align-items: center;
   justify-content: center;
   gap: 1rem;
@@ -734,6 +735,7 @@ footer a {
   width: 450px;
   height: 450px;
   margin-bottom: 20px;
+  margin: 0, auto;
 }
 #modal-description {
   text-align: center;
