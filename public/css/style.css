@@ -725,7 +725,6 @@ footer a {
 #myModal .modal-body {
   display: flex;
   flex-direction: row;
-
   align-items: center;
   justify-content: center;
   gap: 1rem;
@@ -735,12 +734,18 @@ footer a {
   width: 450px;
   height: 450px;
   margin-bottom: 20px;
-  margin: 0, auto;
 }
 #modal-description {
-  text-align: center;
+  text-align: left;
+  border: #6f93ff solid 1px;
+  border-radius: 15px;
+  padding: 5px;
 }
-
+#modal-title {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
 /*registratie*/
 
 .register-main {
@@ -792,7 +797,6 @@ input[type="submit"]:hover {
   background-color: #ff9900;
   color: black;
 }
-
 /* Media Queries */
 
 @media (max-width: 375px) {
