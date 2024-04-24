@@ -17,8 +17,6 @@ function topFunction() {
   document.documentElement.scrollTop = 0;
 }
 
-//Avatar
-
 //POP UP
 document.addEventListener("DOMContentLoaded", function () {
   const gameBlocks = document.querySelectorAll(".game");
