@@ -510,6 +510,22 @@ footer {
   margin: 30px auto;
 }
 
+.favorieten-modal-dialog {
+  max-width: 1000px;
+}
+
+.avatar-modal-dialog {
+  max-width: 600px;
+}
+
+.zwartelijst-modal-dialog {
+  max-width: 600px;
+}
+
+.index-modal-dialog {
+  max-width: 600px;
+}
+
 .avatarbody .btn-danger {
   background-color: #dc3545;
   color: white;
