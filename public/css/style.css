@@ -730,6 +730,10 @@ footer a {
   justify-content: center;
   gap: 1rem;
 }
+.v-buck {
+  height: 30px;
+  width: 30px;
+}
 
 #modal-image {
   width: 450px;
