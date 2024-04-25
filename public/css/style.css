@@ -432,6 +432,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 800px;
 }
 
 .zwartelijstbody .modal-content {
@@ -511,11 +512,11 @@ footer {
 }
 
 .favorieten-modal-dialog {
-  max-width: 1000px;
+  max-width: 800px;
 }
 
 .avatar-modal-dialog {
-  max-width: 600px;
+  max-width: 1000px;
 }
 
 .zwartelijst-modal-dialog {
@@ -524,6 +525,38 @@ footer {
 
 .index-modal-dialog {
   max-width: 600px;
+}
+
+.left-section, .right-section {
+  flex: 1; /* Zorgt dat beide secties evenveel ruimte innemen */
+}
+.left-section {
+  padding: 20px; /* Voegt padding toe voor spacing rond de afbeelding en titel */
+}
+.row {
+  width: 100%; /* Ensures the row takes full width of the container */
+}
+
+.col {
+  flex: 1; /* Each column takes equal width */
+}
+
+.dropdown {
+  width: 100%; /* Ensures dropdowns fill their column */
+}
+
+.dropdown-toggle {
+  width: 100%; /* Ensures the button fills the dropdown area */
+}
+
+.right-section {
+  display: flex;
+  flex-direction: column; /* Zorgt dat alle items verticaal geordend worden */
+  padding: 20px;
+}
+
+.outfit-description {
+  margin-bottom: 100px;
 }
 
 .avatarbody .btn-danger {
@@ -761,6 +794,10 @@ footer a {
   border: #6f93ff solid 1px;
   border-radius: 15px;
   padding: 5px;
+}
+
+.modal-description{
+  margin-left: 40px;
 }
 #modal-title {
   display: flex;
