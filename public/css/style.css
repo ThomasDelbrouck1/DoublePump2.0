@@ -9,6 +9,7 @@ body {
   font-family: "Fortnite", sans-serif;
   letter-spacing: 1.5px;
 }
+
 main {
   grid-area: main;
 }
@@ -25,6 +26,7 @@ footer {
 .navbar .logo {
   margin: 0;
 }
+
 .navContainer {
   width: 100%;
   display: flex;
@@ -48,11 +50,13 @@ footer {
   color: white;
   gap: 1.5rem;
 }
+
 .navContainer section:nth-child(1) p {
   margin: 0;
   padding: 0;
   /*font-size: 1.5rem;*/
 }
+
 .navContainer ul {
   display: flex;
   flex-direction: row;
@@ -528,7 +532,7 @@ footer {
   justify-content: center;
 }
 
-.avatarbody .modal-body > .modal-text {
+.avatarbody .modal-body>.modal-text {
   flex: 1;
   margin-left: 20px;
 }
@@ -602,7 +606,7 @@ nav {
   border-radius: 25px;
 }
 
-nav > div {
+nav>div {
   display: flex;
   flex-direction: column;
 }
@@ -693,7 +697,7 @@ footer a {
   margin-top: 2rem;
 }
 
-.tools > section {
+.tools>section {
   width: 75px;
   /*width: fit-content; remove after adding content*/
   height: 75px;
@@ -703,7 +707,8 @@ footer a {
 
 .avatars {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Change here */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  /* Change here */
   gap: 0.5rem;
   row-gap: 4rem;
   justify-content: center;
@@ -723,6 +728,7 @@ footer a {
 #myModal .modal-body section {
   width: 100%;
 }
+
 /*venster horizontaal*/
 #myModal .modal-body {
   display: flex;
@@ -741,6 +747,7 @@ footer a {
   height: 450px;
   margin-bottom: 20px;
 }
+
 #modal-description {
   text-align: left;
   border: #6f93ff solid 1px;
@@ -753,6 +760,7 @@ footer a {
   flex-direction: column;
   flex-wrap: wrap;
 }
+
 /*registratie*/
 
 .register-main {
@@ -804,6 +812,7 @@ input[type="submit"]:hover {
   background-color: #ff9900;
   color: black;
 }
+
 /* Media Queries */
 
 @media (max-width: 375px) {
@@ -823,6 +832,7 @@ input[type="submit"]:hover {
 }
 
 @media screen and (max-width: 768px) {
+
   .logo,
   .avatar img {
     width: 80px;
@@ -839,6 +849,7 @@ input[type="submit"]:hover {
 }
 
 @media screen and (max-width: 480px) {
+
   .logo,
   .avatar img {
     width: 60px;
@@ -875,6 +886,7 @@ input[type="submit"]:hover {
 }
 
 @media screen and (min-width: 481px) and (max-width: 1400px) {
+
   .landingbody,
   .registratiebody,
   .avatarbody,
