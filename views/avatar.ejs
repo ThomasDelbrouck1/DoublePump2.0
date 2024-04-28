@@ -1,190 +1,185 @@
-<!DOCTYPE html>
-<html lang="nl-be">
+<%- include('partials/header.ejs') %>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Avatar Page</title>
-  <script src="/js/script.js"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-  <link rel="stylesheet" href="/css/reset.css" />
-  <link rel="stylesheet" href="/css/style.css" />
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-</head>
 
-<body class="avatarbody">
-  <!-- Nav -->
-  <header class="navbar">
-    <nav>
-      <section class="navContainer">
-        <section>
-          <img class="logo" src="/assets/_c329f736-c0ec-4f70-b64f-db3066f2d096.jpg" alt="logo" />
-          <p>DOUBLEPUMP</p>
+  <body class="avatarbody">
+    <!-- Nav -->
+    <header class="navbar">
+      <nav>
+        <section class="navContainer">
+          <section>
+            <img class="logo" src="/assets/_c329f736-c0ec-4f70-b64f-db3066f2d096.jpg" alt="logo" />
+            <p>DOUBLEPUMP</p>
+          </section>
+          <ul class="navbar-nav">
+            <li>
+              <a href="/"><i class="bx bxs-home"></i> GameHub</a>
+            </li>
+            <li>
+              <a class="active" href="/avatar"><i class="bx bx-male-female"></i> Personages</a>
+            </li>
+            <li>
+              <a href="/favorieten"><i class="bx bxs-heart"></i> Favorieten</a>
+            </li>
+            <li>
+              <a href="/zwartelijst"><i class="bx bxs-x-circle"></i> Zwarte lijst</a>
+            </li>
+          </ul>
         </section>
-        <ul class="navbar-nav">
-          <li>
-            <a href="/"><i class="bx bxs-home"></i> GameHub</a>
-          </li>
-          <li>
-            <a class="active" href="/avatar"><i class="bx bx-male-female"></i> Personages</a>
-          </li>
-          <li>
-            <a href="/favoriete"><i class="bx bxs-heart"></i> Favorieten</a>
-          </li>
-          <li>
-            <a href="/zwartelijst"><i class="bx bxs-x-circle"></i> Zwarte lijst</a>
-          </li>
-        </ul>
+      </nav>
+
+    </header>
+    <hr>
+    <main>
+
+      <section class="avatars">
+        <article class="avatar">
+          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal"> <img src="/assets/popje5.jpeg"
+              alt="Brilliant Bomber" /></a>
+          <p>Brilliant Bomber</p>
+        </article>
+        <article class="avatar">
+          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal"> <img src="/assets/popettje4.webp"
+              alt="Drift" /></a>
+          <p>Drift</p>
+        </article>
+        <article class="avatar">
+          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal"> <img src="/assets/popje6.jpeg"
+              alt="Ninja" /></a>
+          <p>Ninja</p>
+        </article>
+        <article class="avatar">
+          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal"> <img src="/assets/popje8.jpeg"
+              alt="Ramirez" /></a>
+          <p>Ramirez</p>
+        </article>
+        <article class="avatar">
+          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal"> <img src="/assets/popettje4.webp"
+              alt="Drift" /></a>
+          <p>Drift</p>
+        </article>
+        <article class="avatar">
+          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal"> <img src="/assets/popje3.webp"
+              alt="Meowscles" /></a>
+          <p>Meowscles</p>
+        </article>
+        <article class="avatar">
+          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal"> <img src="/assets/popje5.jpeg"
+              alt="Brilliant Bomber" /></a>
+          <p>Brilliant Bomber</p>
+        </article>
+        <article class="avatar">
+          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal"> <img src="/assets/popettje4.webp"
+              alt="Drift" /></a>
+          <p>Drift</p>
+        </article>
+        <article class="avatar">
+          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal"> <img src="/assets/popje7.jpeg"
+              alt="Ghoul Trooper" /></a>
+          <p>Ghoul Trooper</p>
+        </article>
+        <article class="avatar">
+          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal"> <img src="/assets/popettje4.webp"
+              alt="Drift" /></a>
+          <p>Drift</p>
+        </article>
+        <article class="avatar">
+          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal"> <img src="/assets/popje3.webp"
+              alt="Meowscles" /></a>
+          <p>Meowscles</p>
+        </article>
+        <article class="avatar">
+          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal"> <img src="/assets/popje3.webp"
+              alt="Meowscles" /></a>
+          <p>Meowscles</p>
+        </article>
       </section>
-    </nav>
-  </header>
-  <hr />
-  <main>
-    <section class="avatars">
-      <article class="avatar">
-        <a href="#" data-bs-target="#avatar" data-bs-toggle="modal">
-          <img src="/assets/popje5.jpeg" alt="Brilliant Bomber" /></a>
-        <p>Brilliant Bomber</p>
-      </article>
-      <article class="avatar">
-        <a href="#" data-bs-target="#avatar" data-bs-toggle="modal">
-          <img src="/assets/popettje4.webp" alt="Drift" /></a>
-        <p>Drift</p>
-      </article>
-      <article class="avatar">
-        <a href="#" data-bs-target="#avatar" data-bs-toggle="modal">
-          <img src="/assets/popje6.jpeg" alt="Ninja" /></a>
-        <p>Ninja</p>
-      </article>
-      <article class="avatar">
-        <a href="#" data-bs-target="#avatar" data-bs-toggle="modal">
-          <img src="/assets/popje8.jpeg" alt="Ramirez" /></a>
-        <p>Ramirez</p>
-      </article>
-      <article class="avatar">
-        <a href="#" data-bs-target="#avatar" data-bs-toggle="modal">
-          <img src="/assets/popettje4.webp" alt="Drift" /></a>
-        <p>Drift</p>
-      </article>
-      <article class="avatar">
-        <a href="#" data-bs-target="#avatar" data-bs-toggle="modal">
-          <img src="/assets/popje3.webp" alt="Meowscles" /></a>
-        <p>Meowscles</p>
-      </article>
-      <article class="avatar">
-        <a href="#" data-bs-target="#avatar" data-bs-toggle="modal">
-          <img src="/assets/popje5.jpeg" alt="Brilliant Bomber" /></a>
-        <p>Brilliant Bomber</p>
-      </article>
-      <article class="avatar">
-        <a href="#" data-bs-target="#avatar" data-bs-toggle="modal">
-          <img src="/assets/popettje4.webp" alt="Drift" /></a>
-        <p>Drift</p>
-      </article>
-      <article class="avatar">
-        <a href="#" data-bs-target="#avatar" data-bs-toggle="modal">
-          <img src="/assets/popje7.jpeg" alt="Ghoul Trooper" /></a>
-        <p>Ghoul Trooper</p>
-      </article>
-      <article class="avatar">
-        <a href="#" data-bs-target="#avatar" data-bs-toggle="modal">
-          <img src="/assets/popettje4.webp" alt="Drift" /></a>
-        <p>Drift</p>
-      </article>
-      <article class="avatar">
-        <a href="#" data-bs-target="#avatar" data-bs-toggle="modal">
-          <img src="/assets/popje3.webp" alt="Meowscles" /></a>
-        <p>Meowscles</p>
-      </article>
-      <article class="avatar">
-        <a href="#" data-bs-target="#avatar" data-bs-toggle="modal">
-          <img src="/assets/popje3.webp" alt="Meowscles" /></a>
-        <p>Meowscles</p>
+    </main>
+
+    <section class="modal fade" id="myModal" tabindex="-1" aria-labelledby="loginLabel" aria-hidden="true">
+      <article class="modal-dialog modal-dialog-centered">
+        <article class="modal-content">
+          <header class="modal-header">
+            <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
+          </header>
+          <section class="modal-body">
+            <section>
+              <h2 id="modal-title">Meowscles</h2>
+              <img id="modal-image" src="/assets/popje3.webp" alt="Ninja" />
+            </section>
+            <section class="modal-description">
+              <h3 class="outfit-type">Rare Outfit</h3>
+              <img class="v-buck" src="/assets/one-v-buck-dpf.png" alt="vbuck" />
+              <p class="outfit-price">
+                <span class="price">1,200</span>
+              </p>
+              <p class="outfit-description">Venture beyond the ninth life.</p>
+              <hr />
+              <p><strong>Back Bling:</strong> Pathwalker's Pack</p>
+              <p><strong>Source:</strong> Shop</p>
+              <p><strong>Introduced in:</strong> Chapter 5, Season 2</p>
+              <p><strong>Release date:</strong> Apr 21, 2024</p>
+              <p><strong>Last seen:</strong> Apr 23, 2024 (yesterday)</p>
+              <p><strong>Occurrences:</strong> 3</p>
+              <p><strong>Wishlists:</strong> 1,436</p>
+            </section>
+          </section>
+          <footer class="modal-footer">
+            <button type="button" class="btn btn-secondary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-arrow-through-heart" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M2.854 15.854A.5.5 0 0 1 2 15.5V14H.5a.5.5 0 0 1-.354-.854l1.5-1.5A.5.5 0 0 1 2 11.5h1.793l.53-.53c-.771-.802-1.328-1.58-1.704-2.32-.798-1.575-.775-2.996-.213-4.092C3.426 2.565 6.18 1.809 8 3.233c1.25-.98 2.944-.928 4.212-.152L13.292 2 12.147.854A.5.5 0 0 1 12.5 0h3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.854.354L14 2.707l-1.006 1.006c.236.248.44.531.6.845.562 1.096.585 2.517-.213 4.092-.793 1.563-2.395 3.288-5.105 5.08L8 13.912l-.276-.182a22 22 0 0 1-2.685-2.062l-.539.54V14a.5.5 0 0 1-.146.354zm2.893-4.894A20.4 20.4 0 0 0 8 12.71c2.456-1.666 3.827-3.207 4.489-4.512.679-1.34.607-2.42.215-3.185-.817-1.595-3.087-2.054-4.346-.761L8 4.62l-.358-.368c-1.259-1.293-3.53-.834-4.346.761-.392.766-.464 1.845.215 3.185.323.636.815 1.33 1.519 2.065l1.866-1.867a.5.5 0 1 1 .708.708z" />
+              </svg>
+            </button>
+            <button type="button" class="btn btn-primary">
+              Set as Active Avatar
+            </button>
+            <button type="button" class="btn btn-danger">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-ban blacklist-icon" viewBox="0 0 16 16">
+                <path
+                  d="M15 8a6.97 6.97 0 0 0-1.71-4.584l-9.874 9.875A7 7 0 0 0 15 8M2.71 12.584l9.874-9.875a7 7 0 0 0-9.874 9.874ZM16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0" />
+              </svg>
+            </button>
+          </footer>
+        </article>
       </article>
     </section>
-  </main>
-  <section class="modal fade" id="avatar tabindex=" -1" aria-labelledby="loginLabel" aria-hidden="true">
-    <article class="modal-dialog modal-dialog-centered">
-      <article class="modal-content">
-        <header class="modal-header">
-          <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
-        </header>
-        <section class="modal-body">
-          <section>
-            <h2 id="modal-title">Meowscles</h2>
-            <img id="modal-image" src="/assets/popje3.webp" alt="Ninja" />
-          </section>
-          <section>
-            <p id="modal-description">
 
-              weewee ipsum dolor sit amet consectetur adipisicing elit. Nam
-              culpa ullam quas non iste ut molestias, quaerat sit voluptatum
-              at vitae temporibus suscipit nulla sequi minima eaque obcaecati
-              cum quibusdam?
-            </p>
-          </section>
-        </section>
-        <footer class="modal-footer">
-          <button type="button" class="btn btn-secondary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-              class="bi bi-arrow-through-heart" viewBox="0 0 16 16">
-              <path fill-rule="evenodd"
-                d="M2.854 15.854A.5.5 0 0 1 2 15.5V14H.5a.5.5 0 0 1-.354-.854l1.5-1.5A.5.5 0 0 1 2 11.5h1.793l.53-.53c-.771-.802-1.328-1.58-1.704-2.32-.798-1.575-.775-2.996-.213-4.092C3.426 2.565 6.18 1.809 8 3.233c1.25-.98 2.944-.928 4.212-.152L13.292 2 12.147.854A.5.5 0 0 1 12.5 0h3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.854.354L14 2.707l-1.006 1.006c.236.248.44.531.6.845.562 1.096.585 2.517-.213 4.092-.793 1.563-2.395 3.288-5.105 5.08L8 13.912l-.276-.182a22 22 0 0 1-2.685-2.062l-.539.54V14a.5.5 0 0 1-.146.354zm2.893-4.894A20.4 20.4 0 0 0 8 12.71c2.456-1.666 3.827-3.207 4.489-4.512.679-1.34.607-2.42.215-3.185-.817-1.595-3.087-2.054-4.346-.761L8 4.62l-.358-.368c-1.259-1.293-3.53-.834-4.346.761-.392.766-.464 1.845.215 3.185.323.636.815 1.33 1.519 2.065l1.866-1.867a.5.5 0 1 1 .708.708z" />
+    <article id="myModal" class="modal">
+      <section class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-info">
+          <img id="modal-image" src="" alt="" />
+          <div class="modal-text">
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+          </div>
+        </div>
+        <div class="modal-buttons">
+          <button class="btn btn-primary" onclick="setActiveAvatar()">
+            Set as Active Avata
+          </button>
+
+          <button class="btn btn-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart"
+              viewBox="0 0 16 16">
+              <path
+                d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
             </svg>
           </button>
-          <button type="button" class="btn btn-primary">
-            Set as Active Avatar
-          </button>
-          <button type="button" class="btn btn-danger">
+          <button class="btn btn-danger">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
               class="bi bi-ban blacklist-icon" viewBox="0 0 16 16">
               <path
                 d="M15 8a6.97 6.97 0 0 0-1.71-4.584l-9.874 9.875A7 7 0 0 0 15 8M2.71 12.584l9.874-9.875a7 7 0 0 0-9.874 9.874ZM16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0" />
             </svg>
           </button>
-        </footer>
-      </article>
-    </article>
-  </section>
-
-  <article id="myModal" class="modal">
-    <section class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <div class="modal-info">
-        <img id="modal-image" src="" alt="" />
-        <div class="modal-text">
-          <h2 id="modal-title"></h2>
-          <p id="modal-description"></p>
         </div>
-      </div>
-      <div class="modal-buttons">
-        <button class="btn btn-primary" onclick="setActiveAvatar()">
-          Set as Active Avata
-        </button>
+      </section>
+    </article>
 
-        <button class="btn btn-secondary">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart"
-            viewBox="0 0 16 16">
-            <path
-              d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
-          </svg>
-        </button>
-        <button class="btn btn-danger">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-            class="bi bi-ban blacklist-icon" viewBox="0 0 16 16">
-            <path
-              d="M15 8a6.97 6.97 0 0 0-1.71-4.584l-9.874 9.875A7 7 0 0 0 15 8M2.71 12.584l9.874-9.875a7 7 0 0 0-9.874 9.874ZM16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0" />
-          </svg>
-        </button>
-      </div>
-    </section>
-  </article>
-
-  <!--<footer class="avatarfooter">
+    <!--<footer class="avatarfooter">
     <p>
       © 2024 <a href="https://www.ap.be" class="footer-link">AP hogeschool</a>
     </p>
@@ -195,9 +190,9 @@
     </ul>
   </footer>-->
 
-  <button onclick="topFunction()" id="myBtn" title="Go to top">
-    <i class="bx bxs-up-arrow"></i>
-  </button>
-</body>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">
+      <i class="bx bxs-up-arrow"></i>
+    </button>
+  </body>
 
-</html>
+  </html>
