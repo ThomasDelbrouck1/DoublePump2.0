@@ -437,6 +437,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 900px;
 }
 
 .zwartelijstbody .modal-content {
@@ -513,6 +514,84 @@ footer {
   width: 900px;
   max-width: 1800px;
   margin: 30px auto;
+}
+
+.favorieten-modal-dialog {
+  max-width: 800px;
+}
+
+.avatar-modal-dialog {
+  max-width: 1000px;
+}
+
+.zwartelijst-modal-dialog {
+  max-width: 600px;
+}
+
+.index-modal-dialog {
+  max-width: 600px;
+}
+
+.left-section, .right-section {
+  flex: 1; /* Zorgt dat beide secties evenveel ruimte innemen */
+}
+.left-section {
+  padding: 20px; /* Voegt padding toe voor spacing rond de afbeelding en titel */
+}
+.row {
+  width: 100%; /* Ensures the row takes full width of the container */
+}
+
+.col {
+  flex: 1; /* Each column takes equal width */
+}
+
+.dropdown {
+  width: 100%; /* Ensures dropdowns fill their column */
+}
+
+.dropdown1 {
+  margin-bottom: 90px;
+}
+
+.dropdown-toggle {
+  width: 100%; /* Ensures the button fills the dropdown area */
+}
+
+.dropdown-item-image {
+  width: 200px;  /* Breedte van de afbeelding */
+  height: auto;
+}
+
+.dropdown-menu {
+  display: none; /* Verbergt de dropdown standaard */
+}
+
+.dropdown-menu.show {
+  display: flex; /* Activeert flex alleen wanneer de dropdown zichtbaar is */
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  width: auto;
+}
+
+.dropdown-item-image {
+  width: 50px; /* Stel de breedte in op 50px of een andere gewenste waarde */
+  height: auto; /* Behoudt de aspectratio van de afbeelding */
+}
+
+
+
+.right-section {
+  display: flex;
+  flex-direction: column; /* Zorgt dat alle items verticaal geordend worden */
+  padding: 20px;
+}
+
+hr{
+  margin-bottom: 50px;
+  margin-top: 0px;
 }
 
 .avatarbody .btn-danger {
@@ -753,6 +832,10 @@ footer a {
   border: #6f93ff solid 1px;
   border-radius: 15px;
   padding: 5px;
+}
+
+.modal-description{
+  margin-left: 40px;
 }
 
 #modal-title {
