@@ -847,6 +847,71 @@ footer a {
   flex-direction: column;
   flex-wrap: wrap;
 }
+/*profiel*/
+
+.profile {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Align profile option to the right */
+}
+
+.profile img {
+  width: 30px; /* Adjust size as needed */
+  height: 30px; /* Adjust size as needed */
+  border-radius: 50%; /* To make it circular */
+  margin-right: 8px; /* Spacing between image and username */
+}
+
+.username {
+  font-size: 16px; /* Adjust size as needed */
+  color: #333; /* Text color */
+}
+
+.profilebody {
+  font-family: 'Arial', sans-serif;
+  background-color: #333;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.sign-out {
+  color: #E53E3E;
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.username {
+  margin-right: 20px;
+}
+
+.change-avatar-button {
+  background: #4A5568;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.profile-picture-nav{
+  border-radius: 50%;
+  width: 300px;
+  height: auto;
+}
 
 /*registratie*/
 
