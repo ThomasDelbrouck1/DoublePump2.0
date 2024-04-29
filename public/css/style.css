@@ -543,7 +543,9 @@ footer {
 }
 .left-section {
   padding: 20px; /* Voegt padding toe voor spacing rond de afbeelding en titel */
+  margin-top: -14.5%;
 }
+
 .row {
   width: 100%; /* Ensures the row takes full width of the container */
 }
@@ -557,17 +559,13 @@ footer {
 }
 
 .dropdown1 {
-  margin-bottom: 90px;
+  margin-bottom: 40px;
 }
 
 .dropdown-toggle {
   width: 100%; /* Ensures the button fills the dropdown area */
 }
 
-.dropdown-item-image {
-  width: 200px; /* Breedte van de afbeelding */
-  height: auto;
-}
 
 .dropdown-menu {
   display: none; /* Verbergt de dropdown standaard */
@@ -585,12 +583,26 @@ footer {
 .dropdown-item-image {
   width: 50px; /* Stel de breedte in op 50px of een andere gewenste waarde */
   height: auto; /* Behoudt de aspectratio van de afbeelding */
+  margin-bottom: 5px;
 }
+
+.dropdown-item {
+  text-align: center; /* Centreert de tekst en afbeeldingen */
+  display: flex;
+  flex-direction: column; /* Stapelt de afbeelding en tekst verticaal */
+}
+
+.item-name {
+  font-size: 0.8rem; /* Kleinere tekstgrootte voor de itemnamen */
+  color: #353535; /* Stel in op gewenste tekstkleur */
+}
+
 
 .right-section {
   display: flex;
   flex-direction: column; /* Zorgt dat alle items verticaal geordend worden */
   padding: 20px;
+  margin-top: -7%;  
 }
 
 hr {
@@ -670,14 +682,33 @@ hr {
   margin-right: 0.5rem;
 }
 
+/* Stijl voor de buttons */
+.btn {
+  margin: 5px; /* Voegt een marge toe rond elke button */
+}
+
+/* Extra stijl om de button containers uit te lijnen */
+section {
+  text-align: center; /* Centreert de buttons */
+}
+
+/* Optioneel: Extra stijlen om de list items te stylen */
+li.col {
+  display: flex;
+  flex-direction: column; /* Stapelt de 'p' en 'section' verticaal */
+  align-items: center; /* Centreert de inhoud */
+}
+
 .notes-section {
-  margin-top: 1rem;
-  width: 100%;
+  width: 50%; /* Of de gewenste breedte */
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
 }
 
 .notes-section textarea {
   width: 100%;
-  min-height: 100px;
+  min-height: 200px;
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -823,6 +854,9 @@ footer a {
 .v-buck {
   height: 30px;
   width: 30px;
+  position: absolute ;
+  left: 67%;
+  top: 14.5%;
 }
 
 #modal-image {
