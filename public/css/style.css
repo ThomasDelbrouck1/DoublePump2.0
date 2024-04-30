@@ -1,6 +1,7 @@
 @font-face {
   font-family: "Fortnite";
   src: url("/assets/Burbank Big Condensed Black.otf") format("opentype");
+  font-weight: 200;
 }
 
 /* Algemeen */
@@ -293,6 +294,11 @@ footer {
   padding: 0;
 }
 
+#notes {
+  border: #007bff solid 1px;
+  border-radius: 15px;
+  padding: 8px;
+}
 #myBtn:hover {
   background-color: #ff9900;
 }
@@ -531,7 +537,8 @@ footer {
   max-width: 600px;
 }
 
-.left-section, .right-section {
+.left-section,
+.right-section {
   flex: 1; /* Zorgt dat beide secties evenveel ruimte innemen */
 }
 .left-section {
@@ -558,7 +565,7 @@ footer {
 }
 
 .dropdown-item-image {
-  width: 200px;  /* Breedte van de afbeelding */
+  width: 200px; /* Breedte van de afbeelding */
   height: auto;
 }
 
@@ -580,15 +587,13 @@ footer {
   height: auto; /* Behoudt de aspectratio van de afbeelding */
 }
 
-
-
 .right-section {
   display: flex;
   flex-direction: column; /* Zorgt dat alle items verticaal geordend worden */
   padding: 20px;
 }
 
-hr{
+hr {
   margin-bottom: 50px;
   margin-top: 0px;
 }
@@ -610,7 +615,7 @@ hr{
   justify-content: center;
 }
 
-.avatarbody .modal-body>.modal-text {
+.avatarbody .modal-body > .modal-text {
   flex: 1;
   margin-left: 20px;
 }
@@ -684,7 +689,7 @@ nav {
   border-radius: 25px;
 }
 
-nav>div {
+nav > div {
   display: flex;
   flex-direction: column;
 }
@@ -775,7 +780,7 @@ footer a {
   margin-top: 2rem;
 }
 
-.tools>section {
+.tools > section {
   width: 75px;
   /*width: fit-content; remove after adding content*/
   height: 75px;
@@ -833,7 +838,7 @@ footer a {
   padding: 5px;
 }
 
-.modal-description{
+.modal-description {
   margin-left: 40px;
 }
 
@@ -841,6 +846,71 @@ footer a {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+}
+/*profiel*/
+
+.profile {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Align profile option to the right */
+}
+
+.profile img {
+  width: 30px; /* Adjust size as needed */
+  height: 30px; /* Adjust size as needed */
+  border-radius: 50%; /* To make it circular */
+  margin-right: 8px; /* Spacing between image and username */
+}
+
+.username {
+  font-size: 16px; /* Adjust size as needed */
+  color: #333; /* Text color */
+}
+
+.profilebody {
+  font-family: 'Arial', sans-serif;
+  background-color: #333;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.sign-out {
+  color: #E53E3E;
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.username {
+  margin-right: 20px;
+}
+
+.change-avatar-button {
+  background: #4A5568;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.profile-picture-nav{
+  border-radius: 50%;
+  width: 300px;
+  height: auto;
 }
 
 /*registratie*/
@@ -914,7 +984,6 @@ input[type="submit"]:hover {
 }
 
 @media screen and (max-width: 768px) {
-
   .logo,
   .avatar img {
     width: 80px;
@@ -931,7 +1000,6 @@ input[type="submit"]:hover {
 }
 
 @media screen and (max-width: 480px) {
-
   .logo,
   .avatar img {
     width: 60px;
@@ -968,7 +1036,6 @@ input[type="submit"]:hover {
 }
 
 @media screen and (min-width: 481px) and (max-width: 1400px) {
-
   .landingbody,
   .registratiebody,
   .avatarbody,
