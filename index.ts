@@ -28,6 +28,9 @@ app.get("/registratiepagina", (req, res) => {
 app.get("/zwartelijst", (req, res) => {
   res.render("zwartelijst");
 });
+app.get("/profiel", (req, res) => {
+  res.render("profiel");
+});
 
 app.post("/registratiepagina", async (req, res) => {
   const { firstname, lastname, username, password, email } = req.body;
