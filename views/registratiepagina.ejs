@@ -1,8 +1,14 @@
 <%- include('partials/header.ejs') %>
 
   <body class="registratiebody">
+    
+<section class="floatingElement" style="--randomPosition: 0.2; --randomDelay: 0.5s; --randomTranslate: 0.2;"></section>
+<section class="floatingElement" style="--randomPosition: 0.3; --randomDelay: 0.1s; --randomTranslate: 0.9;"></section>
+<section class="floatingElement" style="--randomPosition: 0.7; --randomDelay: 0.2s; --randomTranslate: 0.8;"></section>
+<section class="floatingElement" style="--randomPosition: 0.5; --randomDelay: 0.4s; --randomTranslate: 0.4;"></section>
+
     <main class="register-main">
-      <section class="register-container">
+      <section class="login fiel">
         <h2>Registratie</h2>
         <form action="./registratiepagina" method="post">
           <input type="text" name="firstname" placeholder="Voornaam" required>
@@ -13,10 +19,10 @@
           <input type="password" name="repeatpassword" placeholder="Herhaal paswoord" required>
           <input type="submit" value="Registreer">
         </form>
+        <a href="/" class="home-button">Terug naar Home</a>
       </section>
     </main>
   </body>
   </main>
   </body>
-
   </html>
