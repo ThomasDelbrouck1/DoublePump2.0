@@ -34,4 +34,5 @@ document.addEventListener("DOMContentLoaded", function () {
   closeBtn.addEventListener("click", () => {
     popup.style.display = "none";
   });
+
 });
