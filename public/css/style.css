@@ -936,6 +936,33 @@ footer a {
   background-color: #777;
 }
 
+#new-username{
+  width: 300px;
+}
+
+#save-username{
+  background-color:#007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+#logout{
+  margin-top: 30px;
+  background-color:#dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+#logout-tab{
+  color: #dc3545;
+
+}
 /*registratie*/
 
 .register-main {
