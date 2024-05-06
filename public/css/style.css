@@ -325,7 +325,8 @@ footer {
 }
 
 .avatarbody main,
-.favobody header {
+.favobody header,
+.profilebody {
   grid-area: main;
 }
 
@@ -940,7 +941,17 @@ footer a {
 }
 #logout-tab{
   color: #dc3545;
+}
 
+#delete{
+  margin-top: 15px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 /*registratie*/
 
