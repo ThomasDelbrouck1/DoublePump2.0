@@ -22,6 +22,11 @@ footer {
   margin: 0;
 }
 
+#login .modal-footer button {
+  width: 100%;
+  margin: 0;
+}
+
 .navContainer {
   width: 100%;
   display: flex;
@@ -936,33 +941,6 @@ footer a {
   background-color: #777;
 }
 
-#new-username{
-  width: 300px;
-}
-
-#save-username{
-  background-color:#007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 8px 20px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-#logout{
-  margin-top: 30px;
-  background-color:#dc3545;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 8px 20px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-#logout-tab{
-  color: #dc3545;
-
-}
 /*registratie*/
 
 .register-main {
@@ -1115,15 +1093,15 @@ input[type="submit"]:hover {
   background-color: red;
   /* Makes the button red */
   color: white;
-  /* Ensures the text is readable on red background */
+
   border: none;
-  /* Optional: Removes border */
+
   padding: 10px 20px;
-  /* Optional: Adds padding */
+
   border-radius: 5px;
-  /* Optional: Adds rounded corners */
+
   cursor: pointer;
-  /* Changes the cursor to pointer on hover */
+
 }
 
 /* CSS to style the Dashboard button */
