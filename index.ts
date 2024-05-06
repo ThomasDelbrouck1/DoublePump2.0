@@ -7,13 +7,14 @@ const client = new MongoClient(uri);
 
 const app = express();
 
-app.set("view engine", "ejs");
-app.set("port", 3000);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.set("view engine", "ejs");
+app.set("port", 3000);
+
 
 app.use(express.static("public"));
-//app.use('/', authentificationRouter);
+app.use('/', authentificationRouter);
 
 
 app.get("/", (req, res) => {
@@ -22,24 +23,7 @@ app.get("/", (req, res) => {
   });
 });
 
-app.post('/', async (req, res) => {
-  const { email, password } = req.body;
 
-  try {
-    const user = await client.db("wpl").collection("users").findOne({ email: email });
-    if (user && user.password === password) {
-      res.redirect("/avatar");
-      return;
-    }
-    else {
-      //error
-      res.redirect("/avatar");
-    }
-  }
-  catch (err) {
-    console.error(err);
-  }
-});
 
 app.get("/avatar", (req, res) => {
   res.render("avatar", {
