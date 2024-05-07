@@ -999,6 +999,8 @@ footer a {
 
 .register-main input[type=submit]:hover {
   background-color: #863406;
+  color: white;
+  
 }
 
 .home-button {
@@ -1017,6 +1019,7 @@ footer a {
 
 .home-button:hover {
   background-color: #863406;
+  color: white;
 }
 
 .floatingElement {
@@ -1024,40 +1027,50 @@ footer a {
   background-color: #DA874B;
   width: 50px;
   height: 50px;
-  border-radius: 50%; /* Maakt het element rond */
-  animation-name: fly-across;
-  animation-duration: 5s;  /* Verander deze waarde om de snelheid van de animatie aan te passen */
+  border-radius: 50%;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+  animation-direction: alternate;
   z-index: -1;
-    
-  /* Positieer het element op een willekeurige plaats om willekeurige startpunten te creëren */
-  left: calc(100% * var(--randomPosition));
-  animation-direction: alternate;
-  animation-delay: var(--randomDelay);
+  box-shadow: 3px 3px 5px #863406, -2px -2px 5px #863406;
 }
 
-.floatingElement:nth-child(odd) {
-  animation-direction: alternate-reverse;
-  left: 45%;
-  top: 30%;
+.floatingElement:nth-child(1) {
+  animation-delay: 0.5s;
 }
 
-.floatingElement:nth-child(even) {
-  animation-direction: alternate;
-  right: 30%;
-  top: 50%;
+.floatingElement:nth-child(2) {
+  animation-delay: 0.1s;
+  animation-duration: 3s; /* Different duration for variety */
 }
 
-@keyframes fly-across {
-  0% {
-    transform: translateX(calc(-100% * var(--randomTranslate))) translateY(calc(-100% * var(--randomTranslate)));
+.floatingElement:nth-child(3) {
+  animation-delay: 0.2s;
+  animation-duration: 5s; /* Different duration for variety */
+}
+
+.floatingElement:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+@keyframes moveDiagonal {
+  to {
+    transform: translate(calc(100vw - 100%), calc(100vh - 100%));
+    opacity: 0;
   }
-  50% {
-    transform: translateX(calc(100% * var(--randomTranslate))) translateY(0);
+}
+
+@keyframes moveHorizontal {
+  to {
+    transform: translateX(calc(100vw - 100%));
+    opacity: 0.5;
   }
-  100% {
-    transform: translateX(calc(-100% * var(--randomTranslate))) translateY(calc(100% * var(--randomTranslate)));
+}
+
+@keyframes moveVertical {
+  to {
+    transform: translateY(calc(100vh - 100%));
+    opacity: 1;
   }
 }
 

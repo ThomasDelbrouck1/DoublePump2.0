@@ -36,3 +36,15 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  const animations = ['moveDiagonal', 'moveHorizontal', 'moveVertical'];
+  const elements = document.querySelectorAll('.floatingElement');
+
+  elements.forEach(el => {
+    const animationName = animations[Math.floor(Math.random() * animations.length)];
+    const duration = Math.random() * 10 + 15;
+    el.style.animationName = animationName;
+    el.style.animationDuration = `${duration}s`;
+  });
+});
