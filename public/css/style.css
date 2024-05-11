@@ -965,12 +965,13 @@ footer a {
   }
 
   .register-main {
-  width: 300px;
+  width: 600px;
   margin: 100px auto;
   padding: 30px;
   border-radius: 8px;
   background-color: rgba(0, 0, 0, 0.8);
   color: white;
+
 }
 
 .register-main input[type=text],
@@ -983,6 +984,7 @@ footer a {
   border: 1px solid #ccc;
   box-sizing: border-box;
   border-radius: 4px;
+  text-align: center;
 }
 
 .register-main input[type=submit] {
