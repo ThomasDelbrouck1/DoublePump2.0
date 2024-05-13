@@ -1,7 +1,7 @@
 <%- include('partials/header.ejs') %>
 
     <body class="profilebody">
-        <header>
+        <header class="navbar">
             <nav>
                 <section class="navContainer">
                     <section>
@@ -54,11 +54,11 @@
                 <div class="profile-header">
                     <h1 class="username">Gebruikersnaam</h1>
                     <img src="/assets/popje3.webp" alt="Profile Picture" class="profile-picture">
-                    <button class="change-avatar-button" data-bs-target="#myModal" data-bs-toggle="modal">Verander
-                        Avatar ▼</button>
 
-                    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
+                    <button class="change-avatar-button" data-bs-target="#myModal" data-bs-toggle="modal">Verander Avatar</button>
+
+                    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -69,13 +69,19 @@
                                 <div class="modal-body">
                                     <article class="avatar">
                                         <a href="#" data-bs-target="#myModal" data-bs-toggle="modal">
-                                            <img src="/assets/popje3.webp" alt="Meowscles" /></a>
+
+                                            <img src="/assets/popje3.webp" alt="Meowscles" />
+                                        </a>
+
                                         <p>Meowscles</p>
                                     </article>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+
+
 
                 </div>
             </div>
@@ -85,6 +91,30 @@
                     <h2>Verander uw gebruikersnaam</h2>
                     <input type="text" id="new-username" placeholder="Vul uw nieuwe gebruikersnaam in">
                     <button type="button" id="save-username">Opslaan</button>
+                    <button type="button" id="delete" data-bs-target="#myModal1" data-bs-toggle="modal">Verwijder
+                        account</button>
+
+                    <div class="modal fade" id="myModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                              <!-- Modal Header -->
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="deleteModalLabel">Account Verwijderen</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <!-- Modal Body -->
+                              <div class="modal-body">
+                                Weet je zeker dat je je account wilt verwijderen?
+                              </div>
+                              <!-- Modal Footer -->
+                              <div class="modal-footer">
+                                <a href="/"><button type="button" class="btn btn-danger" id="confirmDelete">Verwijderen</button></a>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuleren</button>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
                 </div>
             </div>
             <div class="tab-pane fade" id="logout-tab-pane" role="tabpanel" aria-labelledby="logout-tab" tabindex="0">
