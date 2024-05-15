@@ -31,7 +31,9 @@ app.get("/zwartelijst", (req, res) => {
 app.get("/profiel", (req, res) => {
   res.render("profiel");
 });
-
+app.get("/wachtwoordvergeten", (req, res) => {
+  res.render("wachtwoordvergeten");
+});
 app.post("/registratiepagina", async (req, res) => {
   const { firstname, lastname, username, password, email } = req.body;
   console.log(firstname, lastname, username, password, email);
