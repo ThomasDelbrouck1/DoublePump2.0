@@ -25,7 +25,9 @@
             </li>
             <li class="profile">
               <img src="/assets/popje3.webp" alt="Profile Picture" class="profile-picture-nav">
-              <a href="/profiel"></i>Gebruikersnaam</a>
+              <a href="/profiel"></i>
+                <%= username %>
+              </a>
             </li>
           </ul>
         </section>
@@ -150,20 +152,20 @@
       </article>
     </section>
 
-  <article id="myModal" class="modal">
-    <section class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <div class="modal-info">
-        <img id="modal-image" src="" alt="" />
-        <div class="modal-text">
-          <h2 id="modal-title"></h2>
-          <p id="modal-description"></p>
+    <article id="myModal" class="modal">
+      <section class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-info">
+          <img id="modal-image" src="" alt="" />
+          <div class="modal-text">
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+          </div>
         </div>
-      </div>
-      <div class="modal-buttons">
-        <button class="btn btn-primary" onclick="setActiveAvatar()">
-          Set as Active Avatar
-        </button>
+        <div class="modal-buttons">
+          <button class="btn btn-primary" onclick="setActiveAvatar()">
+            Set as Active Avatar
+          </button>
 
           <button class="btn btn-secondary">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart"
@@ -183,7 +185,7 @@
       </section>
     </article>
 
-  <!--<footer class="avatarfooter">
+    <!--<footer class="avatarfooter">
     <p>
       © 2024 <a href="https://www.ap.be" class="footer-link">AP hogeschool</a>
     </p>

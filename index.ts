@@ -24,22 +24,21 @@ app.get("/", (req, res) => {
     title: "Home",
   });
 });
+let username = "";
 app.post("/", async (req, res) => {
-  const { email, password } = req.body; // Destructure email and password
+  const { email, password } = req.body;
   try {
     const user = await client.db("wpl").collection("users").findOne({
       email
     });
-    // if user was found
     if (user) {
-      // check if credentials are correct
       if (user.email == email && user.password == password) {
-        //give an ok response
+        // Set res.locals.username here
+        username = user.username;
         res.status(200).json({ message: "gebruiker gevonden" });
         return;
       }
       else {
-        // send error message
         res.status(400).json({ error: "gebruikersnaam of wachtwoord is incorrect" });
       }
       return;
@@ -54,16 +53,19 @@ app.post("/", async (req, res) => {
 app.get("/avatar", (req, res) => {
   res.render("avatar", {
     title: "Avatar",
+    username
   });
 });
 app.get("/favorieten", (req, res) => {
   res.render("favorieten", {
     title: "Favorieten",
+    username
   });
 });
 app.get("/registratiepagina", (req, res) => {
   res.render("registratiepagina", {
     title: "Registratiepagina",
+    username
   });
 });
 app.post('/registratiepagina', async (req, res) => {
@@ -89,11 +91,13 @@ app.post('/registratiepagina', async (req, res) => {
 app.get("/zwartelijst", (req, res) => {
   res.render("zwartelijst", {
     title: "Zwartelijst",
+    username
   });
 });
 app.get("/profiel", (req, res) => {
   res.render("profiel", {
     title: "Profiel",
+    username
   });
 });
 
