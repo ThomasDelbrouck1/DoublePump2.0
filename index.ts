@@ -2,7 +2,8 @@ import express from "express";
 import authentificationRouter from './routers/authentification'
 import { MongoClient } from "mongodb";
 import { error } from "console";
-
+import dotenv from "dotenv";
+dotenv.config();
 const uri = "mongodb+srv://wpl:doublepump@wplcluster.tus2eyw.mongodb.net/";
 const client = new MongoClient(uri);
 
@@ -15,9 +16,7 @@ app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-
 app.use('/', authentificationRouter);
-
 
 app.get("/", (req, res) => {
   res.render("index", {
@@ -50,12 +49,32 @@ app.post("/", async (req, res) => {
     res.send("error bij het inloggen");
   }
 });
-app.get("/avatar", (req, res) => {
+app.get("/avatar", async (req, res) => {
+  const apiKey = process.env.API_KEY;
+
+  await fetch('https://fortniteapi.io/v2/items/list?lang=en', {
+    method: 'GET',
+    headers: {
+      'Authorization': apiKey as string,
+    }
+  })
+    .then(response => response.json())
+    .then((data: any) => {
+      res.status(200).json(data);
+      for (let i = 0; i < data.items.length; i++) {
+        console.log(data.items[i].name);
+      }
+    })
+    .catch(error => {
+      console.log(error);
+    });
+});
+/*app.get("/avatar", (req, res) => {
   res.render("avatar", {
     title: "Avatar",
     username
   });
-});
+});*/
 app.get("/favorieten", (req, res) => {
   res.render("favorieten", {
     title: "Favorieten",
