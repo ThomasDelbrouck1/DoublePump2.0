@@ -25,7 +25,9 @@
             </li>
             <li class="profile">
               <img src="/assets/popje3.webp" alt="Profile Picture" class="profile-picture-nav">
-              <a href="/profiel"></i>Gebruikersnaam</a>
+              <a href="/profiel"></i>
+                <%= username %>
+              </a>
             </li>
           </ul>
         </section>
@@ -36,66 +38,15 @@
     <main>
 
       <section class="avatars">
-        <article class="avatar">
-          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal"> <img src="/assets/popje5.jpeg"
-              alt="Brilliant Bomber" /></a>
-          <p>Brilliant Bomber</p>
-        </article>
-        <article class="avatar">
-          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal"> <img src="/assets/popettje4.webp"
-              alt="Drift" /></a>
-          <p>Drift</p>
-        </article>
-        <article class="avatar">
-          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal"> <img src="/assets/popje6.jpeg"
-              alt="Ninja" /></a>
-          <p>Ninja</p>
-        </article>
-        <article class="avatar">
-          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal"> <img src="/assets/popje8.jpeg"
-              alt="Ramirez" /></a>
-          <p>Ramirez</p>
-        </article>
-        <article class="avatar">
-          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal"> <img src="/assets/popettje4.webp"
-              alt="Drift" /></a>
-          <p>Drift</p>
-        </article>
-        <article class="avatar">
-          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal"> <img src="/assets/popje3.webp"
-              alt="Meowscles" /></a>
-          <p>Meowscles</p>
-        </article>
-        <article class="avatar">
-          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal"> <img src="/assets/popje5.jpeg"
-              alt="Brilliant Bomber" /></a>
-          <p>Brilliant Bomber</p>
-        </article>
-        <article class="avatar">
-          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal"> <img src="/assets/popettje4.webp"
-              alt="Drift" /></a>
-          <p>Drift</p>
-        </article>
-        <article class="avatar">
-          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal"> <img src="/assets/popje7.jpeg"
-              alt="Ghoul Trooper" /></a>
-          <p>Ghoul Trooper</p>
-        </article>
-        <article class="avatar">
-          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal"> <img src="/assets/popettje4.webp"
-              alt="Drift" /></a>
-          <p>Drift</p>
-        </article>
-        <article class="avatar">
-          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal"> <img src="/assets/popje3.webp"
-              alt="Meowscles" /></a>
-          <p>Meowscles</p>
-        </article>
-        <article class="avatar">
-          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal"> <img src="/assets/popje3.webp"
-              alt="Meowscles" /></a>
-          <p>Meowscles</p>
-        </article>
+        <% for (let i=0; i < characters.length; i++) { %>
+          <article class="avatar">
+            <a href="#" data-bs-target="#myModal" data-bs-toggle="modal"> <img
+                src="<%= characters[i].images.background %>" alt="<%= characters[i].name %>" /></a>
+            <p>
+              <%= characters[i].name %>
+            </p>
+          </article>
+          <% } %>
       </section>
     </main>
 
@@ -150,20 +101,20 @@
       </article>
     </section>
 
-  <article id="myModal" class="modal">
-    <section class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <div class="modal-info">
-        <img id="modal-image" src="" alt="" />
-        <div class="modal-text">
-          <h2 id="modal-title"></h2>
-          <p id="modal-description"></p>
+    <article id="myModal" class="modal">
+      <section class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-info">
+          <img id="modal-image" src="" alt="" />
+          <div class="modal-text">
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+          </div>
         </div>
-      </div>
-      <div class="modal-buttons">
-        <button class="btn btn-primary" onclick="setActiveAvatar()">
-          Set as Active Avatar
-        </button>
+        <div class="modal-buttons">
+          <button class="btn btn-primary" onclick="setActiveAvatar()">
+            Set as Active Avatar
+          </button>
 
           <button class="btn btn-secondary">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart"
@@ -183,7 +134,7 @@
       </section>
     </article>
 
-  <!--<footer class="avatarfooter">
+    <!--<footer class="avatarfooter">
     <p>
       © 2024 <a href="https://www.ap.be" class="footer-link">AP hogeschool</a>
     </p>
