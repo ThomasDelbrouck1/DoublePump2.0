@@ -49,9 +49,10 @@ app.post("/", async (req, res) => {
     res.send("error bij het inloggen");
   }
 });
+
 app.get("/avatar", async (req, res) => {
   const apiKey = process.env.API_KEY;
-
+  const characters: any[] = [];
   await fetch('https://fortniteapi.io/v2/items/list?lang=en', {
     method: 'GET',
     headers: {
@@ -60,15 +61,33 @@ app.get("/avatar", async (req, res) => {
   })
     .then(response => response.json())
     .then((data: any) => {
-      res.status(200).json(data);
+      // Sorting data by release date (newest on top)
+      data.items.sort((a: any, b: any) => {
+        return new Date(b.releaseDate).getTime() - new Date(a.releaseDate).getTime();
+      });
       for (let i = 0; i < data.items.length; i++) {
-        console.log(data.items[i].name);
+        // Filtering out characters with null icon images
+        if (data.items[i].type.name === "Outfit" &&
+          data.items[i].name &&
+          data.items[i].name !== "TBD" &&
+          data.items[i].name !== "NPC" &&
+          data.items[i].images.icon !== null) {
+          characters.push(data.items[i]);
+        }
       }
+      characters.reverse(); // Reversing array to show newest on top
+      res.render("avatar", {
+        title: "Avatar",
+        characters,
+        username
+      });
     })
     .catch(error => {
       console.log(error);
     });
 });
+
+
 /*app.get("/avatar", (req, res) => {
   res.render("avatar", {
     title: "Avatar",
