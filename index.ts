@@ -16,6 +16,11 @@ app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+const apiKey = process.env.API_KEY;
+const charactersIDs: any[] = [];
+const characters: any[] = [];
+
+
 app.use('/', authentificationRouter);
 
 app.get("/", (req, res) => {
@@ -51,40 +56,11 @@ app.post("/", async (req, res) => {
 });
 
 app.get("/avatar", async (req, res) => {
-  const apiKey = process.env.API_KEY;
-  const characters: any[] = [];
-  await fetch('https://fortniteapi.io/v2/items/list?lang=en', {
-    method: 'GET',
-    headers: {
-      'Authorization': apiKey as string,
-    }
-  })
-    .then(response => response.json())
-    .then((data: any) => {
-      // Sorting data by release date (newest on top)
-      data.items.sort((a: any, b: any) => {
-        return new Date(b.releaseDate).getTime() - new Date(a.releaseDate).getTime();
-      });
-      for (let i = 0; i < data.items.length; i++) {
-        // Filtering out characters with null icon images
-        if (data.items[i].type.name === "Outfit" &&
-          data.items[i].name &&
-          data.items[i].name !== "TBD" &&
-          data.items[i].name !== "NPC" &&
-          data.items[i].images.icon !== null) {
-          characters.push(data.items[i]);
-        }
-      }
-      characters.reverse(); // Reversing array to show newest on top
-      res.render("avatar", {
-        title: "Avatar",
-        characters,
-        username
-      });
-    })
-    .catch(error => {
-      console.log(error);
-    });
+  res.render("avatar", {
+    title: "Avatar",
+    characters,
+    username
+  });
 });
 
 
@@ -139,11 +115,53 @@ app.get("/profiel", (req, res) => {
   });
 });
 
+app.get("/api/characters/:id", async (req, res) => {
+  const id = req.params.id;
+  await fetch(`https://fortniteapi.io/v2/items/get?id=${id}&lang=en`, {
+    method: 'GET',
+    headers: {
+      'Authorization': apiKey as string,
+    }
+  })
+    .then(response => response.json())
+    .then((data: any) => {
+      res.json(data);
+    })
+    .catch(error => {
+      console.log(error);
+    });
+});
 
 
 app.listen(app.get("port"), async () => {
   await client.connect();
   console.log("[server] connected to mongodb");
+  await fetch('https://fortniteapi.io/v2/items/list?lang=en', {
+    method: 'GET',
+    headers: {
+      'Authorization': apiKey as string,
+    }
+  })
+    .then(response => response.json())
+    .then((data: any) => {
+      // Sorting data by release date (newest on top)
+      data.items.sort((a: any, b: any) => {
+        return new Date(b.added.date).getTime() - new Date(a.added.date).getTime();
+      });
+      for (let i = 0; i < data.items.length; i++) {
+        // Filtering out characters
+        if (data.items[i].type.name === "Outfit" &&
+          data.items[i].name &&
+          data.items[i].name !== "TBD" &&
+          data.items[i].name !== "NPC") {
+          characters.push(data.items[i]);
+        }
+      }
+    })
+    .catch(error => {
+      console.log(error);
+    });
+
+  console.log('Data fetched from Fortnite API');
   console.log("[server] http://localhost/:" + app.get("port"));
 });
-
