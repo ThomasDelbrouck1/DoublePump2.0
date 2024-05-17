@@ -48,3 +48,4 @@ document.addEventListener('DOMContentLoaded', function () {
     el.style.animationDuration = `${duration}s`;
   });
 });
+
