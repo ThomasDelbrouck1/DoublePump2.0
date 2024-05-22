@@ -318,15 +318,15 @@ footer {
 /* Avatar Page */
 
 .avatarbody header,
-.favobody header {
+.favobody header,
+.profilebody{
   grid-area: header;
   padding: 0;
   margin: 0;
 }
 
 .avatarbody main,
-.favobody header,
-.profilebody {
+.favobody header  {
   grid-area: main;
 }
 
