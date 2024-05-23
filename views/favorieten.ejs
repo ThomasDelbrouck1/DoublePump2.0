@@ -34,6 +34,18 @@
     </header>
 
     <main>
+      <section class="search-bar">
+        <input type="text" class="search-input" placeholder="Zoeken..." style="background-color: rgba(145, 142, 142, 0.564);">
+        <div class="sort-dropdown">
+          <label for="sort-by">Sorteer op:</label>
+          <select id="sort-by">
+              <option value="relevance">Relevantie</option>
+              <option value="date">Datum</option>
+              <option value="popularity">Populariteit</option>
+          </select>
+      </div>
+      </section>
+      </section>
       <section class="avatars">
         <article class="avatar">
           <a href="#" data-bs-target="#myModal" data-bs-toggle="modal">
@@ -69,7 +81,7 @@
           <a href="#" data-bs-target="#myModal" data-bs-toggle="modal">
             <img src="/assets/popje5.jpeg" alt="Brilliant Bomber" /></a>
           <p>Brilliant Bomber</p>
-        </article>
+        </article> 
         <article class="avatar">
           <a href="#" data-bs-target="#myModal" data-bs-toggle="modal">
             <img src="/assets/popettje4.webp" alt="Drift" /></a>
@@ -110,6 +122,7 @@
               <h2 id="modal-title">Personage Naam</h2>
               <img id="modal-image" src="/assets/popje3.webp" alt="Ninja" />
             </section>
+            
             <section class="right-section">
               <h3 class="outfit-type">Rare Outfit</h3>
               <img class="v-buck" src="/assets/one-v-buck-dpf.png" alt="vbuck" />
@@ -123,15 +136,21 @@
                   <section class="dropdown1">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="backpackDropdown"
                       data-bs-toggle="dropdown" aria-expanded="false">
-                      Selecteer BackBling
+                      Selecteer rugzak
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="backpackDropdown">
                       <li>
-                        <a class="dropdown-item" href="#">
-                          <img src="/assets/_40ee15ba-8b35-49a9-b94a-cc0830f40257.jpg" alt="Rugzak 1"
-                            class="dropdown-item-image" />
+                        <label class="dropdown-item">
+                          <input type="checkbox" id="modal1" class="modal-toggle" />
+                          <img src="/assets/_40ee15ba-8b35-49a9-b94a-cc0830f40257.jpg" alt="Rugzak 1" class="dropdown-item-image" />
                           <span class="item-name">Rugzak 1</span>
-                        </a>
+                          <div class="modal" id="modal1-content">
+                            <div class="modal-content">
+                              <label for="modal1" class="modal-overlay"></label>
+                              <img src="/assets/_40ee15ba-8b35-49a9-b94a-cc0830f40257.jpg" alt="Rugzak 1" />
+                            </div>
+                          </div>
+                        </label>
                       </li>
                       <li>
                         <a class="dropdown-item" href="#">
@@ -153,25 +172,25 @@
                   <section class="dropdown2">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="pickaxeDropdown"
                       data-bs-toggle="dropdown" aria-expanded="false">
-                      Selecteer Pickaxe
+                      Selecteer wapen
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="pickaxeDropdown">
                       <li>
                         <a class="dropdown-item" href="#">
                           <img src="/assets/_40ee15ba-8b35-49a9-b94a-cc0830f40257.jpg" class="dropdown-item-image" />
-                          <span class="item-name">Pickaxe 1</span>
+                          <span class="item-name">wapen 1</span>
                         </a>
                       </li>
                       <li>
                         <a class="dropdown-item" href="#">
                           <img src="/assets/_c329f736-c0ec-4f70-b64f-db3066f2d096.jpg" class="dropdown-item-image" />
-                          <span class="item-name">Pickaxe 2</span>
+                          <span class="item-name">wapen 2</span>
                         </a>
                       </li>
                       <li>
                         <a class="dropdown-item" href="#">
                           <img src="/assets/popje8.jpeg" class="dropdown-item-image" />
-                          <span class="item-name">Pickaxe 3</span>
+                          <span class="item-name">wapen 3</span>
                         </a>
                       </li>
                     </ul>
