@@ -34,7 +34,7 @@
       </nav>
 
     </header>
-    
+
     <main>
       <% const fortniteTiers={ "Common" : "rgba(128, 128, 128, 1)" , "Uncommon" : "rgba(0, 128, 0, 1)" , "Rare"
         : "rgba(0, 0, 255, 1)" , "Epic" : "rgba(128, 0, 128, 1)" , "Legendary" : "rgba(255, 165, 0, 1)" , "Mythic"
@@ -49,10 +49,17 @@
             <article class="avatar">
               <a href="#" data-bs-target="#myModal" data-bs-toggle="modal"
                 onclick="getCharacterDetails('<%= characters[i].id %>')">
-                <img src="<%= characters[i].images.icon %>"
-                  style="background-color: <%= fortniteTiers[characters[i].rarity.id] %>"
-                  alt="<%= characters[i].name %>" />
+                <% if (characters[i].series && characters[i].series.id) { %>
+                  <img src="<%= characters[i].images.icon %>"
+                    style="background-image: url('https://media.fortniteapi.io/images/textures/<%= characters[i].series.id %>.png'); background-position: center; background-size: contain; background-repeat: no-repeat;"
+                    alt="<%= characters[i].name %>" />
+                  <% } else { %>
+                    <img src="<%= characters[i].images.icon %>"
+                      style="background-color: <%= fortniteTiers[characters[i].rarity.id] %>;background-position: center;"
+                      alt="<%= characters[i].name %>" />
+                    <% } %>
               </a>
+
               <p>
                 <%= characters[i].name %>
               </p>
@@ -62,14 +69,14 @@
     </main>
 
     <section class="modal fade" id="myModal" tabindex="-1" aria-labelledby="loginLabel" aria-hidden="true">
-      <article class="modal-dialog modal-dialog-centered">
-        <article class="modal-content">
+      <section class="modal-dialog modal-dialog-centered">
+        <section class="modal-content">
           <section class="modal-header">
             <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
           </section>
           <section class="modal-body">
             <section>
-              <h2 id="modal-title">Meowscles</h2>
+              <h2 id="modal-title"></h2>
               <video id="modal-video" width="450px" height="450px" loop autoplay controls>
                 <!-- Voeg 'controls' als attribuut om bv te kunnen pauzeren -->
                 <source
@@ -86,17 +93,17 @@
               <p class="outfit-description">Venture beyond the ninth life.</p>
               <hr />
               <section>
-              <p><strong>Back Bling:</strong> Pathwalker's Pack</p>
-              <p><strong>Source:</strong> Shop</p>
-              <p><strong>Introduced in:</strong> Chapter 5, Season 2</p>
-              <p><strong>Release date:</strong> Apr 21, 2024</p>
-              <p><strong>Last seen:</strong> Apr 23, 2024 (yesterday)</p>
-              <p><strong>Occurrences:</strong> 3</p>
-              <p><strong>Wishlists:</strong> 1,436</p>
+                <p><strong>Back Bling:</strong> Pathwalker's Pack</p>
+                <p><strong>Source:</strong> Shop</p>
+                <p><strong>Introduced in:</strong> Chapter 5, Season 2</p>
+                <p><strong>Release date:</strong> Apr 21, 2024</p>
+                <p><strong>Last seen:</strong> Apr 23, 2024 (yesterday)</p>
+                <p><strong>Occurrences:</strong> 3</p>
+                <p><strong>Wishlists:</strong> 1,436</p>
               </section>
             </section>
           </section>
-          <footer class="modal-footer">
+          <section class="modal-footer">
             <button type="button" class="btn btn-secondary">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                 class="bi bi-arrow-through-heart" viewBox="0 0 16 16">
@@ -114,9 +121,9 @@
                   d="M15 8a6.97 6.97 0 0 0-1.71-4.584l-9.874 9.875A7 7 0 0 0 15 8M2.71 12.584l9.874-9.875a7 7 0 0 0-9.874 9.874ZM16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0" />
               </svg>
             </button>
-          </footer>
-        </article>
-      </article>
+          </section>
+        </section>
+      </section>
     </section>
 
     <article id="myModal" class="modal">
