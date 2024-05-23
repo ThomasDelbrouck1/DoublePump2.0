@@ -34,7 +34,12 @@ document.addEventListener("DOMContentLoaded", function () {
   closeBtn.addEventListener("click", () => {
     popup.style.display = "none";
   });
-
+  function openModal(imageSrc) {
+    var modalImg = document.getElementById('modalImage');
+    modalImg.src = imageSrc;
+    var myModal = new bootstrap.Modal(document.getElementById('imageModal'));
+    myModal.show();
+  }
 });
 
 document.addEventListener('DOMContentLoaded', function () {
