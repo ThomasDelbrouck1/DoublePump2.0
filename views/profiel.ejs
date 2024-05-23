@@ -23,7 +23,9 @@
                         </li>
                         <li class="profile">
                             <img src="/assets/popje3.webp" alt="Profile Picture" class="profile-picture-nav">
-                            <a class="active" href="/profiel"> Gebruikersnaam</a>
+                            <a class="active" href="/profiel">
+                                <%= username %>
+                            </a>
                         </li>
                     </ul>
                 </section>
@@ -52,11 +54,17 @@
             <div class="tab-pane fade show active" id="dashboard-tab-pane" role="tabpanel"
                 aria-labelledby="dashboard-tab" tabindex="0">
                 <div class="profile-header">
-                    <h1 class="username">Gebruikersnaam</h1>
+                    <h1 class="username">
+                        <%= username %>
+                    </h1>
                     <img src="/assets/popje3.webp" alt="Profile Picture" class="profile-picture">
-                    <button class="change-avatar-button" data-bs-target="#myModal" data-bs-toggle="modal">Verander Avatar</button>
 
-                    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+                    <button class="change-avatar-button" data-bs-target="#myModal" data-bs-toggle="modal">Verander
+                        Avatar</button>
+
+                    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel1"
+                        aria-hidden="true">
+
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -67,14 +75,18 @@
                                 <div class="modal-body">
                                     <article class="avatar">
                                         <a href="#" data-bs-target="#myModal" data-bs-toggle="modal">
+
                                             <img src="/assets/popje3.webp" alt="Meowscles" />
                                         </a>
+
                                         <p>Meowscles</p>
                                     </article>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+
 
 
                 </div>
@@ -92,22 +104,25 @@
                         aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
-                              <!-- Modal Header -->
-                              <div class="modal-header">
-                                <h5 class="modal-title" id="deleteModalLabel">Account Verwijderen</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                              </div>
-                              <!-- Modal Body -->
-                              <div class="modal-body">
-                                Weet je zeker dat je je account wilt verwijderen?
-                              </div>
-                              <!-- Modal Footer -->
-                              <div class="modal-footer">
-                                <a href="/"><button type="button" class="btn btn-danger" id="confirmDelete">Verwijderen</button></a>
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuleren</button>
-                              </div>
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="deleteModalLabel">Account Verwijderen</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <!-- Modal Body -->
+                                <div class="modal-body">
+                                    Weet je zeker dat je je account wilt verwijderen?
+                                </div>
+                                <!-- Modal Footer -->
+                                <div class="modal-footer">
+                                    <a href="/"><button type="button" class="btn btn-danger"
+                                            id="confirmDelete">Verwijderen</button></a>
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Annuleren</button>
+                                </div>
                             </div>
-                          </div>
+                        </div>
                     </div>
                 </div>
             </div>

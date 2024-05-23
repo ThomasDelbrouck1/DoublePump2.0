@@ -25,7 +25,9 @@
             </li>
             <li class="profile">
               <img src="/assets/popje3.webp" alt="Profile Picture" class="profile-picture-nav">
-              <a href="/profiel"></i>Gebruikersnaam</a>
+              <a href="/profiel"></i>
+                <%= username %>
+              </a>
             </li>
           </ul>
         </section>
@@ -34,69 +36,29 @@
     </header>
     <hr>
     <main>
-
-      <section class="avatars">
-        <article class="avatar">
-          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal"> <img src="/assets/popje5.jpeg"
-              alt="Brilliant Bomber" /></a>
-          <p>Brilliant Bomber</p>
-        </article>
-        <article class="avatar">
-          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal"> <img src="/assets/popettje4.webp"
-              alt="Drift" /></a>
-          <p>Drift</p>
-        </article>
-        <article class="avatar">
-          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal"> <img src="/assets/popje6.jpeg"
-              alt="Ninja" /></a>
-          <p>Ninja</p>
-        </article>
-        <article class="avatar">
-          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal"> <img src="/assets/popje8.jpeg"
-              alt="Ramirez" /></a>
-          <p>Ramirez</p>
-        </article>
-        <article class="avatar">
-          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal"> <img src="/assets/popettje4.webp"
-              alt="Drift" /></a>
-          <p>Drift</p>
-        </article>
-        <article class="avatar">
-          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal"> <img src="/assets/popje3.webp"
-              alt="Meowscles" /></a>
-          <p>Meowscles</p>
-        </article>
-        <article class="avatar">
-          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal"> <img src="/assets/popje5.jpeg"
-              alt="Brilliant Bomber" /></a>
-          <p>Brilliant Bomber</p>
-        </article>
-        <article class="avatar">
-          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal"> <img src="/assets/popettje4.webp"
-              alt="Drift" /></a>
-          <p>Drift</p>
-        </article>
-        <article class="avatar">
-          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal"> <img src="/assets/popje7.jpeg"
-              alt="Ghoul Trooper" /></a>
-          <p>Ghoul Trooper</p>
-        </article>
-        <article class="avatar">
-          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal"> <img src="/assets/popettje4.webp"
-              alt="Drift" /></a>
-          <p>Drift</p>
-        </article>
-        <article class="avatar">
-          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal"> <img src="/assets/popje3.webp"
-              alt="Meowscles" /></a>
-          <p>Meowscles</p>
-        </article>
-        <article class="avatar">
-          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal"> <img src="/assets/popje3.webp"
-              alt="Meowscles" /></a>
-          <p>Meowscles</p>
-        </article>
-      </section>
+      <% const fortniteTiers={ "Common" : "rgba(128, 128, 128, 1)" , "Uncommon" : "rgba(0, 128, 0, 1)" , "Rare"
+        : "rgba(0, 0, 255, 1)" , "Epic" : "rgba(128, 0, 128, 1)" , "Legendary" : "rgba(255, 165, 0, 1)" , "Mythic"
+        : "rgba(255, 215, 0, 1)" , "Exotic" : "rgba(0, 255, 255, 1)" , "Transcendent" : "rgba(255, 255, 179, 1)"
+        , "Marvel Series" : "rgba(139, 0, 0, 1)" , "Dark Series" : "rgba(255, 0, 255, 1)" , "DC Series"
+        : "rgba(112, 128, 144, 1)" , "Icon Series" : "rgba(0, 255, 255, 1)" , "Frozen Series" : "rgba(173,216,230, 1)"
+        , "Lava Series" : "rgba(255, 140, 0, 1)" , "Star Wars Series" : "rgba(0, 0, 139, 1)" , "Shadow Series"
+        : "rgba(0, 0, 0, 1)" , "Slurp Series" : "rgba(0, 139, 139, 1)" , "Gaming Legends Series" : "rgba(75, 0, 130, 1)"
+        , }; %>
+        <section class="avatars">
+          <% for (let i=0; i < characters.length; i++) { %>
+            <article class="avatar">
+              <a href="#" data-bs-target="#myModal" data-bs-toggle="modal"
+                onclick="getCharacterDetails('<%= characters[i].id %>')">
+                <img src="<%= characters[i].images.icon %>"
+                  style="background-color: <%= fortniteTiers[characters[i].rarity.id] %>"
+                  alt="<%= characters[i].name %>" />
+              </a>
+              <p>
+                <%= characters[i].name %>
+              </p>
+            </article>
+            <% } %>
+        </section>
     </main>
 
     <section class="modal fade" id="myModal" tabindex="-1" aria-labelledby="loginLabel" aria-hidden="true">
@@ -110,7 +72,11 @@
           <section class="modal-body">
             <section>
               <h2 id="modal-title">Meowscles</h2>
-              <img id="modal-image" src="/assets/popje3.webp" alt="Ninja" />
+              <video id="modal-video" width="450px" height="450px" loop autoplay controls>
+                <!-- Voeg 'controls' als attribuut om bv te kunnen pauzeren -->
+                <source
+                  src="https://media.fortniteapi.io/videos/cosmetics/preview/750a81ff0a1ac40d60bcc0b26a4dd067bd71c489/14f91392ad0ffd925cf1fd1858fe6e9e8896c241/Character_TwiceBaked.mp4">
+              </video>
             </section>
 
             <section class="modal-description">
@@ -155,20 +121,20 @@
       </article>
     </section>
 
-  <article id="myModal" class="modal">
-    <section class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <div class="modal-info">
-        <img id="modal-image" src="" alt="" />
-        <div class="modal-text">
-          <h2 id="modal-title"></h2>
-          <p id="modal-description"></p>
+    <article id="myModal" class="modal">
+      <section class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-info">
+          <img id="modal-image" src="" alt="" />
+          <div class="modal-text">
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+          </div>
         </div>
-      </div>
-      <div class="modal-buttons">
-        <button class="btn btn-primary" onclick="setActiveAvatar()">
-          Set as Active Avatar
-        </button>
+        <div class="modal-buttons">
+          <button class="btn btn-primary" onclick="setActiveAvatar()">
+            Set as Active Avatar
+          </button>
 
           <button class="btn btn-secondary">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart"
@@ -188,7 +154,7 @@
       </section>
     </article>
 
-  <!--<footer class="avatarfooter">
+    <!--<footer class="avatarfooter">
     <p>
       © 2024 <a href="https://www.ap.be" class="footer-link">AP hogeschool</a>
     </p>
@@ -202,6 +168,22 @@
     <button onclick="topFunction()" id="myBtn" title="Go to top">
       <i class="bx bxs-up-arrow"></i>
     </button>
+
+    <script>
+      async function getCharacterDetails(id) {
+        document.getElementById('modal-video').style.display = 'none';
+        document.getElementById('modal-video').src = '';
+        await fetch(`/api/characters/${id}`)
+          .then(response => response.json())
+          .then(data => {
+            document.getElementById('modal-title').innerText = data.item.name;
+            if (data.item.previewVideos.length > 0) {
+              document.getElementById('modal-video').style.display = 'block';
+              document.getElementById('modal-video').src = data.item.previewVideos[0].url;
+            }
+          });
+      }
+    </script>
   </body>
 
   </html>

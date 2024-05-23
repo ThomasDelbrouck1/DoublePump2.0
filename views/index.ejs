@@ -63,25 +63,30 @@
       </aside>
 
       <section class="modal fade" id="login" tabindex="-1" aria-labelledby="loginLabel" aria-hidden="true">
+
         <article class="modal-dialog modal-dialog-centered">
+
           <article class="modal-content">
             <header class="modal-header">
               <h5 class="modal-title" id="loginLabel">Login</h5>
               <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
             </header>
+
             <section class="modal-body">
-              <img class="mb-5" src="/assets/_c329f736-c0ec-4f70-b64f-db3066f2d096.jpg" alt="" />
-              <p class="mb-2 text-light">Login op je DoublePump Account!</p>
-              <input type="email" class="form-control mb-4" id="emailInput" placeholder="naam@voorbeeld.com"
-                autocomplete="email" />
-              <input type="password" class="form-control mb-4" id="passwordInput" placeholder="Wachtwoord"
-                autocomplete="current-password" />
-              Heeft u nog geen account?
-              <a href="/registratiepagina">Registreer hier!</a>
+              <form action="/" method="post" id="loginForm">
+                <img class="mb-5" src="/assets/_c329f736-c0ec-4f70-b64f-db3066f2d096.jpg" alt="" />
+                <p class="mb-2 text-light">Login op je DoublePump Account!</p>
+                <input type="email" class="form-control mb-4" id="emailInput" placeholder="naam@voorbeeld.com"
+                  name="email" autocomplete="email" />
+                <input type="password" class="form-control mb-4" id="passwordInput" placeholder="Wachtwoord"
+                  name="password" autocomplete="current-password" />
+                Heeft u nog geen account?
+                <a href="/registratiepagina">Registreer hier!</a>
             </section>
             <footer class="modal-footer">
-              <a href="/avatar" class="btn btn-primary text-light">Inloggen</a>
+              <button class="btn btn-primary text-light">Inloggen</button>
             </footer>
+            </form>
           </article>
         </article>
       </section>
@@ -102,6 +107,8 @@
     <button onclick="topFunction()" id="myBtn" title="Go to top">
       <i class="bx bxs-up-arrow"></i>
     </button>
+    <!-- Scripts -->
+    <script src="/js/auth.js"></script>
   </body>
 
   </html>

@@ -22,6 +22,11 @@ footer {
   margin: 0;
 }
 
+#login .modal-footer button {
+  width: 100%;
+  margin: 0;
+}
+
 .navContainer {
   width: 100%;
   display: flex;
@@ -328,6 +333,7 @@ footer {
   border-radius: 15px;
   padding: 8px;
 }
+
 #myBtn:hover {
   background-color: #ff9900;
 }
@@ -591,23 +597,28 @@ footer {
 
 .left-section,
 .right-section {
-  flex: 1; /* Zorgt dat beide secties evenveel ruimte innemen */
+  flex: 1;
+  /* Zorgt dat beide secties evenveel ruimte innemen */
 }
+
 .left-section {
   padding: 20px; /* Voegt padding toe voor spacing rond de afbeelding en titel */
   margin-top: 0%;
 }
 
 .row {
-  width: 100%; /* Ensures the row takes full width of the container */
+  width: 100%;
+  /* Ensures the row takes full width of the container */
 }
 
 .col {
-  flex: 1; /* Each column takes equal width */
+  flex: 1;
+  /* Each column takes equal width */
 }
 
 .dropdown {
-  width: 100%; /* Ensures dropdowns fill their column */
+  width: 100%;
+  /* Ensures dropdowns fill their column */
 }
 
 .dropdown1 {
@@ -615,16 +626,26 @@ footer {
 }
 
 .dropdown-toggle {
-  width: 100%; /* Ensures the button fills the dropdown area */
+  width: 100%;
+  /* Ensures the button fills the dropdown area */
+}
+
+
+.dropdown-item-image {
+  width: 200px;
+  /* Breedte van de afbeelding */
+  height: auto;
 }
 
 
 .dropdown-menu {
-  display: none; /* Verbergt de dropdown standaard */
+  display: none;
+  /* Verbergt de dropdown standaard */
 }
 
 .dropdown-menu.show {
-  display: flex; /* Activeert flex alleen wanneer de dropdown zichtbaar is */
+  display: flex;
+  /* Activeert flex alleen wanneer de dropdown zichtbaar is */
   flex-direction: row;
   justify-content: center;
   flex-wrap: nowrap;
@@ -633,6 +654,7 @@ footer {
 }
 
 .dropdown-item-image {
+
   width: 50px; /* Stel de breedte in op 50px of een andere gewenste waarde */
   height: auto; /* Behoudt de aspectratio van de afbeelding */
   margin-bottom: 5px;
@@ -647,12 +669,14 @@ footer {
 .item-name {
   font-size: 0.8rem; /* Kleinere tekstgrootte voor de itemnamen */
   color: #353535; /* Stel in op gewenste tekstkleur */
+
 }
 
 
 .right-section {
   display: flex;
-  flex-direction: column; /* Zorgt dat alle items verticaal geordend worden */
+  flex-direction: column;
+  /* Zorgt dat alle items verticaal geordend worden */
   padding: 20px;
   margin-top: 0%;  
 }
@@ -903,6 +927,7 @@ footer a {
   justify-content: center;
   gap: 1rem;
 }
+
 .v-buck {
   height: 30px;
   width: 30px;
@@ -938,6 +963,7 @@ footer a {
   flex-direction: column;
   flex-wrap: wrap;
 }
+
 /*profiel*/
 
 .profile {
@@ -945,9 +971,11 @@ footer a {
   align-items: center;
   margin-left: auto;
 }
-.profilebody{
+
+.profilebody {
   background-color: rgb(48, 47, 47);
 }
+
 .navbar {
   display: flex;
   justify-content: center;
@@ -992,12 +1020,14 @@ footer a {
   border-radius: 50%;
   margin-bottom: 10px;
 }
+
 .profile-picture-nav {
   width: 40px;
   height: 40px;
   margin-right: 5px;
   margin-top: 18px;
 }
+
 .change-avatar-button {
   background-color: #555;
   color: white;
@@ -1011,6 +1041,7 @@ footer a {
 .change-avatar-button:hover {
   background-color: #777;
 }
+
 
 #new-username{
   width: 300px;
@@ -1049,7 +1080,6 @@ footer a {
   cursor: pointer;
   transition: background-color 0.3s;
 }
-
 
 /*registratie*/
 
@@ -1197,6 +1227,39 @@ input[type="submit"]:hover {
     overflow: visible;
   }
 }
+
+/* CSS to style the Sign Out button */
+.sign-out {
+  background-color: red;
+  /* Makes the button red */
+  color: white;
+
+  border: none;
+
+  padding: 10px 20px;
+
+  border-radius: 5px;
+
+  cursor: pointer;
+
+}
+
+/* CSS to style the Dashboard button */
+.dashboard-button {
+  background-color: blue;
+  /* Makes the button blue */
+  color: white;
+  /* Ensures the text is readable on blue background */
+  border: none;
+  /* Optional: Removes border */
+  padding: 10px 20px;
+  /* Optional: Adds padding for better appearance */
+  border-radius: 5px;
+  /* Optional: Adds rounded corners */
+  cursor: pointer;
+  /* Changes the cursor to pointer on hover */
+}
+
 
 @media screen and (max-width: 480px) {
   .avatarbody p {
