@@ -19,7 +19,11 @@ footer {
 }
 
 .navbar .logo {
-  margin: 0;
+  margin: 15px;
+}
+.navbar, .tab-content{
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow: auto;
 }
 
 #login .modal-footer button {
@@ -37,6 +41,15 @@ footer {
   background-color: rgb(21, 21, 21);
   border-bottom: 1px solid rgb(21, 21, 21);
   font-size: 30px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow: auto;
+}
+
+.navContainer p{
+  font-family: "Fortnite";
+  src: url("/assets/Burbank Big Condensed Black.otf") format("opentype");
+  font-weight: 200;
+  font-size: 35px;
 }
 
 .navContainer section:nth-child(1) {
@@ -381,6 +394,7 @@ footer {
 .favobody {
   /*font-family: Arial, sans-serif;*/
   margin: 0;
+  background-color: #302F2E;
   padding: 0;
   height: 100vh;
   width: 100%;
@@ -394,13 +408,6 @@ footer {
   row-gap: 0;
   /*overflow: hidden;*/
 }
-
-.avatarbody,
-.favobody,
-.zwartelijstbody {
-  background-color: rgb(48, 47, 47);
-}
-
 .avatar:hover p {
   bottom: 10px;
   background-color: rgb(57, 57, 219);
@@ -420,10 +427,13 @@ footer {
 .avatar p,
 .favobody p {
   text-align: center;
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: 700;
   color: white;
   margin: 5px 0;
+  
 }
+
 
 .avatar-info {
   display: flex;
@@ -680,12 +690,12 @@ footer {
   padding: 20px;
   margin-top: 0%;  
 }
-
+/*
 hr {
   margin-bottom: 50px;
   margin-top: 0px;
 }
-
+*/
 .avatarbody .btn-danger {
   background-color: #dc3545;
   color: white;
@@ -1083,54 +1093,73 @@ footer a {
 
 /*registratie*/
 
-.register-main {
-  /*font-family: Arial, sans-serif;*/
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: black;
-  height: 100vh;
-}
+.registratiebody{
+    background-image: url('../assets/black-abstract-dark-3840x2160-9729.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+  }
 
-.register-container {
-  width: 350px;
-  background-color: rgb(48, 47, 47);
-  padding: 20px;
+  .register-main {
+  width: 600px;
+  margin: 100px auto;
+  padding: 30px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-  text-align: center;
-  margin-bottom: 20px;
+  background-color: rgba(0, 0, 0, 0.8);
   color: white;
+
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="submit"] {
+.register-main input[type=text],
+.register-main input[type=email],
+.register-main input[type=password] {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.register-main input[type=submit] {
+  width: 100%;
+  background-color: #DA874B;
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.register-main input[type=submit]:hover {
+  background-color: #863406;
+  color: white;
+  
+}
+
+.home-button {
+  display: block;
   width: 100%;
   padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
+  margin: 10px 0;
+  color: black;
+  background-color: #DA874B;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
   border-radius: 4px;
-  box-sizing: border-box;
-  background-color: white;
-}
-
-input[type="submit"] {
-  background-color: black;
-  color: #ff9900;
-  border: none;
   cursor: pointer;
 }
 
-input[type="submit"]:hover {
-  background-color: #ff9900;
-  color: black;
+.home-button:hover {
+  background-color: #863406;
+  color: white;
 }
 
 /* Media Queries */
