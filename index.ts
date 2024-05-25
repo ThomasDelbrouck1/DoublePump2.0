@@ -153,7 +153,9 @@ app.listen(app.get("port"), async () => {
         if (data.items[i].type.name === "Outfit" &&
           data.items[i].name &&
           data.items[i].name !== "TBD" &&
-          data.items[i].name !== "NPC") {
+          data.items[i].name !== "NPC" &&
+          !data.items[i].id.includes("NPC") &&
+          !data.items[i].id.includes("CID_NPC")) {
           characters.push(data.items[i]);
         }
       }
