@@ -28,7 +28,9 @@ app.get("/", (req, res) => {
     title: "Home",
   });
 });
+// login
 let username = "";
+let userId : any = "";
 app.post("/", async (req, res) => {
   const { email, password } = req.body;
   try {
@@ -39,6 +41,8 @@ app.post("/", async (req, res) => {
       if (user.email == email && user.password == password) {
         // Set res.locals.username here
         username = user.username;
+        // Set res.locals.userId as global variable
+        userId = user._id;
         res.status(200).json({ message: "gebruiker gevonden" });
         return;
       }
@@ -70,12 +74,32 @@ app.get("/avatar", async (req, res) => {
     username
   });
 });*/
-app.get("/favorieten", (req, res) => {
+app.get("/favorieten", async (req, res) => {
+  const usersFav = await client.db("wpl").collection("users").findOne({ _id: userId });
+  const favCharacters : any = [];
+  for (let i = 0; i < usersFav?.favorieten.length; i++) {
+    const character = await fetch(`https://fortniteapi.io/v2/items/get?id=${usersFav?.favorieten[i]}&lang=en`, {
+      method: 'GET',
+      headers: {
+        'Authorization': apiKey as string,
+      }
+    })
+      .then(response => response.json())
+      .then((data: any) => {
+        return data;
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    favCharacters.push(character);
+  }
   res.render("favorieten", {
     title: "Favorieten",
-    username
+    username,
+    characters : favCharacters
   });
 });
+
 app.get("/registratiepagina", (req, res) => {
   res.render("registratiepagina", {
     title: "Registratiepagina",
@@ -93,7 +117,8 @@ app.post('/registratiepagina', async (req, res) => {
       username,
       password,
       favorieten: [],
-      zwartelijst: []
+      zwartelijst: [],
+      currentAvatar: ""
     });
     res.redirect('/');
   }
@@ -102,12 +127,34 @@ app.post('/registratiepagina', async (req, res) => {
   }
 
 });
-app.get("/zwartelijst", (req, res) => {
+app.get("/zwartelijst", async (req, res) => {
+  const usersBlack =  await client.db("wpl").collection("users").findOne({ _id: userId });
+  const blackListCharacters : any = [];
+  for (let i = 0; i < usersBlack?.zwartelijst.length; i++) {
+    const character = await fetch(`https://fortniteapi.io/v2/items/get?id=${usersBlack?.zwartelijst[i]}&lang=en`, {
+      method: 'GET',
+      headers: {
+        'Authorization': apiKey as string,
+      }
+    })
+      .then(response => response.json())
+      .then((data: any) => {
+        return data;
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    blackListCharacters.push(character);
+  }
+  
   res.render("zwartelijst", {
     title: "Zwartelijst",
-    username
+    username,
+    charactersBlack : blackListCharacters
   });
 });
+
+
 app.get("/profiel", (req, res) => {
   res.render("profiel", {
     title: "Profiel",
@@ -132,6 +179,26 @@ app.get("/api/characters/:id", async (req, res) => {
     });
 });
 
+app.post("/saveToFav", async (req, res) => {
+  const { characterId } = req.body;
+  const user = userId;
+  await client.db("wpl").collection("users").updateOne({ _id: user }, { $push: { favorieten: characterId } });
+  res.redirect('/avatar');
+});
+
+app.post("/saveAsActive", async (req, res) => {
+  const { characterId } = req.body;
+  const user = userId;
+  await client.db("wpl").collection("users").updateOne({ _id: user }, { $set: { currentAvatar: characterId } });
+  res.redirect('/avatar');
+});
+
+app.post("/saveToBlack", async (req, res) => {
+  const { characterId } = req.body;
+  const user = userId;
+  await client.db("wpl").collection("users").updateOne({ _id: user }, { $push: { zwartelijst: characterId } });
+  res.redirect('/avatar');
+});
 
 app.listen(app.get("port"), async () => {
   await client.connect();
