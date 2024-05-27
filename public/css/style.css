@@ -400,7 +400,7 @@ footer {
 .avatarbody,
 .zwartelijstbody,
 .favobody {
-  /*font-family: Arial, sans-serif;*/
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   margin: 0;
   background-color: #302F2E;
   padding: 0;
@@ -933,9 +933,10 @@ footer a {
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   /* Change here */
   gap: 0.5rem;
-  row-gap: 4rem;
+  row-gap: 6rem;
   justify-content: center;
-  margin: 10rem 20rem 0 20rem;
+  margin: 5rem 20rem 0 20rem;
+  justify-items: center;
 }
 
 .avatars .avatar {
@@ -960,7 +961,7 @@ footer a {
 #myModal .modal-body {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   gap: 1rem;
   height: 100%;
@@ -970,8 +971,8 @@ footer a {
   height: 30px;
   width: 30px;
   position: absolute;
-  left: 68.5%;
-  top: 25.5%;
+  left: 68%;
+  top: 10%;
 }
 
 #modal-image {
@@ -989,6 +990,7 @@ footer a {
 
 .modal-description {
   margin-left: 40px;
+  text-align: left;
 }
 
 .modal-description section {
