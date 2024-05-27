@@ -33,37 +33,37 @@
       </nav>
     </header>
     <main>
-     
-     <% const fortniteTiers={ "Common" : "rgba(128, 128, 128, 1)" , "Uncommon" : "rgba(0, 128, 0, 1)" , "Rare"
-     : "rgba(0, 0, 255, 1)" , "Epic" : "rgba(128, 0, 128, 1)" , "Legendary" : "rgba(255, 165, 0, 1)" , "Mythic"
-     : "rgba(255, 215, 0, 1)" , "Exotic" : "rgba(0, 255, 255, 1)" , "Transcendent" : "rgba(255, 255, 179, 1)"
-     , "Marvel Series" : "rgba(139, 0, 0, 1)" , "Dark Series" : "rgba(255, 0, 255, 1)" , "DC Series"
-     : "rgba(112, 128, 144, 1)" , "Icon Series" : "rgba(0, 255, 255, 1)" , "Frozen Series" : "rgba(173,216,230, 1)"
-     , "Lava Series" : "rgba(255, 140, 0, 1)" , "Star Wars Series" : "rgba(0, 0, 139, 1)" , "Shadow Series"
-     : "rgba(0, 0, 0, 1)" , "Slurp Series" : "rgba(0, 139, 139, 1)" , "Gaming Legends Series" : "rgba(75, 0, 130, 1)"
-     , }; %>
-     <section class="avatars">
-       <% for (let i=0; i < charactersBlack.length; i++) { %>
-         <article class="avatar">
-           <a href="#" data-bs-target="#myModal" data-bs-toggle="modal"
-             onclick="getCharacterDetails('<%= charactersBlack[i].item.id %>')">
-             <% if (charactersBlack[i].item.series && charactersBlack[i].item.series.id) { %>
-               <img src="<%= charactersBlack[i].item.images.icon %>"
-                 style="background-image: url('https://media.fortniteapi.io/images/textures/<%= charactersBlack[i].item.series.id %>.png'); background-position: center; background-size: contain; background-repeat: no-repeat;"
-                 alt="<%= charactersBlack[i].item.name %>" />
-               <% } else { %>
-                 <img src="<%= charactersBlack[i].item.images.icon %>"
-                   style="background-color: <%= fortniteTiers[charactersBlack[i].item.rarity.id] %>;background-position: center;"
-                   alt="<%= charactersBlack[i].item.name %>" />
-                 <% } %>
-           </a>
 
-           <p>
-             <%= charactersBlack[i].item.name %>
-           </p>
-         </article>
-         <% } %>
-     </section>
+      <% const fortniteTiers={ "Common" : "rgba(128, 128, 128, 1)" , "Uncommon" : "rgba(0, 128, 0, 1)" , "Rare"
+        : "rgba(0, 0, 255, 1)" , "Epic" : "rgba(128, 0, 128, 1)" , "Legendary" : "rgba(255, 165, 0, 1)" , "Mythic"
+        : "rgba(255, 215, 0, 1)" , "Exotic" : "rgba(0, 255, 255, 1)" , "Transcendent" : "rgba(255, 255, 179, 1)"
+        , "Marvel Series" : "rgba(139, 0, 0, 1)" , "Dark Series" : "rgba(255, 0, 255, 1)" , "DC Series"
+        : "rgba(112, 128, 144, 1)" , "Icon Series" : "rgba(0, 255, 255, 1)" , "Frozen Series" : "rgba(173,216,230, 1)"
+        , "Lava Series" : "rgba(255, 140, 0, 1)" , "Star Wars Series" : "rgba(0, 0, 139, 1)" , "Shadow Series"
+        : "rgba(0, 0, 0, 1)" , "Slurp Series" : "rgba(0, 139, 139, 1)" , "Gaming Legends Series" : "rgba(75, 0, 130, 1)"
+        , }; %>
+        <section class="avatars">
+          <% for (let i=0; i < charactersBlack.length; i++) { %>
+            <article class="avatar">
+              <a href="#" data-bs-target="#myModal" data-bs-toggle="modal"
+                onclick="getCharacterDetails('<%= charactersBlack[i].item.id %>')">
+                <% if (charactersBlack[i].item.series && charactersBlack[i].item.series.id) { %>
+                  <img src="<%= charactersBlack[i].item.images.icon %>"
+                    style="background-image: url('https://media.fortniteapi.io/images/textures/<%= charactersBlack[i].item.series.id %>.png'); background-position: center; background-size: contain; background-repeat: no-repeat;"
+                    alt="<%= charactersBlack[i].item.name %>" />
+                  <% } else { %>
+                    <img src="<%= charactersBlack[i].item.images.icon %>"
+                      style="background-color: <%= fortniteTiers[charactersBlack[i].item.rarity.id] %>;background-position: center;"
+                      alt="<%= charactersBlack[i].item.name %>" />
+                    <% } %>
+              </a>
+
+              <p>
+                <%= charactersBlack[i].item.name %>
+              </p>
+            </article>
+            <% } %>
+        </section>
     </main>
 
     <section class="modal fade" id="myModal" tabindex="-1" aria-labelledby="loginLabel" aria-hidden="true">

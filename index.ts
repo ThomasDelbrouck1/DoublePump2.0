@@ -3,9 +3,10 @@ import authentificationRouter from './routers/authentification'
 import { MongoClient } from "mongodb";
 import { error } from "console";
 import dotenv from "dotenv";
+import { currentAvatar } from "./middleware/currentAvatar";
 dotenv.config();
 const uri = "mongodb+srv://wpl:doublepump@wplcluster.tus2eyw.mongodb.net/";
-const client = new MongoClient(uri);
+export const client = new MongoClient(uri);
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.set("port", 3000);
 app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(currentAvatar);
 
 const apiKey = process.env.API_KEY;
 const charactersIDs: any[] = [];
@@ -30,7 +32,7 @@ app.get("/", (req, res) => {
 });
 // login
 let username = "";
-let userId : any = "";
+export let userId: any = "";
 app.post("/", async (req, res) => {
   const { email, password } = req.body;
   try {
@@ -60,10 +62,42 @@ app.post("/", async (req, res) => {
 });
 
 app.get("/avatar", async (req, res) => {
+  const avatarName: any = req.query.avatarName ? req.query.avatarName : "";
+  let filteredCharacters: any[] = characters;
+  const profilePicture = res.locals.currentAvatar ? res.locals.currentAvatar : "/assets/popje1.jpeg";
+
+  if (avatarName === '') {
+    res.render("avatar", {
+      title: "Avatar",
+      characters: filteredCharacters,
+      username,
+      avatarName,
+      profilePicture
+    });
+    return;
+  }
+  if (avatarName) {
+    filteredCharacters = characters.filter((character: any) => {
+      return character.name.toLowerCase().includes(avatarName.toString().toLowerCase());
+    });
+
+    res.render("avatar", {
+      title: "Avatar",
+      characters: filteredCharacters,
+      username,
+      avatarName,
+      profilePicture
+    });
+
+    return;
+  }
+
   res.render("avatar", {
     title: "Avatar",
     characters,
-    username
+    username,
+    avatarName,
+    profilePicture
   });
 });
 
@@ -76,7 +110,7 @@ app.get("/avatar", async (req, res) => {
 });*/
 app.get("/favorieten", async (req, res) => {
   const usersFav = await client.db("wpl").collection("users").findOne({ _id: userId });
-  const favCharacters : any = [];
+  const favCharacters: any = [];
   for (let i = 0; i < usersFav?.favorieten.length; i++) {
     const character = await fetch(`https://fortniteapi.io/v2/items/get?id=${usersFav?.favorieten[i]}&lang=en`, {
       method: 'GET',
@@ -96,7 +130,7 @@ app.get("/favorieten", async (req, res) => {
   res.render("favorieten", {
     title: "Favorieten",
     username,
-    characters : favCharacters
+    characters: favCharacters
   });
 });
 
@@ -128,10 +162,10 @@ app.post('/registratiepagina', async (req, res) => {
 
 });
 app.get("/zwartelijst", async (req, res) => {
-  const usersBlack =  await client.db("wpl").collection("users").findOne({ _id: userId });
-  const blackListCharacters : any = [];
+  const usersBlack = await client.db("wpl").collection("users").findOne({ _id: userId });
+  const blackListCharacters: any = [];
   for (let i = 0; i < usersBlack?.zwartelijst.length; i++) {
-    const character = await fetch(`https://fortniteapi.io/v2/items/get?id=${usersBlack?.zwartelijst[i]}&lang=en`, {
+    const character = await fetch(`https://fortniteapi.io/v2/items/get?id=${usersBlack?.zwartelijst[i].characterId}&lang=en`, {
       method: 'GET',
       headers: {
         'Authorization': apiKey as string,
@@ -146,11 +180,11 @@ app.get("/zwartelijst", async (req, res) => {
       });
     blackListCharacters.push(character);
   }
-  
+
   res.render("zwartelijst", {
     title: "Zwartelijst",
     username,
-    charactersBlack : blackListCharacters
+    charactersBlack: blackListCharacters
   });
 });
 
@@ -187,18 +221,35 @@ app.post("/saveToFav", async (req, res) => {
 });
 
 app.post("/saveAsActive", async (req, res) => {
-  const { characterId } = req.body;
+  let { characterId } = req.body;
   const user = userId;
+  characterId = await fetch(`https://fortniteapi.io/v2/items/get?id=${characterId}&lang=en`, {
+    method: 'GET',
+    headers: {
+      'Authorization': apiKey as string,
+    }
+  })
+    .then(response => response.json())
+    .then((data: any) => {
+      return data.item.images.icon_background;
+    })
+    .catch(error => {
+      console.log(error);
+    });
   await client.db("wpl").collection("users").updateOne({ _id: user }, { $set: { currentAvatar: characterId } });
   res.redirect('/avatar');
 });
 
 app.post("/saveToBlack", async (req, res) => {
   const { characterId } = req.body;
+  const reason: string = "";
   const user = userId;
-  await client.db("wpl").collection("users").updateOne({ _id: user }, { $push: { zwartelijst: characterId } });
+  const usersBlaclist = await client.db("wpl").collection("users").findOne({ _id: user });
+  usersBlaclist?.zwartelijst.push({ characterId, reason });
+  await client.db("wpl").collection("users").updateOne({ _id: user }, { $set: { zwartelijst: usersBlaclist?.zwartelijst } });
   res.redirect('/avatar');
 });
+
 
 app.listen(app.get("port"), async () => {
   await client.connect();

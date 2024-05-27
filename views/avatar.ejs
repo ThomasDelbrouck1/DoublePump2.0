@@ -24,7 +24,7 @@
               <a href="/zwartelijst"><i class="bx bxs-x-circle"></i> Zwarte lijst</a>
             </li>
             <li class="profile">
-              <img src="/assets/popje3.webp" alt="Profile Picture" class="profile-picture-nav">
+              <img src="<%= profilePicture %>" alt="Profile Picture" class="profile-picture-nav">
               <a href="/profiel"></i>
                 <%= username %>
               </a>
@@ -44,6 +44,16 @@
         , "Lava Series" : "rgba(255, 140, 0, 1)" , "Star Wars Series" : "rgba(0, 0, 139, 1)" , "Shadow Series"
         : "rgba(0, 0, 0, 1)" , "Slurp Series" : "rgba(0, 139, 139, 1)" , "Gaming Legends Series" : "rgba(75, 0, 130, 1)"
         , }; %>
+        <div
+          style="margin-top: 10rem; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+          <form action="/avatar" method="get" style="display: flex; gap: 10px;">
+            <input type="text" name="avatarName" placeholder="Zoeken naar avatar ..." value="<%= avatarName %>"
+              style="color: white; border: 2px white; border-radius: 5px; padding: 5px 10px;">
+            <button type="submit"
+              style="border: 2px white; border-radius: 5px; padding: 5px 10px; color: white;">Zoeken</button>
+          </form>
+        </div>
+
         <section class="avatars">
           <% for (let i=0; i < characters.length; i++) { %>
             <article class="avatar">
@@ -99,7 +109,7 @@
             </section>
           </section>
           <form method="post">
-          <input type="hidden" id="characterID" name="characterId" value="">
+            <input type="hidden" id="characterID" name="characterId" value="">
             <section class="modal-footer">
               <button type="submit" class="btn btn-secondary" formaction="/saveToFav">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -230,6 +240,14 @@
             }
           });
       }
+      // pause the video on click
+      document.getElementById('modal-video').addEventListener('click', function () {
+        if (this.paused) {
+          this.play();
+        } else {
+          this.pause();
+        }
+      });
     </script>
   </body>
 
