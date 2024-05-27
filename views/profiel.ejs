@@ -58,37 +58,6 @@
                         <%= username %>
                     </h1>
                     <img src="<%= profilePicture %>" alt="Profile Picture" class="profile-picture">
-
-                    <button class="change-avatar-button" data-bs-target="#myModal" data-bs-toggle="modal">Verander
-                        Avatar</button>
-
-                    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel1"
-                        aria-hidden="true">
-
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Kies een avatar</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <article class="avatar">
-                                        <a href="#" data-bs-target="#myModal" data-bs-toggle="modal">
-
-                                            <img src="/assets/popje3.webp" alt="Meowscles" />
-                                        </a>
-
-                                        <p>Meowscles</p>
-                                    </article>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
                 </div>
             </div>
             <div class="tab-pane fade" id="settings-tab-pane" role="tabpanel" aria-labelledby="settings-tab"
@@ -104,10 +73,7 @@
                         <input type="hidden" name="username" value="<%= username %>">
                         <button type="submit" id="delete" data-bs-target="#myModal1" data-bs-toggle="modal">Verwijder
                             account</button>
-
                     </form>
-
-
                     <div class="modal fade" id="myModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
                         aria-hidden="true">
                         <div class="modal-dialog">
@@ -142,5 +108,4 @@
         </div>
 
     </body>
-
     </html>

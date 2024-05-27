@@ -308,23 +308,6 @@ footer {
   padding: 0;
 }
 
-.search-bar {
-  display: flex;
-  align-items: center;
-  margin: 20px 0;
-}
-
-.search-input {
-  padding: 5px;
-  border: none;
-  border-radius: 50%;
-  /* Fully rounded edges */
-  margin: 3rem 50rem 0 20rem;
-  color: white;
-  background-color: red;
-  /* Adding the background color red as requested earlier */
-}
-
 .sort-dropdown {
   display: flex;
   align-items: center;
@@ -966,6 +949,14 @@ footer a {
   gap: 1rem;
   height: 100%;
 }
+.zwarteModal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
+  height: 100%;
+}
 
 .v-buck {
   height: 30px;
@@ -1050,6 +1041,7 @@ footer a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: white;
 }
 
 .username {
@@ -1314,35 +1306,32 @@ footer a {
 }
 
 /* Search bar */
-.search-bar {
+.search-container {
+  margin-top: 10rem;
   display: flex;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  margin-left: auto;
-  /* Aligns search bar to the right */
-  margin-right: 20px;
-  /* Adds some space on the right */
+}
+
+.search-form {
+  display: flex;
+  gap: 10px;
 }
 
 .search-input {
+  color: white;
+  border: 2px solid white;
+  border-radius: 5px;
   padding: 5px 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  width: 200px;
-  /* Adjust the width as needed */
-  transition: width 0.3s ease;
-  /* Smooth transition when resizing */
 }
 
-.search-input:focus {
-  width: 250px;
-  /* Expand width on focus */
-  outline: none;
-  /* Remove default outline */
-  border-color: #007bff;
-  /* Change border color on focus */
+.search-button {
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: white;
 }
-
 
 
 @media screen and (max-width: 480px) {
