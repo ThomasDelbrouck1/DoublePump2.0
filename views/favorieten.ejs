@@ -23,8 +23,10 @@
               <a href="/zwartelijst"><i class="bx bxs-x-circle"></i> Zwarte lijst</a>
             </li>
             <li class="profile">
-              <img src="/assets/popje3.webp" alt="Profile Picture" class="profile-picture-nav">
-              <a href="/profiel"> Gebruikersnaam</a>
+              <img src="<%= profilePicture %>" alt="Profile Picture" class="profile-picture-nav">
+              <a href="/profiel">
+                <%= username %>
+              </a>
             </li>
           </ul>
         </section>
@@ -32,81 +34,64 @@
     </header>
 
     <main>
-      <section class="avatars">
-        <article class="avatar">
-          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal">
-            <img src="/assets/popje5.jpeg" alt="Brilliant Bomber" /></a>
-          <p>Brilliant Bomber</p>
-        </article>
-        <article class="avatar">
-          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal">
-            <img src="/assets/popettje4.webp" alt="Drift" /></a>
-          <p>Drift</p>
-        </article>
-        <article class="avatar">
-          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal">
-            <img src="/assets/popje6.jpeg" alt="Ninja" /></a>
-          <p>Ninja</p>
-        </article>
-        <article class="avatar">
-          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal">
-            <img src="/assets/popje8.jpeg" alt="Ramirez" /></a>
-          <p>Ramirez</p>
-        </article>
-        <article class="avatar">
-          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal">
-            <img src="/assets/popettje4.webp" alt="Drift" /></a>
-          <p>Drift</p>
-        </article>
-        <article class="avatar">
-          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal">
-            <img src="/assets/popje3.webp" alt="Meowscles" /></a>
-          <p>Meowscles</p>
-        </article>
-        <article class="avatar">
-          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal">
-            <img src="/assets/popje5.jpeg" alt="Brilliant Bomber" /></a>
-          <p>Brilliant Bomber</p>
-        </article>
-        <article class="avatar">
-          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal">
-            <img src="/assets/popettje4.webp" alt="Drift" /></a>
-          <p>Drift</p>
-        </article>
-        <article class="avatar">
-          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal">
-            <img src="/assets/popje7.jpeg" alt="Ghoul Trooper" /></a>
-          <p>Ghoul Trooper</p>
-        </article>
-        <article class="avatar">
-          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal">
-            <img src="/assets/popettje4.webp" alt="Drift" /></a>
-          <p>Drift</p>
-        </article>
-        <article class="avatar">
-          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal">
-            <img src="/assets/popje3.webp" alt="Meowscles" /></a>
-          <p>Meowscles</p>
-        </article>
-        <article class="avatar">
-          <a href="#" data-bs-target="#myModal" data-bs-toggle="modal">
-            <img src="/assets/popje3.webp" alt="Meowscles" /></a>
-          <p>Meowscles</p>
-        </article>
+      <section class="search-bar">
+        <input type="text" class="search-input" placeholder="Zoeken..."
+          style="background-color: rgba(145, 142, 142, 0.564);">
+        <div class="sort-dropdown">
+          <label for="sort-by">Sorteer op:</label>
+          <select id="sort-by">
+            <option value="relevance">Relevantie</option>
+            <option value="date">Datum</option>
+            <option value="popularity">Populariteit</option>
+          </select>
+        </div>
       </section>
+      <% const fortniteTiers={ "Common" : "rgba(128, 128, 128, 1)" , "Uncommon" : "rgba(0, 128, 0, 1)" , "Rare"
+        : "rgba(0, 0, 255, 1)" , "Epic" : "rgba(128, 0, 128, 1)" , "Legendary" : "rgba(255, 165, 0, 1)" , "Mythic"
+        : "rgba(255, 215, 0, 1)" , "Exotic" : "rgba(0, 255, 255, 1)" , "Transcendent" : "rgba(255, 255, 179, 1)"
+        , "Marvel Series" : "rgba(139, 0, 0, 1)" , "Dark Series" : "rgba(255, 0, 255, 1)" , "DC Series"
+        : "rgba(112, 128, 144, 1)" , "Icon Series" : "rgba(0, 255, 255, 1)" , "Frozen Series" : "rgba(173,216,230, 1)"
+        , "Lava Series" : "rgba(255, 140, 0, 1)" , "Star Wars Series" : "rgba(0, 0, 139, 1)" , "Shadow Series"
+        : "rgba(0, 0, 0, 1)" , "Slurp Series" : "rgba(0, 139, 139, 1)" , "Gaming Legends Series" : "rgba(75, 0, 130, 1)"
+        , }; %>
+        <section class="avatars">
+          <% for (let i=0; i < characters.length; i++) { %>
+            <article class="avatar">
+              <a href="#" data-bs-target="#myModal" data-bs-toggle="modal"
+                onclick="getCharacterDetails('<%= characters[i].item.id %>')">
+                <% if (characters[i].item.series && characters[i].item.series.id) { %>
+                  <img src="<%= characters[i].item.images.icon %>"
+                    style="background-image: url('https://media.fortniteapi.io/images/textures/<%= characters[i].item.series.id %>.png'); background-position: center; background-size: contain; background-repeat: no-repeat;"
+                    alt="<%= characters[i].item.name %>" />
+                  <% } else { %>
+                    <img src="<%= characters[i].item.images.icon %>"
+                      style="background-color: <%= fortniteTiers[characters[i].item.rarity.id] %>;background-position: center;"
+                      alt="<%= characters[i].item.name %>" />
+                    <% } %>
+              </a>
+
+              <p>
+                <%= characters[i].item.name %>
+              </p>
+            </article>
+            <% } %>
+        </section>
     </main>
     <section class="modal fade" id="myModal" tabindex="-1" aria-labelledby="loginLabel" aria-hidden="true">
       <article class="modal-dialog favorieten-modal-dialog">
         <article class="modal-content">
 
-          <header class="modal-header">
+          <section class="modal-header">
             <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Sluiten"></button>
-          </header>
+          </section>
 
           <section class="modal-body">
             <section class="left-section">
               <h2 id="modal-title">Personage Naam</h2>
-              <img id="modal-image" src="/assets/popje3.webp" alt="Ninja" />
+              <video id="modal-video" width="450px" height="450px" loop autoplay playsline>
+                <!-- Voeg 'controls' als attribuut om bv te kunnen pauzeren -->
+                <source src="">
+              </video>
             </section>
 
             <section class="right-section">
@@ -122,20 +107,35 @@
                   <section class="dropdown1">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="backpackDropdown"
                       data-bs-toggle="dropdown" aria-expanded="false">
-                      Selecteer BackBling
+                      Selecteer rugzak
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="backpackDropdown">
                       <li>
-                        <a class="dropdown-item" href="#"><img src="/assets/_40ee15ba-8b35-49a9-b94a-cc0830f40257.jpg"
-                            alt="Rugzak 1" class="dropdown-item-image" /></a>
+                        <label class="dropdown-item">
+                          <input type="checkbox" id="modal1" class="modal-toggle" />
+                          <img src="/assets/_40ee15ba-8b35-49a9-b94a-cc0830f40257.jpg" alt="Rugzak 1"
+                            class="dropdown-item-image" />
+                          <span class="item-name">Rugzak 1</span>
+                          <div class="modal" id="modal1-content">
+                            <div class="modal-content">
+                              <label for="modal1" class="modal-overlay"></label>
+                              <img src="/assets/_40ee15ba-8b35-49a9-b94a-cc0830f40257.jpg" alt="Rugzak 1" />
+                            </div>
+                          </div>
+                        </label>
                       </li>
                       <li>
-                        <a class="dropdown-item" href="#"><img src="/assets/_c329f736-c0ec-4f70-b64f-db3066f2d096.jpg"
-                            alt="Rugzak 2" class="dropdown-item-image" /></a>
+                        <a class="dropdown-item" href="#">
+                          <img src="/assets/_c329f736-c0ec-4f70-b64f-db3066f2d096.jpg" alt="Rugzak 2"
+                            class="dropdown-item-image" />
+                          <span class="item-name">Rugzak 2</span>
+                        </a>
                       </li>
                       <li>
-                        <a class="dropdown-item" href="#"><img src="/assets/popje8.jpeg" alt="Rugzak 3"
-                            class="dropdown-item-image" /></a>
+                        <a class="dropdown-item" href="#">
+                          <img src="/assets/popje8.jpeg" alt="Rugzak 3" class="dropdown-item-image" />
+                          <span class="item-name">Rugzak 3</span>
+                        </a>
                       </li>
                     </ul>
                   </section>
@@ -144,20 +144,26 @@
                   <section class="dropdown2">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="pickaxeDropdown"
                       data-bs-toggle="dropdown" aria-expanded="false">
-                      Selecteer Pickaxe
+                      Selecteer wapen
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="pickaxeDropdown">
                       <li>
-                        <a class="dropdown-item" href="#"><img src="/assets/pickaxe1.jpg" class="dropdown-item-image" />
-                          Pickaxe 1</a>
+                        <a class="dropdown-item" href="#">
+                          <img src="/assets/_40ee15ba-8b35-49a9-b94a-cc0830f40257.jpg" class="dropdown-item-image" />
+                          <span class="item-name">wapen 1</span>
+                        </a>
                       </li>
                       <li>
-                        <a class="dropdown-item" href="#"><img src="/assets/pickaxe2.jpg" class="dropdown-item-image" />
-                          Pickaxe 2</a>
+                        <a class="dropdown-item" href="#">
+                          <img src="/assets/_c329f736-c0ec-4f70-b64f-db3066f2d096.jpg" class="dropdown-item-image" />
+                          <span class="item-name">wapen 2</span>
+                        </a>
                       </li>
                       <li>
-                        <a class="dropdown-item" href="#"><img src="/assets/pickaxe3.jpg" class="dropdown-item-image" />
-                          Pickaxe 3</a>
+                        <a class="dropdown-item" href="#">
+                          <img src="/assets/popje8.jpeg" class="dropdown-item-image" />
+                          <span class="item-name">wapen 3</span>
+                        </a>
                       </li>
                     </ul>
                   </section>
@@ -187,9 +193,10 @@
                   </section>
                 </li>
               </ul>
-              <textarea class="notes-section mt-3" id="notes" placeholder="Voeg notities toe"></textarea>
             </section>
           </section>
+          <textarea class="notes-section mt-3" id="notes" placeholder="Voeg notities toe"
+            style="height: 200px;"></textarea>
           <footer class="modal-footer">
             <button type="button" class="btn btn-secondary me-3" data-bs-dismiss="modal">
               Sluiten
@@ -201,9 +208,23 @@
     </article>
     </article>
     </section>
+
     <button onclick="topFunction()" id="myBtn" title="Go to top">
       <i class="bx bxs-up-arrow"></i>
     </button>
+
+    <script>
+      async function getCharacterDetails(id) {
+        // Reset modal fields
+        document.getElementById('modal-video').src = '';
+        // Fetch character details
+        await fetch(`/api/characters/${id}`)
+          .then(response => response.json())
+          .then(data => {
+            document.getElementById('modal-video').src = data.item.previewVideos[0].url;
+          });
+      }
+    </script>
   </body>
 
   </html>

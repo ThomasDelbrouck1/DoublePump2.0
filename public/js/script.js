@@ -34,5 +34,23 @@ document.addEventListener("DOMContentLoaded", function () {
   closeBtn.addEventListener("click", () => {
     popup.style.display = "none";
   });
-
+  function openModal(imageSrc) {
+    var modalImg = document.getElementById('modalImage');
+    modalImg.src = imageSrc;
+    var myModal = new bootstrap.Modal(document.getElementById('imageModal'));
+    myModal.show();
+  }
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  const animations = ['moveDiagonal', 'moveHorizontal', 'moveVertical'];
+  const elements = document.querySelectorAll('.floatingElement');
+
+  elements.forEach(el => {
+    const animationName = animations[Math.floor(Math.random() * animations.length)];
+    const duration = Math.random() * 10 + 15;
+    el.style.animationName = animationName;
+    el.style.animationDuration = `${duration}s`;
+  });
+});
+

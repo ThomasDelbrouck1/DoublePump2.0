@@ -19,6 +19,17 @@ footer {
 }
 
 .navbar .logo {
+  margin: 15px;
+}
+
+.navbar,
+.tab-content {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow: auto;
+}
+
+#login .modal-footer button {
+  width: 100%;
   margin: 0;
 }
 
@@ -32,6 +43,15 @@ footer {
   background-color: rgb(21, 21, 21);
   border-bottom: 1px solid rgb(21, 21, 21);
   font-size: 30px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow: auto;
+}
+
+.navContainer p {
+  font-family: "Fortnite";
+  src: url("/assets/Burbank Big Condensed Black.otf") format("opentype");
+  font-weight: 200;
+  font-size: 35px;
 }
 
 .navContainer section:nth-child(1) {
@@ -288,11 +308,53 @@ footer {
   padding: 0;
 }
 
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.search-input {
+  padding: 5px;
+  border: none;
+  border-radius: 50%;
+  /* Fully rounded edges */
+  margin: 3rem 50rem 0 20rem;
+  color: white;
+  background-color: red;
+  /* Adding the background color red as requested earlier */
+}
+
+.sort-dropdown {
+  display: flex;
+  align-items: center;
+}
+
+.sort-dropdown label {
+  margin-right: 10px;
+  /* Spacing between label and dropdown */
+  color: white;
+  /* Color of the text label */
+}
+
+.sort-dropdown select {
+  padding: 5px;
+  border: none;
+  border-radius: 4rem;
+  /* Consistent rounded borders like input */
+  color: white;
+  background-color: #555;
+  /* Darker background for dropdown */
+}
+
+
+
 #notes {
   border: #007bff solid 1px;
   border-radius: 15px;
   padding: 8px;
 }
+
 #myBtn:hover {
   background-color: #ff9900;
 }
@@ -340,6 +402,7 @@ footer {
 .favobody {
   /*font-family: Arial, sans-serif;*/
   margin: 0;
+  background-color: #302F2E;
   padding: 0;
   height: 100vh;
   width: 100%;
@@ -352,12 +415,6 @@ footer {
   gap: 0;
   row-gap: 0;
   /*overflow: hidden;*/
-}
-
-.avatarbody,
-.favobody,
-.zwartelijstbody {
-  background-color: rgb(48, 47, 47);
 }
 
 .avatar:hover p {
@@ -379,10 +436,13 @@ footer {
 .avatar p,
 .favobody p {
   text-align: center;
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: 700;
   color: white;
   margin: 5px 0;
+
 }
+
 
 .avatar-info {
   display: flex;
@@ -410,6 +470,29 @@ footer {
   transform: scale(1.1);
 }
 
+/*profiel modale*/
+
+.modal-toggle {
+  display: none;
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+}
+
+.modal-toggle:checked+img+span+.modal {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+/*profiel modale*/
 .avatarbody .modal,
 .favobody .modal {
   display: none;
@@ -429,15 +512,15 @@ footer {
 .zwartelijstbody .modal-content,
 .favobody .modal-content {
   background-color: rgb(36, 35, 35);
-  margin: 15% auto;
+  /*margin: 15% auto;*/
   padding: 20px;
   border: 1px solid #888;
   width: 100%;
-  max-width: 1800px;
+  /*max-width: 1800px;*/
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 900px;
+  /*height: 900px;*/
   
 }
 .avatarbody .modal-content p{
@@ -537,42 +620,56 @@ footer {
 
 .left-section,
 .right-section {
-  flex: 1; /* Zorgt dat beide secties evenveel ruimte innemen */
+  flex: 1;
+  /* Zorgt dat beide secties evenveel ruimte innemen */
 }
+
 .left-section {
-  padding: 20px; /* Voegt padding toe voor spacing rond de afbeelding en titel */
+  padding: 20px;
+  /* Voegt padding toe voor spacing rond de afbeelding en titel */
+  margin-top: 0%;
 }
+
 .row {
-  width: 100%; /* Ensures the row takes full width of the container */
+  width: 100%;
+  /* Ensures the row takes full width of the container */
 }
 
 .col {
-  flex: 1; /* Each column takes equal width */
+  flex: 1;
+  /* Each column takes equal width */
 }
 
 .dropdown {
-  width: 100%; /* Ensures dropdowns fill their column */
+  width: 100%;
+  /* Ensures dropdowns fill their column */
 }
 
 .dropdown1 {
-  margin-bottom: 90px;
+  margin-bottom: 40px;
 }
 
 .dropdown-toggle {
-  width: 100%; /* Ensures the button fills the dropdown area */
+  width: 100%;
+  /* Ensures the button fills the dropdown area */
 }
 
+
 .dropdown-item-image {
-  width: 200px; /* Breedte van de afbeelding */
+  width: 200px;
+  /* Breedte van de afbeelding */
   height: auto;
 }
 
+
 .dropdown-menu {
-  display: none; /* Verbergt de dropdown standaard */
+  display: none;
+  /* Verbergt de dropdown standaard */
 }
 
 .dropdown-menu.show {
-  display: flex; /* Activeert flex alleen wanneer de dropdown zichtbaar is */
+  display: flex;
+  /* Activeert flex alleen wanneer de dropdown zichtbaar is */
   flex-direction: row;
   justify-content: center;
   flex-wrap: nowrap;
@@ -581,21 +678,45 @@ footer {
 }
 
 .dropdown-item-image {
-  width: 50px; /* Stel de breedte in op 50px of een andere gewenste waarde */
-  height: auto; /* Behoudt de aspectratio van de afbeelding */
+
+  width: 50px;
+  /* Stel de breedte in op 50px of een andere gewenste waarde */
+  height: auto;
+  /* Behoudt de aspectratio van de afbeelding */
+  margin-bottom: 5px;
 }
+
+.dropdown-item {
+  text-align: center;
+  /* Centreert de tekst en afbeeldingen */
+  display: flex;
+  flex-direction: column;
+  /* Stapelt de afbeelding en tekst verticaal */
+}
+
+.item-name {
+  font-size: 0.8rem;
+  /* Kleinere tekstgrootte voor de itemnamen */
+  color: #353535;
+  /* Stel in op gewenste tekstkleur */
+
+}
+
 
 .right-section {
   display: flex;
-  flex-direction: column; /* Zorgt dat alle items verticaal geordend worden */
+  flex-direction: column;
+  /* Zorgt dat alle items verticaal geordend worden */
   padding: 20px;
+  margin-top: 0%;
 }
 
+/*
 hr {
   margin-bottom: 50px;
   margin-top: 0px;
 }
-
+*/
 .avatarbody .btn-danger {
   background-color: #dc3545;
   color: white;
@@ -613,7 +734,7 @@ hr {
   justify-content: center;
 }
 
-.avatarbody .modal-body > .modal-text {
+.avatarbody .modal-body>.modal-text {
   flex: 1;
   margin-left: 20px;
 }
@@ -668,14 +789,38 @@ hr {
   margin-right: 0.5rem;
 }
 
+/* Stijl voor de buttons */
+.btn {
+  margin: 5px;
+  /* Voegt een marge toe rond elke button */
+}
+
+/* Extra stijl om de button containers uit te lijnen */
+section {
+  text-align: center;
+  /* Centreert de buttons */
+}
+
+/* Optioneel: Extra stijlen om de list items te stylen */
+li.col {
+  display: flex;
+  flex-direction: column;
+  /* Stapelt de 'p' en 'section' verticaal */
+  align-items: center;
+  /* Centreert de inhoud */
+}
+
 .notes-section {
-  margin-top: 1rem;
-  width: 100%;
+  width: 50%;
+  /* Of de gewenste breedte */
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
 }
 
 .notes-section textarea {
   width: 100%;
-  min-height: 100px;
+  min-height: 200px;
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -687,7 +832,7 @@ nav {
   border-radius: 25px;
 }
 
-nav > div {
+nav>div {
   display: flex;
   flex-direction: column;
 }
@@ -778,7 +923,7 @@ footer a {
   margin-top: 2rem;
 }
 
-.tools > section {
+.tools>section {
   width: 75px;
   /*width: fit-content; remove after adding content*/
   height: 75px;
@@ -793,7 +938,7 @@ footer a {
   gap: 0.5rem;
   row-gap: 4rem;
   justify-content: center;
-  margin: 3rem 20rem 0 20rem;
+  margin: 10rem 20rem 0 20rem;
 }
 
 .avatars .avatar {
@@ -810,6 +955,10 @@ footer a {
   width: 100%;
 }
 
+#myModal .modal-content section.modal-header {
+  padding: 1rem;
+}
+
 /*venster horizontaal*/
 #myModal .modal-body {
   display: flex;
@@ -817,10 +966,15 @@ footer a {
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  height: 100%;
 }
+
 .v-buck {
   height: 30px;
   width: 30px;
+  position: absolute;
+  left: 68.5%;
+  top: 25.5%;
 }
 
 #modal-image {
@@ -840,11 +994,20 @@ footer a {
   margin-left: 40px;
 }
 
+.modal-description section {
+  text-align: left;
+}
+
+.modal-description section strong {
+  color: rgb(134, 131, 131);
+}
+
 #modal-title {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
 }
+
 /*profiel*/
 
 .profile {
@@ -852,9 +1015,11 @@ footer a {
   align-items: center;
   margin-left: auto;
 }
-.profilebody{
+
+.profilebody {
   background-color: rgb(48, 47, 47);
 }
+
 .navbar {
   display: flex;
   justify-content: center;
@@ -899,12 +1064,14 @@ footer a {
   border-radius: 50%;
   margin-bottom: 10px;
 }
+
 .profile-picture-nav {
   width: 40px;
   height: 40px;
   margin-right: 5px;
   margin-top: 18px;
 }
+
 .change-avatar-button {
   background-color: #555;
   color: white;
@@ -919,12 +1086,13 @@ footer a {
   background-color: #777;
 }
 
-#new-username{
+
+#new-username {
   width: 300px;
 }
 
-#save-username{
-  background-color:#007bff;
+#save-username {
+  background-color: #007bff;
   color: white;
   border: none;
   border-radius: 5px;
@@ -932,9 +1100,10 @@ footer a {
   cursor: pointer;
   transition: background-color 0.3s;
 }
-#logout{
+
+#logout {
   margin-top: 30px;
-  background-color:#dc3545;
+  background-color: #dc3545;
   color: white;
   border: none;
   border-radius: 5px;
@@ -942,11 +1111,12 @@ footer a {
   cursor: pointer;
   transition: background-color 0.3s;
 }
-#logout-tab{
+
+#logout-tab {
   color: #dc3545;
 }
 
-#delete{
+#delete {
   margin-top: 15px;
   background-color: #dc3545;
   color: white;
@@ -956,56 +1126,76 @@ footer a {
   cursor: pointer;
   transition: background-color 0.3s;
 }
+
 /*registratie*/
 
+.registratiebody {
+  background-image: url('../assets/black-abstract-dark-3840x2160-9729.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+}
+
 .register-main {
-  /*font-family: Arial, sans-serif;*/
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: black;
-  height: 100vh;
-}
-
-.register-container {
-  width: 350px;
-  background-color: rgb(48, 47, 47);
-  padding: 20px;
+  width: 600px;
+  margin: 100px auto;
+  padding: 30px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-  text-align: center;
-  margin-bottom: 20px;
+  background-color: rgba(0, 0, 0, 0.8);
   color: white;
+
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="submit"] {
+.register-main input[type=text],
+.register-main input[type=email],
+.register-main input[type=password] {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.register-main input[type=submit] {
+  width: 100%;
+  background-color: #DA874B;
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.register-main input[type=submit]:hover {
+  background-color: #863406;
+  color: white;
+
+}
+
+.home-button {
+  display: block;
   width: 100%;
   padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
+  margin: 10px 0;
+  color: black;
+  background-color: #DA874B;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
   border-radius: 4px;
-  box-sizing: border-box;
-  background-color: white;
-}
-
-input[type="submit"] {
-  background-color: black;
-  color: #ff9900;
-  border: none;
   cursor: pointer;
 }
 
-input[type="submit"]:hover {
-  background-color: #ff9900;
-  color: black;
+.home-button:hover {
+  background-color: #863406;
+  color: white;
 }
 
 /* Media Queries */
@@ -1027,6 +1217,7 @@ input[type="submit"]:hover {
 }
 
 @media screen and (max-width: 768px) {
+
   .logo,
   .avatar img {
     width: 80px;
@@ -1043,6 +1234,7 @@ input[type="submit"]:hover {
 }
 
 @media screen and (max-width: 480px) {
+
   .logo,
   .avatar img {
     width: 60px;
@@ -1079,6 +1271,7 @@ input[type="submit"]:hover {
 }
 
 @media screen and (min-width: 481px) and (max-width: 1400px) {
+
   .landingbody,
   .registratiebody,
   .avatarbody,
@@ -1099,6 +1292,70 @@ input[type="submit"]:hover {
     overflow: visible;
   }
 }
+
+/* CSS to style the Sign Out button */
+.sign-out {
+  background-color: red;
+  /* Makes the button red */
+  color: white;
+
+  border: none;
+
+  padding: 10px 20px;
+
+  border-radius: 5px;
+
+  cursor: pointer;
+
+}
+
+/* CSS to style the Dashboard button */
+.dashboard-button {
+  background-color: blue;
+  /* Makes the button blue */
+  color: white;
+  /* Ensures the text is readable on blue background */
+  border: none;
+  /* Optional: Removes border */
+  padding: 10px 20px;
+  /* Optional: Adds padding for better appearance */
+  border-radius: 5px;
+  /* Optional: Adds rounded corners */
+  cursor: pointer;
+  /* Changes the cursor to pointer on hover */
+}
+
+/* Search bar */
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  /* Aligns search bar to the right */
+  margin-right: 20px;
+  /* Adds some space on the right */
+}
+
+.search-input {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 200px;
+  /* Adjust the width as needed */
+  transition: width 0.3s ease;
+  /* Smooth transition when resizing */
+}
+
+.search-input:focus {
+  width: 250px;
+  /* Expand width on focus */
+  outline: none;
+  /* Remove default outline */
+  border-color: #007bff;
+  /* Change border color on focus */
+}
+
+
 
 @media screen and (max-width: 480px) {
   .avatarbody p {
