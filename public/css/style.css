@@ -1180,23 +1180,6 @@ footer a {
   }
 }
 
-@media screen and (max-width: 768px) {
-
-  .logo,
-  .avatar img {
-    width: 80px;
-    height: 80px;
-  }
-
-  .avatarbody .container {
-    gap: 50px;
-  }
-
-  .favobody .container {
-    gap: 50px;
-  }
-}
-
 @media screen and (max-width: 480px) {
 
   .logo,
@@ -1231,6 +1214,23 @@ footer a {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .logo,
+  .avatar img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .avatarbody .container {
+    gap: 50px;
+  }
+
+  .favobody .container {
+    gap: 50px;
   }
 }
 
