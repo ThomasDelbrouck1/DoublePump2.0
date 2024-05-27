@@ -4,6 +4,11 @@ import { MongoClient } from "mongodb";
 import { error } from "console";
 import dotenv from "dotenv";
 import { currentAvatar } from "./middleware/currentAvatar";
+import bcrypt from "bcrypt";
+import { cookieMiddleware } from "./middleware/cookieMiddleware";
+import cookieParser from 'cookie-parser';
+
+
 dotenv.config();
 const uri = "mongodb+srv://wpl:doublepump@wplcluster.tus2eyw.mongodb.net/";
 export const client = new MongoClient(uri);
@@ -17,18 +22,26 @@ app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(currentAvatar);
+app.use(cookieParser());
+
 
 const apiKey = process.env.API_KEY;
 const charactersIDs: any[] = [];
 const characters: any[] = [];
 
 
-app.use('/', authentificationRouter);
+//app.use('/', authentificationRouter);
 
 app.get("/", (req, res) => {
-  res.render("index", {
-    title: "Home",
-  });
+  if (req.cookies.user) {
+    res.locals.userId = req.cookies.user;
+    res.locals.username = username;
+    res.redirect('/avatar');
+  } else {
+    res.render("index", {
+      title: "Home",
+    });
+  }
 });
 // login
 let username = "";
@@ -40,11 +53,18 @@ app.post("/", async (req, res) => {
       email
     });
     if (user) {
-      if (user.email == email && user.password == password) {
+      if (user.email == email && bcrypt.compareSync(password, user.password)) {
         // Set res.locals.username here
         username = user.username;
         // Set res.locals.userId as global variable
         userId = user._id;
+        // add cookie for user with max age 1 week
+        res.cookie("user", userId, {
+          httpOnly: true,
+          maxAge: 1000 * 60 * 60 * 24 * 7,
+          secure: true,
+          sameSite: "strict",
+        })
         res.status(200).json({ message: "gebruiker gevonden" });
         return;
       }
@@ -61,7 +81,7 @@ app.post("/", async (req, res) => {
   }
 });
 
-app.get("/avatar", async (req, res) => {
+app.get("/avatar", cookieMiddleware, async (req, res) => {
   const avatarName: any = req.query.avatarName ? req.query.avatarName : "";
   let filteredCharacters: any[] = characters;
   const profilePicture = res.locals.currentAvatar ? res.locals.currentAvatar : "/assets/popje1.jpeg";
@@ -108,9 +128,11 @@ app.get("/avatar", async (req, res) => {
     username
   });
 });*/
-app.get("/favorieten", async (req, res) => {
+app.get("/favorieten", cookieMiddleware,  async (req, res) => {
   const usersFav = await client.db("wpl").collection("users").findOne({ _id: userId });
   const favCharacters: any = [];
+  const profilePicture = res.locals.currentAvatar ? res.locals.currentAvatar : "/assets/popje1.jpeg";
+
   for (let i = 0; i < usersFav?.favorieten.length; i++) {
     const character = await fetch(`https://fortniteapi.io/v2/items/get?id=${usersFav?.favorieten[i]}&lang=en`, {
       method: 'GET',
@@ -130,7 +152,8 @@ app.get("/favorieten", async (req, res) => {
   res.render("favorieten", {
     title: "Favorieten",
     username,
-    characters: favCharacters
+    characters: favCharacters,
+    profilePicture
   });
 });
 
@@ -149,7 +172,7 @@ app.post('/registratiepagina', async (req, res) => {
       lastname,
       email,
       username,
-      password,
+      password : bcrypt.hashSync(password, 10),
       favorieten: [],
       zwartelijst: [],
       currentAvatar: ""
@@ -161,9 +184,11 @@ app.post('/registratiepagina', async (req, res) => {
   }
 
 });
-app.get("/zwartelijst", async (req, res) => {
+app.get("/zwartelijst", cookieMiddleware,  async (req, res) => {
   const usersBlack = await client.db("wpl").collection("users").findOne({ _id: userId });
   const blackListCharacters: any = [];
+  const profilePicture = res.locals.currentAvatar ? res.locals.currentAvatar : "/assets/popje1.jpeg";
+
   for (let i = 0; i < usersBlack?.zwartelijst.length; i++) {
     const character = await fetch(`https://fortniteapi.io/v2/items/get?id=${usersBlack?.zwartelijst[i].characterId}&lang=en`, {
       method: 'GET',
@@ -184,15 +209,19 @@ app.get("/zwartelijst", async (req, res) => {
   res.render("zwartelijst", {
     title: "Zwartelijst",
     username,
-    charactersBlack: blackListCharacters
+    charactersBlack: blackListCharacters,
+    profilePicture
   });
 });
 
 
-app.get("/profiel", (req, res) => {
+app.get("/profiel", cookieMiddleware,  (req, res) => {
+  const profilePicture = res.locals.currentAvatar ? res.locals.currentAvatar : "/assets/popje1.jpeg";
+
   res.render("profiel", {
     title: "Profiel",
-    username
+    username,
+    profilePicture
   });
 });
 
@@ -216,7 +245,10 @@ app.get("/api/characters/:id", async (req, res) => {
 app.post("/saveToFav", async (req, res) => {
   const { characterId } = req.body;
   const user = userId;
-  await client.db("wpl").collection("users").updateOne({ _id: user }, { $push: { favorieten: characterId } });
+  const usersFav = await client.db("wpl").collection("users").findOne({ _id: user });
+  if (!usersFav?.favorieten.includes(characterId)) {
+    await client.db("wpl").collection("users").updateOne({ _id: user }, { $push: { favorieten: characterId } });
+  }
   res.redirect('/avatar');
 });
 
@@ -242,14 +274,63 @@ app.post("/saveAsActive", async (req, res) => {
 
 app.post("/saveToBlack", async (req, res) => {
   const { characterId } = req.body;
-  const reason: string = "";
+  const reason = ""; // You had a type declaration here which is not necessary in JavaScript
   const user = userId;
-  const usersBlaclist = await client.db("wpl").collection("users").findOne({ _id: user });
-  usersBlaclist?.zwartelijst.push({ characterId, reason });
-  await client.db("wpl").collection("users").updateOne({ _id: user }, { $set: { zwartelijst: usersBlaclist?.zwartelijst } });
-  res.redirect('/avatar');
+  
+  try {
+    const usersBlacklist = await client.db("wpl").collection("users").findOne({ _id: user });
+    let characterExists = false;
+
+    if (usersBlacklist && usersBlacklist.zwartelijst) {
+      for (let i = 0; i < usersBlacklist.zwartelijst.length; i++) {
+        if (usersBlacklist.zwartelijst[i].characterId === characterId) {
+          characterExists = true;
+          break;
+        }
+      }
+    }
+
+    if (!characterExists) {
+      const newEntry = { characterId, reason };
+      await client.db("wpl").collection("users").updateOne(
+        { _id: user },
+        { $push: { zwartelijst: newEntry } as any }
+      );
+    }
+
+    res.redirect('/avatar');
+  } catch (error) {
+    console.error("Error updating blacklist: ", error);
+    res.status(500).send("Internal Server Error");
+  }
 });
 
+app.post("/deleteUser", async (req, res) => {
+  const  {username} = req.body;
+  const user = await client.db("wpl").collection("users").findOne({ username: username })
+  if (username === user?.username) {
+    await client.db("wpl").collection("users").deleteOne({ _id: user?._id });
+    res.redirect('/');
+  }
+});
+
+app.post("/changeUsername", async (req, res) => {
+  const { newUsername } = req.body;
+  const user = userId;
+  try {
+    await client.db("wpl").collection("users").updateOne({ _id: user }, { $set: { username: newUsername } });
+    username = newUsername;
+    res.redirect('/profiel');
+  }
+  catch {
+    res.redirect('/profiel');
+  }
+});
+
+app.get("/logout", (req, res) => {
+  res.clearCookie("user");
+  res.redirect("/");
+});
 
 app.listen(app.get("port"), async () => {
   await client.connect();
