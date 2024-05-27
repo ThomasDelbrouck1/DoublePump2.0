@@ -690,12 +690,7 @@ footer {
   padding: 20px;
   margin-top: 0%;  
 }
-/*
-hr {
-  margin-bottom: 50px;
-  margin-top: 0px;
-}
-*/
+
 .avatarbody .btn-danger {
   background-color: #dc3545;
   color: white;
@@ -1164,20 +1159,9 @@ footer a {
 
 /* Media Queries */
 
-@media (max-width: 375px) {
-  .games {
-    gap: 4rem;
-  }
+@media only screen and (max-width: 375px) {
+  
 
-  .games img {
-    width: 300px;
-    height: 170px;
-    border-radius: 25px;
-  }
-
-  .landingbody p {
-    font-size: 16px;
-  }
 }
 
 @media screen and (max-width: 480px) {
