@@ -1,6 +1,5 @@
 <%- include('partials/header.ejs') %>
 
-
   <body class="avatarbody">
     <!-- Nav -->
     <header class="navbar">
@@ -45,7 +44,8 @@
         , }; %>
         <div class="search-container">
           <form action="/avatar" method="get" class="search-form">
-            <input type="text" name="avatarName" placeholder="Zoeken naar avatar ..." value="<%= avatarName %>" class="search-input">
+            <input type="text" name="avatarName" placeholder="Zoeken naar avatar ..." value="<%= avatarName %>"
+              class="search-input">
             <button type="submit" class="search-button">Zoeken</button>
           </form>
         </div>
@@ -91,9 +91,9 @@
 
             <section class="modal-description">
               <h3 id="rarity" class="outfit-type">Rare Outfit</h3>
-              <img class="v-buck" src="/assets/one-v-buck-dpf.png" alt="vbuck" />
               <p class="outfit-price">
-                <span class="price">1,200</span>
+
+                <span class="price"><img class="v-buck" src="/assets/one-v-buck-dpf.png" alt="vbuck" />1,200</span>
               </p>
               <p id="description" class="outfit-description"></p>
               <hr />

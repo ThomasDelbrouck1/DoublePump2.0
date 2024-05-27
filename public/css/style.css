@@ -963,7 +963,11 @@ footer a {
   width: 30px;
   position: absolute;
   left: 68%;
-  top: 10%;
+  display: flex;
+}
+.price{
+  display: flex;
+  align-items: center;
 }
 
 #modal-image {
