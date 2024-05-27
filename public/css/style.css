@@ -21,9 +21,11 @@ footer {
 .navbar .logo {
   margin: 15px;
 }
-.navbar, .tab-content{
+
+.navbar,
+.tab-content {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    overflow: auto;
+  overflow: auto;
 }
 
 #login .modal-footer button {
@@ -42,10 +44,10 @@ footer {
   border-bottom: 1px solid rgb(21, 21, 21);
   font-size: 30px;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    overflow: auto;
+  overflow: auto;
 }
 
-.navContainer p{
+.navContainer p {
   font-family: "Fortnite";
   src: url("/assets/Burbank Big Condensed Black.otf") format("opentype");
   font-weight: 200;
@@ -306,37 +308,26 @@ footer {
   padding: 0;
 }
 
-.search-bar {
-  display: flex;
-  align-items: center;
-  margin: 20px 0;
-}
-
-.search-input {
-  padding: 5px;
-  border: none;
-  border-radius: 50%; /* Fully rounded edges */
-  margin: 3rem 50rem 0 20rem;
-  color: white;
-  background-color: red; /* Adding the background color red as requested earlier */
-}
-
 .sort-dropdown {
   display: flex;
   align-items: center;
 }
 
 .sort-dropdown label {
-  margin-right: 10px; /* Spacing between label and dropdown */
-  color: white; /* Color of the text label */
+  margin-right: 10px;
+  /* Spacing between label and dropdown */
+  color: white;
+  /* Color of the text label */
 }
 
 .sort-dropdown select {
   padding: 5px;
   border: none;
-  border-radius: 4rem; /* Consistent rounded borders like input */
+  border-radius: 4rem;
+  /* Consistent rounded borders like input */
   color: white;
-  background-color: #555; /* Darker background for dropdown */
+  background-color: #555;
+  /* Darker background for dropdown */
 }
 
 
@@ -392,7 +383,7 @@ footer {
 .avatarbody,
 .zwartelijstbody,
 .favobody {
-  /*font-family: Arial, sans-serif;*/
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   margin: 0;
   background-color: #302F2E;
   padding: 0;
@@ -408,6 +399,7 @@ footer {
   row-gap: 0;
   /*overflow: hidden;*/
 }
+
 .avatar:hover p {
   bottom: 10px;
   background-color: rgb(57, 57, 219);
@@ -431,7 +423,7 @@ footer {
   font-weight: 700;
   color: white;
   margin: 5px 0;
-  
+
 }
 
 
@@ -460,6 +452,7 @@ footer {
 .avatar:hover p {
   transform: scale(1.1);
 }
+
 /*profiel modale*/
 
 .modal-toggle {
@@ -472,11 +465,11 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.7);
   cursor: pointer;
 }
 
-.modal-toggle:checked + img + span + .modal {
+.modal-toggle:checked+img+span+.modal {
   visibility: visible;
   opacity: 1;
 }
@@ -502,15 +495,15 @@ footer {
 .zwartelijstbody .modal-content,
 .favobody .modal-content {
   background-color: rgb(36, 35, 35);
-  margin: 15% auto;
+  /*margin: 15% auto;*/
   padding: 20px;
   border: 1px solid #888;
   width: 100%;
-  max-width: 1800px;
+  /*max-width: 1800px;*/
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 900px;
+  /*height: 900px;*/
 }
 
 .zwartelijstbody .modal-content {
@@ -612,7 +605,8 @@ footer {
 }
 
 .left-section {
-  padding: 20px; /* Voegt padding toe voor spacing rond de afbeelding en titel */
+  padding: 20px;
+  /* Voegt padding toe voor spacing rond de afbeelding en titel */
   margin-top: 0%;
 }
 
@@ -665,20 +659,26 @@ footer {
 
 .dropdown-item-image {
 
-  width: 50px; /* Stel de breedte in op 50px of een andere gewenste waarde */
-  height: auto; /* Behoudt de aspectratio van de afbeelding */
+  width: 50px;
+  /* Stel de breedte in op 50px of een andere gewenste waarde */
+  height: auto;
+  /* Behoudt de aspectratio van de afbeelding */
   margin-bottom: 5px;
 }
 
 .dropdown-item {
-  text-align: center; /* Centreert de tekst en afbeeldingen */
+  text-align: center;
+  /* Centreert de tekst en afbeeldingen */
   display: flex;
-  flex-direction: column; /* Stapelt de afbeelding en tekst verticaal */
+  flex-direction: column;
+  /* Stapelt de afbeelding en tekst verticaal */
 }
 
 .item-name {
-  font-size: 0.8rem; /* Kleinere tekstgrootte voor de itemnamen */
-  color: #353535; /* Stel in op gewenste tekstkleur */
+  font-size: 0.8rem;
+  /* Kleinere tekstgrootte voor de itemnamen */
+  color: #353535;
+  /* Stel in op gewenste tekstkleur */
 
 }
 
@@ -688,9 +688,15 @@ footer {
   flex-direction: column;
   /* Zorgt dat alle items verticaal geordend worden */
   padding: 20px;
-  margin-top: 0%;  
+  margin-top: 0%;
 }
 
+/*
+hr {
+  margin-bottom: 50px;
+  margin-top: 0px;
+}
+*/
 .avatarbody .btn-danger {
   background-color: #dc3545;
   color: white;
@@ -765,23 +771,28 @@ footer {
 
 /* Stijl voor de buttons */
 .btn {
-  margin: 5px; /* Voegt een marge toe rond elke button */
+  margin: 5px;
+  /* Voegt een marge toe rond elke button */
 }
 
 /* Extra stijl om de button containers uit te lijnen */
 section {
-  text-align: center; /* Centreert de buttons */
+  text-align: center;
+  /* Centreert de buttons */
 }
 
 /* Optioneel: Extra stijlen om de list items te stylen */
 li.col {
   display: flex;
-  flex-direction: column; /* Stapelt de 'p' en 'section' verticaal */
-  align-items: center; /* Centreert de inhoud */
+  flex-direction: column;
+  /* Stapelt de 'p' en 'section' verticaal */
+  align-items: center;
+  /* Centreert de inhoud */
 }
 
 .notes-section {
-  width: 50%; /* Of de gewenste breedte */
+  width: 50%;
+  /* Of de gewenste breedte */
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 40px;
@@ -905,9 +916,10 @@ footer a {
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   /* Change here */
   gap: 0.5rem;
-  row-gap: 4rem;
+  row-gap: 6rem;
   justify-content: center;
-  margin: 4rem 20rem 0 20rem;
+  margin: 5rem 20rem 0 20rem;
+  justify-items: center;
 }
 
 .avatars .avatar {
@@ -924,21 +936,34 @@ footer a {
   width: 100%;
 }
 
+#myModal .modal-content section.modal-header {
+  padding: 1rem;
+}
+
 /*venster horizontaal*/
 #myModal .modal-body {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   gap: 1rem;
+  height: 100%;
+}
+.zwarteModal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
+  height: 100%;
 }
 
 .v-buck {
   height: 30px;
   width: 30px;
-  position: absolute ;
-  left: 68.5%;
-  top: 25.5%;
+  position: absolute;
+  left: 68%;
+  top: 10%;
 }
 
 #modal-image {
@@ -956,13 +981,17 @@ footer a {
 
 .modal-description {
   margin-left: 40px;
-}
-.modal-description section{
   text-align: left;
 }
-.modal-description section strong{
+
+.modal-description section {
+  text-align: left;
+}
+
+.modal-description section strong {
   color: rgb(134, 131, 131);
 }
+
 #modal-title {
   display: flex;
   flex-direction: column;
@@ -1012,6 +1041,7 @@ footer a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: white;
 }
 
 .username {
@@ -1048,12 +1078,12 @@ footer a {
 }
 
 
-#new-username{
+#new-username {
   width: 300px;
 }
 
-#save-username{
-  background-color:#007bff;
+#save-username {
+  background-color: #007bff;
   color: white;
   border: none;
   border-radius: 5px;
@@ -1061,9 +1091,10 @@ footer a {
   cursor: pointer;
   transition: background-color 0.3s;
 }
-#logout{
+
+#logout {
   margin-top: 30px;
-  background-color:#dc3545;
+  background-color: #dc3545;
   color: white;
   border: none;
   border-radius: 5px;
@@ -1071,11 +1102,12 @@ footer a {
   cursor: pointer;
   transition: background-color 0.3s;
 }
-#logout-tab{
+
+#logout-tab {
   color: #dc3545;
 }
 
-#delete{
+#delete {
   margin-top: 15px;
   background-color: #dc3545;
   color: white;
@@ -1088,16 +1120,16 @@ footer a {
 
 /*registratie*/
 
-.registratiebody{
-    background-image: url('../assets/black-abstract-dark-3840x2160-9729.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    position: relative;
-    z-index: 1;
-  }
+.registratiebody {
+  background-image: url('../assets/black-abstract-dark-3840x2160-9729.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+}
 
-  .register-main {
+.register-main {
   width: 600px;
   margin: 100px auto;
   padding: 30px;
@@ -1135,7 +1167,7 @@ footer a {
 .register-main input[type=submit]:hover {
   background-color: #863406;
   color: white;
-  
+
 }
 
 .home-button {
@@ -1162,23 +1194,6 @@ footer a {
 @media (max-width: 375px) {
   
 
-}
-
-@media screen and (max-width: 768px) {
-
-  .logo,
-  .avatar img {
-    width: 80px;
-    height: 80px;
-  }
-
-  .avatarbody .container {
-    gap: 50px;
-  }
-
-  .favobody .container {
-    gap: 50px;
-  }
 }
 
 @media screen and (max-width: 480px) {
@@ -1215,6 +1230,23 @@ footer a {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .logo,
+  .avatar img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .avatarbody .container {
+    gap: 50px;
+  }
+
+  .favobody .container {
+    gap: 50px;
   }
 }
 
@@ -1271,6 +1303,34 @@ footer a {
   /* Optional: Adds rounded corners */
   cursor: pointer;
   /* Changes the cursor to pointer on hover */
+}
+
+/* Search bar */
+.search-container {
+  margin-top: 10rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-form {
+  display: flex;
+  gap: 10px;
+}
+
+.search-input {
+  color: white;
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.search-button {
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: white;
 }
 
 

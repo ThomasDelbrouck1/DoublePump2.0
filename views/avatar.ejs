@@ -24,7 +24,7 @@
               <a href="/zwartelijst"><i class="bx bxs-x-circle"></i> Zwarte lijst</a>
             </li>
             <li class="profile">
-              <img src="/assets/popje3.webp" alt="Profile Picture" class="profile-picture-nav">
+              <img src="<%= profilePicture %>" alt="Profile Picture" class="profile-picture-nav">
               <a href="/profiel"></i>
                 <%= username %>
               </a>
@@ -33,6 +33,7 @@
         </section>
       </nav>
     </header>
+
     <main>
       <% const fortniteTiers={ "Common" : "rgba(128, 128, 128, 1)" , "Uncommon" : "rgba(0, 128, 0, 1)" , "Rare"
         : "rgba(0, 0, 255, 1)" , "Epic" : "rgba(128, 0, 128, 1)" , "Legendary" : "rgba(255, 165, 0, 1)" , "Mythic"
@@ -42,15 +43,29 @@
         , "Lava Series" : "rgba(255, 140, 0, 1)" , "Star Wars Series" : "rgba(0, 0, 139, 1)" , "Shadow Series"
         : "rgba(0, 0, 0, 1)" , "Slurp Series" : "rgba(0, 139, 139, 1)" , "Gaming Legends Series" : "rgba(75, 0, 130, 1)"
         , }; %>
+        <div class="search-container">
+          <form action="/avatar" method="get" class="search-form">
+            <input type="text" name="avatarName" placeholder="Zoeken naar avatar ..." value="<%= avatarName %>" class="search-input">
+            <button type="submit" class="search-button">Zoeken</button>
+          </form>
+        </div>
+
         <section class="avatars">
           <% for (let i=0; i < characters.length; i++) { %>
             <article class="avatar">
               <a href="#" data-bs-target="#myModal" data-bs-toggle="modal"
                 onclick="getCharacterDetails('<%= characters[i].id %>')">
-                <img src="<%= characters[i].images.icon %>"
-                  style="background-color: <%= fortniteTiers[characters[i].rarity.id] %>"
-                  alt="<%= characters[i].name %>" />
+                <% if (characters[i].series && characters[i].series.id) { %>
+                  <img src="<%= characters[i].images.icon %>"
+                    style="background-image: url('https://media.fortniteapi.io/images/textures/<%= characters[i].series.id %>.png'); background-position: center; background-size: contain; background-repeat: no-repeat;"
+                    alt="<%= characters[i].name %>" />
+                  <% } else { %>
+                    <img src="<%= characters[i].images.icon %>"
+                      style="background-color: <%= fortniteTiers[characters[i].rarity.id] %>;background-position: center;"
+                      alt="<%= characters[i].name %>" />
+                    <% } %>
               </a>
+
               <p>
                 <%= characters[i].name %>
               </p>
@@ -60,61 +75,59 @@
     </main>
 
     <section class="modal fade" id="myModal" tabindex="-1" aria-labelledby="loginLabel" aria-hidden="true">
-      <article class="modal-dialog modal-dialog-centered">
-        <article class="modal-content">
+      <section class="modal-dialog modal-dialog-centered">
+        <section class="modal-content">
           <section class="modal-header">
             <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
           </section>
           <section class="modal-body">
             <section>
-              <h2 id="modal-title">Meowscles</h2>
-              <video id="modal-video" width="450px" height="450px" loop autoplay controls>
+              <h2 id="modal-title"></h2>
+              <video id="modal-video" width="450px" height="450px" loop autoplay playsline>
                 <!-- Voeg 'controls' als attribuut om bv te kunnen pauzeren -->
-                <source
-                  src="https://media.fortniteapi.io/videos/cosmetics/preview/750a81ff0a1ac40d60bcc0b26a4dd067bd71c489/14f91392ad0ffd925cf1fd1858fe6e9e8896c241/Character_TwiceBaked.mp4">
+                <source src="">
               </video>
             </section>
 
             <section class="modal-description">
-              <h3 class="outfit-type">Rare Outfit</h3>
+              <h3 id="rarity" class="outfit-type">Rare Outfit</h3>
               <img class="v-buck" src="/assets/one-v-buck-dpf.png" alt="vbuck" />
               <p class="outfit-price">
                 <span class="price">1,200</span>
               </p>
-              <p class="outfit-description">Venture beyond the ninth life.</p>
+              <p id="description" class="outfit-description"></p>
               <hr />
               <section>
-                <p><strong>Back Bling:</strong> Pathwalker's Pack</p>
-                <p><strong>Source:</strong> Shop</p>
-                <p><strong>Introduced in:</strong> Chapter 5, Season 2</p>
-                <p><strong>Release date:</strong> Apr 21, 2024</p>
-                <p><strong>Last seen:</strong> Apr 23, 2024 (yesterday)</p>
-                <p><strong>Occurrences:</strong> 3</p>
-                <p><strong>Wishlists:</strong> 1,436</p>
+                <p id="backbling"></p>
+                <p id="introduction"></p>
+                <p id="date"></p>
               </section>
             </section>
           </section>
-          <footer class="modal-footer">
-            <button type="button" class="btn btn-secondary">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                class="bi bi-arrow-through-heart" viewBox="0 0 16 16">
-                <path fill-rule="evenodd"
-                  d="M2.854 15.854A.5.5 0 0 1 2 15.5V14H.5a.5.5 0 0 1-.354-.854l1.5-1.5A.5.5 0 0 1 2 11.5h1.793l.53-.53c-.771-.802-1.328-1.58-1.704-2.32-.798-1.575-.775-2.996-.213-4.092C3.426 2.565 6.18 1.809 8 3.233c1.25-.98 2.944-.928 4.212-.152L13.292 2 12.147.854A.5.5 0 0 1 12.5 0h3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.854.354L14 2.707l-1.006 1.006c.236.248.44.531.6.845.562 1.096.585 2.517-.213 4.092-.793 1.563-2.395 3.288-5.105 5.08L8 13.912l-.276-.182a22 22 0 0 1-2.685-2.062l-.539.54V14a.5.5 0 0 1-.146.354zm2.893-4.894A20.4 20.4 0 0 0 8 12.71c2.456-1.666 3.827-3.207 4.489-4.512.679-1.34.607-2.42.215-3.185-.817-1.595-3.087-2.054-4.346-.761L8 4.62l-.358-.368c-1.259-1.293-3.53-.834-4.346.761-.392.766-.464 1.845.215 3.185.323.636.815 1.33 1.519 2.065l1.866-1.867a.5.5 0 1 1 .708.708z" />
-              </svg>
-            </button>
-            <button type="button" class="btn btn-primary">
-              Set as Active Avatar
-            </button>
-            <button type="button" class="btn btn-danger">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                class="bi bi-ban blacklist-icon" viewBox="0 0 16 16">
-                <path
-                  d="M15 8a6.97 6.97 0 0 0-1.71-4.584l-9.874 9.875A7 7 0 0 0 15 8M2.71 12.584l9.874-9.875a7 7 0 0 0-9.874 9.874ZM16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0" />
-              </svg>
-            </button>
-          </footer>
-        </article>
-      </article>
+          <form method="post">
+            <input type="hidden" id="characterID" name="characterId" value="">
+            <section class="modal-footer">
+              <button type="submit" class="btn btn-secondary" formaction="/saveToFav">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-arrow-through-heart" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M2.854 15.854A.5.5 0 0 1 2 15.5V14H.5a.5.5 0 0 1-.354-.854l1.5-1.5A.5.5 0 0 1 2 11.5h1.793l.53-.53c-.771-.802-1.328-1.58-1.704-2.32-.798-1.575-.775-2.996-.213-4.092C3.426 2.565 6.18 1.809 8 3.233c1.25-.98 2.944-.928 4.212-.152L13.292 2 12.147.854A.5.5 0 0 1 12.5 0h3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.854.354L14 2.707l-1.006 1.006c.236.248.44.531.6.845.562 1.096.585 2.517-.213 4.092-.793 1.563-2.395 3.288-5.105 5.08L8 13.912l-.276-.182a22 22 0 0 1-2.685-2.062l-.539.54V14a.5.5 0 0 1-.146.354zm2.893-4.894A20.4 20.4 0 0 0 8 12.71c2.456-1.666 3.827-3.207 4.489-4.512.679-1.34.607-2.42.215-3.185-.817-1.595-3.087-2.054-4.346-.761L8 4.62l-.358-.368c-1.259-1.293-3.53-.834-4.346.761-.392.766-.464 1.845.215 3.185.323.636.815 1.33 1.519 2.065l1.866-1.867a.5.5 0 1 1 .708.708z" />
+                </svg>
+              </button>
+              <button type="submit" class="btn btn-primary" formaction="/saveAsActive" formmethod="post">
+                Set as Active Avatar
+              </button>
+              <button type="submit" class="btn btn-danger" formaction="/saveToBlack" formmethod="post">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-ban blacklist-icon" viewBox="0 0 16 16">
+                  <path
+                    d="M15 8a6.97 6.97 0 0 0-1.71-4.584l-9.874 9.875A7 7 0 0 0 15 8M2.71 12.584l9.874-9.875a7 7 0 0 0-9.874 9.874ZM16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0" />
+                </svg>
+              </button>
+            </section>
+          </form>
+        </section>
+      </section>
     </section>
 
     <article id="myModal" class="modal">
@@ -167,18 +180,70 @@
 
     <script>
       async function getCharacterDetails(id) {
+        // Reset modal fields
         document.getElementById('modal-video').style.display = 'none';
         document.getElementById('modal-video').src = '';
+        document.getElementById('backbling').innerHTML = '';
+        document.getElementById('description').innerText = '';
+        document.getElementById('rarity').innerText = '';
+        document.getElementById('introduction').innerHTML = '';
+        document.getElementById('date').innerHTML = '';
+        // Fetch character details
         await fetch(`/api/characters/${id}`)
           .then(response => response.json())
           .then(data => {
             document.getElementById('modal-title').innerText = data.item.name;
+            // Set character ID
+            document.getElementById('characterID').value = data.item.id;
+            // Set video if available
             if (data.item.previewVideos.length > 0) {
               document.getElementById('modal-video').style.display = 'block';
               document.getElementById('modal-video').src = data.item.previewVideos[0].url;
             }
+            // Set back bling if available
+            if (data.item.grants.length > 0) {
+              document.getElementById('backbling').innerHTML = `<strong>Back Bling:</strong> ${data.item.grants[0].name}`;
+            }
+            else {
+              document.getElementById('backbling').innerHTML = `<strong>Back Bling:</strong> None`;
+            }
+            // Set description if available
+            if (data.item.description) {
+              document.getElementById('description').innerText = data.item.description;
+            }
+            else {
+              document.getElementById('description').innerText = 'No description available.';
+            }
+            if (data.item.series && data.item.series.id) {
+              document.getElementById('rarity').innerText = data.item.series.name;
+            }
+            else {
+              document.getElementById('rarity').innerText = data.item.rarity.name;
+            }
+            // Set image
+            document.getElementById('modal-image').src = data.item.imageUrl;
+            if (data.item.introduction) {
+              document.getElementById('introduction').innerHTML = `<strong>Introduced in:</strong> ${data.item.introduction.chapter} - ${data.item.introduction.season}`;
+            }
+            else {
+              document.getElementById('introduction').innerHTML = 'No introduction available.';
+            }
+            if (data.item.added) {
+              document.getElementById('date').innerHTML = `<strong>Added:</strong> ${data.item.added.date}`;
+            }
+            else {
+              document.getElementById('date').innerHTML = 'No date available.';
+            }
           });
       }
+      // pause the video on click
+      document.getElementById('modal-video').addEventListener('click', function () {
+        if (this.paused) {
+          this.play();
+        } else {
+          this.pause();
+        }
+      });
     </script>
   </body>
 

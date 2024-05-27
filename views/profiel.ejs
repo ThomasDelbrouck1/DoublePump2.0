@@ -2,7 +2,7 @@
 
     <body class="profilebody">
         <header class="navbar">
-            <nav> 
+            <nav>
                 <section class="navContainer">
                     <section>
                         <img class="logo" src="/assets/_c329f736-c0ec-4f70-b64f-db3066f2d096.jpg" alt="logo" />
@@ -22,7 +22,7 @@
                             <a href="/zwartelijst"><i class="bx bxs-x-circle"></i> Zwarte lijst</a>
                         </li>
                         <li class="profile">
-                            <img src="/assets/popje3.webp" alt="Profile Picture" class="profile-picture-nav">
+                            <img src="<%= profilePicture %>" alt="Profile Picture" class="profile-picture-nav">
                             <a class="active" href="/profiel">
                                 <%= username %>
                             </a>
@@ -57,49 +57,23 @@
                     <h1 class="username">
                         <%= username %>
                     </h1>
-                    <img src="/assets/popje3.webp" alt="Profile Picture" class="profile-picture">
-
-                    <button class="change-avatar-button" data-bs-target="#myModal" data-bs-toggle="modal">Verander
-                        Avatar</button>
-
-                    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel1"
-                        aria-hidden="true">
-
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Kies een avatar</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <article class="avatar">
-                                        <a href="#" data-bs-target="#myModal" data-bs-toggle="modal">
-
-                                            <img src="/assets/popje3.webp" alt="Meowscles" />
-                                        </a>
-
-                                        <p>Meowscles</p>
-                                    </article>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
+                    <img src="<%= profilePicture %>" alt="Profile Picture" class="profile-picture">
                 </div>
             </div>
             <div class="tab-pane fade" id="settings-tab-pane" role="tabpanel" aria-labelledby="settings-tab"
                 tabindex="0">
                 <div class="profile-header">
                     <h2>Verander uw gebruikersnaam</h2>
-                    <input type="text" id="new-username" placeholder="Vul uw nieuwe gebruikersnaam in">
-                    <button type="button" id="save-username">Opslaan</button>
-                    <button type="button" id="delete" data-bs-target="#myModal1" data-bs-toggle="modal">Verwijder
-                        account</button>
-
+                    <form action="/changeUsername" method="post">
+                        <input type="text" id="new-username" name="newUsername" required
+                            placeholder="Vul uw nieuwe gebruikersnaam in">
+                        <button type="submit" id="save-username">Opslaan</button>
+                    </form>
+                    <form action="/deleteUser" method="post">
+                        <input type="hidden" name="username" value="<%= username %>">
+                        <button type="submit" id="delete" data-bs-target="#myModal1" data-bs-toggle="modal">Verwijder
+                            account</button>
+                    </form>
                     <div class="modal fade" id="myModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
                         aria-hidden="true">
                         <div class="modal-dialog">
@@ -128,11 +102,10 @@
             </div>
             <div class="tab-pane fade" id="logout-tab-pane" role="tabpanel" aria-labelledby="logout-tab" tabindex="0">
                 <div class="profile-header">
-                    <a href="/"><button type="button" id="logout">Log uit</button></a>
+                    <a href="/logout"><button type="button" id="logout">Log uit</button></a>
                 </div>
             </div>
         </div>
 
     </body>
-
     </html>
