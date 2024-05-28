@@ -30,7 +30,7 @@ const charactersIDs: any[] = [];
 const characters: any[] = [];
 
 
-//app.use('/', authentificationRouter);
+app.use('/', authentificationRouter);
 
 app.get("/", (req, res) => {
   if (req.cookies.user) {
@@ -43,7 +43,9 @@ app.get("/", (req, res) => {
     });
   }
 });
+
 // login
+
 let username = "";
 export let userId: any = "";
 app.post("/", async (req, res) => {
@@ -128,6 +130,7 @@ app.get("/avatar", cookieMiddleware, async (req, res) => {
     username
   });
 });*/
+
 app.get("/favorieten", cookieMiddleware,  async (req, res) => {
   const usersFav = await client.db("wpl").collection("users").findOne({ _id: userId });
   const favCharacters: any = [];
@@ -163,6 +166,7 @@ app.get("/registratiepagina", (req, res) => {
     username
   });
 });
+
 app.post('/registratiepagina', async (req, res) => {
 
   const { firstname, lastname, email, username, password } = req.body; // Destructure email and password
@@ -223,7 +227,7 @@ app.get("/profiel", cookieMiddleware,  (req, res) => {
     profilePicture
   });
 });
-`
+
 app.get("/api/characters/:id", async (req, res) => {
   const id = req.params.id;
   await fetch(`https://fortniteapi.io/v2/items/get?id=${id}&lang=en`, {
