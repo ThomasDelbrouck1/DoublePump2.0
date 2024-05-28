@@ -1,6 +1,5 @@
 <%- include('partials/header.ejs') %>
 
-
   <body class="avatarbody">
     <!-- Nav -->
     <header class="navbar">
@@ -32,7 +31,6 @@
           </ul>
         </section>
       </nav>
-
     </header>
 
     <main>
@@ -44,13 +42,11 @@
         , "Lava Series" : "rgba(255, 140, 0, 1)" , "Star Wars Series" : "rgba(0, 0, 139, 1)" , "Shadow Series"
         : "rgba(0, 0, 0, 1)" , "Slurp Series" : "rgba(0, 139, 139, 1)" , "Gaming Legends Series" : "rgba(75, 0, 130, 1)"
         , }; %>
-        <div
-          style="margin-top: 10rem; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-          <form action="/avatar" method="get" style="display: flex; gap: 10px;">
+        <div class="search-container">
+          <form action="/avatar" method="get" class="search-form">
             <input type="text" name="avatarName" placeholder="Zoeken naar avatar ..." value="<%= avatarName %>"
-              style="color: white; border: 2px white; border-radius: 5px; padding: 5px 10px;">
-            <button type="submit"
-              style="border: 2px white; border-radius: 5px; padding: 5px 10px; color: white;">Zoeken</button>
+              class="search-input">
+            <button type="submit" class="search-button">Zoeken</button>
           </form>
         </div>
 
@@ -95,9 +91,9 @@
 
             <section class="modal-description">
               <h3 id="rarity" class="outfit-type">Rare Outfit</h3>
-              <img class="v-buck" src="/assets/one-v-buck-dpf.png" alt="vbuck" />
               <p class="outfit-price">
-                <span class="price">1,200</span>
+
+                <span class="price"><img class="v-buck" src="/assets/one-v-buck-dpf.png" alt="vbuck" />1,200</span>
               </p>
               <p id="description" class="outfit-description"></p>
               <hr />

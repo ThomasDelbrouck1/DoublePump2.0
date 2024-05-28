@@ -308,23 +308,6 @@ footer {
   padding: 0;
 }
 
-.search-bar {
-  display: flex;
-  align-items: center;
-  margin: 20px 0;
-}
-
-.search-input {
-  padding: 5px;
-  border: none;
-  border-radius: 50%;
-  /* Fully rounded edges */
-  margin: 3rem 50rem 0 20rem;
-  color: white;
-  background-color: red;
-  /* Adding the background color red as requested earlier */
-}
-
 .sort-dropdown {
   display: flex;
   align-items: center;
@@ -400,7 +383,7 @@ footer {
 .avatarbody,
 .zwartelijstbody,
 .favobody {
-  /*font-family: Arial, sans-serif;*/
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   margin: 0;
   background-color: #302F2E;
   padding: 0;
@@ -933,9 +916,10 @@ footer a {
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   /* Change here */
   gap: 0.5rem;
-  row-gap: 4rem;
+  row-gap: 6rem;
   justify-content: center;
-  margin: 10rem 20rem 0 20rem;
+  margin: 5rem 20rem 0 20rem;
+  justify-items: center;
 }
 
 .avatars .avatar {
@@ -960,7 +944,15 @@ footer a {
 #myModal .modal-body {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
+  height: 100%;
+}
+.zwarteModal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
   gap: 1rem;
   height: 100%;
@@ -970,8 +962,12 @@ footer a {
   height: 30px;
   width: 30px;
   position: absolute;
-  left: 68.5%;
-  top: 25.5%;
+  left: 68%;
+  display: flex;
+}
+.price{
+  display: flex;
+  align-items: center;
 }
 
 #modal-image {
@@ -989,6 +985,7 @@ footer a {
 
 .modal-description {
   margin-left: 40px;
+  text-align: left;
 }
 
 .modal-description section {
@@ -1048,6 +1045,7 @@ footer a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: white;
 }
 
 .username {
@@ -1198,36 +1196,8 @@ footer a {
 /* Media Queries */
 
 @media (max-width: 375px) {
-  .games {
-    gap: 4rem;
-  }
+  
 
-  .games img {
-    width: 300px;
-    height: 170px;
-    border-radius: 25px;
-  }
-
-  .landingbody p {
-    font-size: 16px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-
-  .logo,
-  .avatar img {
-    width: 80px;
-    height: 80px;
-  }
-
-  .avatarbody .container {
-    gap: 50px;
-  }
-
-  .favobody .container {
-    gap: 50px;
-  }
 }
 
 @media screen and (max-width: 480px) {
@@ -1264,6 +1234,23 @@ footer a {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .logo,
+  .avatar img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .avatarbody .container {
+    gap: 50px;
+  }
+
+  .favobody .container {
+    gap: 50px;
   }
 }
 
@@ -1323,31 +1310,66 @@ footer a {
 }
 
 /* Search bar */
-.search-bar {
+.search-container {
+  margin-top: 10rem;
   display: flex;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  margin-left: auto;
-  /* Aligns search bar to the right */
-  margin-right: 20px;
-  /* Adds some space on the right */
+}
+
+.search-form {
+  display: flex;
+  gap: 10px;
 }
 
 .search-input {
+  color: white;
+  border: 2px solid white;
+  border-radius: 5px;
   padding: 5px 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  width: 200px;
-  /* Adjust the width as needed */
-  transition: width 0.3s ease;
-  /* Smooth transition when resizing */
 }
 
-.search-input:focus {
-  width: 250px;
-  /* Expand width on focus */
-  outline: none;
-  /* Remove default outline */
-  border-color: #007bff;
-  /* Change border color on focus */
+.search-button {
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: white;
+}
+
+
+@media screen and (max-width: 480px) {
+  .avatarbody p {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 315px) {
+  .avatarbody p {
+    font-size: 8px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .zwartelijstbody p {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 315px) {
+  .zwartelijstbody p {
+    font-size: 8px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .favobody p {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 315px) {
+  .favobody p {
+    font-size: 8px;
+  }
 }
