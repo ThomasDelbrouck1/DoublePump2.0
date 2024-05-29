@@ -1173,17 +1173,9 @@ footer a {
 
 /*registratie*/
 
-.registratiebody {
-  background-image: url('../assets/black-abstract-dark-3840x2160-9729.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  position: relative;
-  z-index: 1;
-}
 
 .register-main {
-  width: 600px;
+  width: 400px;
   margin: 100px auto;
   padding: 30px;
   border-radius: 8px;
