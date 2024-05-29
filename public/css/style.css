@@ -363,14 +363,14 @@ footer {
 
 .avatarbody header,
 .favobody header,
-.profilebody{
+.profilebody {
   grid-area: header;
   padding: 0;
   margin: 0;
 }
 
 .avatarbody main,
-.favobody header  {
+.favobody header {
   grid-area: main;
 }
 
@@ -503,11 +503,13 @@ footer {
   flex-direction: column;
   align-items: center;
   /*height: 900px;*/
-  
+
 }
-.avatarbody .modal-content p{
+
+.avatarbody .modal-content p {
   color: white;
 }
+
 .zwartelijstbody .modal-content {
   background-color: rgb(36, 35, 35);
   margin: 15% auto;
@@ -928,6 +930,8 @@ footer a {
   width: 150px;
   height: 150px;
   border-radius: 30px;
+  position: relative;
+  display: inline-block;
 }
 
 .avatars .avatar img {
@@ -940,6 +944,38 @@ footer a {
 
 #myModal .modal-content section.modal-header {
   padding: 1rem;
+}
+
+.character-actions {
+  position: absolute;
+  top: 5px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.avatar:hover .character-actions {
+  opacity: 1;
+}
+
+.favorite-btn,
+.dislike-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1.5em;
+  color: white;
+}
+
+.favorite-btn {
+  color: red;
+}
+
+.dislike-btn {
+  color: black;
 }
 
 /*venster horizontaal*/
@@ -1044,6 +1080,21 @@ footer a {
   flex-direction: column;
   align-items: center;
   color: white;
+}
+
+.profile-header h2,
+.profile-header form {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+#new-username {
+  width: 80%;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .username {

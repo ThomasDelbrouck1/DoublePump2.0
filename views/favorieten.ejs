@@ -174,30 +174,31 @@
                   </section>
                 </li>
               </ul>
-              <ul class="row mt-3">
-                <li class="col">
-                  <p>Wins: <span id="wins-count">0</span></p>
-                  <section>
-                    <button type="button" class="btn btn-success" onclick="increaseWins()">
-                      +1 Win
-                    </button>
-                    <button type="button" class="btn btn-warning" onclick="decreaseWins()">
-                      -1 Win
-                    </button>
-                  </section>
-                </li>
-                <li class="col">
-                  <p>Losses: <span id="losses-count">0</span></p>
-                  <section>
-                    <button type="button" class="btn btn-danger" onclick="increaseLosses()">
-                      +1 Loss
-                    </button>
-                    <button type="button" class="btn btn-warning" onclick="decreaseLosses()">
-                      -1 Loss
-                    </button>
-                  </section>
-                </li>
-              </ul>
+              <form action="/saveStats" method="post">
+                <ul class="row mt-3">
+                  <li class="col">
+                    <p>Wins: <span id="wins-count">0</span></p>
+                    <section>
+                      <button type="button" class="btn btn-success" onclick="increaseWins()">
+                        +1 Win
+                      </button>
+                      <button type="button" class="btn btn-warning" onclick="decreaseWins()">
+                        -1 Win
+                      </button>
+                    </section>
+                  </li>
+                  <li class="col">
+                    <p>Losses: <span id="losses-count">0</span></p>
+                    <section>
+                      <button type="button" class="btn btn-danger" onclick="increaseLosses()">
+                        +1 Loss
+                      </button>
+                      <button type="button" class="btn btn-warning" onclick="decreaseLosses()">
+                        -1 Loss
+                      </button>
+                    </section>
+                  </li>
+                </ul>
             </section>
           </section>
           <textarea class="notes-section mt-3" id="notes" placeholder="Voeg notities toe"
@@ -206,8 +207,9 @@
             <button type="button" class="btn btn-secondary me-3" data-bs-dismiss="modal">
               Sluiten
             </button>
-            <button type="button" class="btn btn-primary me-3">Opslaan</button>
+            <button type="button" class="btn btn-primary me-3" onclick="saveStats()">Opslaan</button>
             <button type="button" class="btn btn-danger">Zwarte Lijst</button>
+            </form>
           </footer>
     </section>
     </article>
