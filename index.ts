@@ -44,6 +44,28 @@ app.get("/", (req, res) => {
   }
 });
 
+app.get("/wachtwoordvergeten", (req, res) => {
+  res.render("wachtwoordvergeten",{
+    title: "wachtwoordvergeten"});
+});
+
+app.post("/saveStats", async (req, res) => {
+  const { wins, losses, notes } = req.body;
+  const user = userId;
+  
+  try {
+    // Update user document in the database with new win/loss stats and notes
+    await client.db("wpl").collection("users").updateOne(
+      { _id: user },
+      { $set: { wins, losses, notes } }
+    );
+    
+    res.status(200).json({ message: "Stats and notes saved successfully." });
+  } catch (error) {
+    console.error("Error saving stats and notes: ", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
 // login
 
 let username = "";
