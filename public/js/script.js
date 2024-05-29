@@ -53,7 +53,11 @@ document.addEventListener('DOMContentLoaded', function () {
     el.style.animationDuration = `${duration}s`;
   });
 });
-
+document.querySelector('.hamburger').addEventListener('click', function() {
+  this.classList.toggle('active');
+  document.querySelector('.navbar-nav').classList.toggle('active');
+});
+/*
 let characterStats = {};
 
 function increaseWins(characterId) {
@@ -117,4 +121,4 @@ async function saveStats(characterId) {
     alert('Er is een fout opgetreden bij het opslaan van de gegevens');
   }
 }
-
+*/

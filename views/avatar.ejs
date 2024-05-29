@@ -4,35 +4,34 @@
     <!-- Nav -->
     <header class="navbar">
       <nav>
-        <section class="navContainer">
-          <section>
-            <img class="logo" src="/assets/_c329f736-c0ec-4f70-b64f-db3066f2d096.jpg" alt="logo" />
-            <p>DOUBLEPUMP</p>
+          <section class="navContainer">
+              <section>
+                  <img class="logo" src="/assets/_c329f736-c0ec-4f70-b64f-db3066f2d096.jpg" alt="logo" />
+                  <p>DOUBLEPUMP</p>
+              </section>
+              <ul class="navbar-nav">
+                  <li>
+                      <a href="/"><i class="bx bxs-home"></i> GameHub</a>
+                  </li>
+                  <li>
+                      <a href="/avatar"><i class="bx bx-male-female"></i> Personages</a>
+                  </li>
+                  <li>
+                      <a href="/favorieten"><i class="bx bxs-heart"></i> Favorieten</a>
+                  </li>
+                  <li>
+                      <a href="/zwartelijst"><i class="bx bxs-x-circle"></i> Zwarte lijst</a>
+                  </li>
+                  <li class="profile">
+                      <img src="<%= profilePicture %>" alt="Profile Picture" class="profile-picture-nav">
+                      <a class="active" href="/profiel">
+                          <%= username %>
+                      </a>
+                  </li>
+              </ul>
           </section>
-          <ul class="navbar-nav">
-            <li>
-              <a href="/"><i class="bx bxs-home"></i> GameHub</a>
-            </li>
-            <li>
-              <a class="active" href="/avatar"><i class="bx bx-male-female"></i> Personages</a>
-            </li>
-            <li>
-              <a href="/favorieten"><i class="bx bxs-heart"></i> Favorieten</a>
-            </li>
-            <li>
-              <a href="/zwartelijst"><i class="bx bxs-x-circle"></i> Zwarte lijst</a>
-            </li>
-            <li class="profile">
-              <img src="<%= profilePicture %>" alt="Profile Picture" class="profile-picture-nav">
-              <a href="/profiel"></i>
-                <%= username %>
-              </a>
-            </li>
-          </ul>
-        </section>
       </nav>
-
-    </header>
+  </header>
 
     <main>
       <% const fortniteTiers={ "Common" : "rgba(128, 128, 128, 1)" , "Uncommon" : "rgba(0, 128, 0, 1)" , "Rare"
@@ -43,13 +42,11 @@
         , "Lava Series" : "rgba(255, 140, 0, 1)" , "Star Wars Series" : "rgba(0, 0, 139, 1)" , "Shadow Series"
         : "rgba(0, 0, 0, 1)" , "Slurp Series" : "rgba(0, 139, 139, 1)" , "Gaming Legends Series" : "rgba(75, 0, 130, 1)"
         , }; %>
-        <div
-          style="margin-top: 10rem; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-          <form action="/avatar" method="get" style="display: flex; gap: 10px;">
-            <input type="text" name="avatarName" placeholder="Zoeken naar avatar ..." value="<%= avatarName %>"
-              style="color: white; border: 2px white; border-radius: 5px; padding: 5px 10px;">
-            <button type="submit"
-              style="border: 2px white; border-radius: 5px; padding: 5px 10px; color: white;">Zoeken</button>
+        <div class="avatar-search-container">
+          <form action="/avatar" method="get" class="search-form">
+            <input type="text" name="avatarName" placeholder="Zoeken naar avatar " value="<%= avatarName %>"
+              class="search-input">
+            <button type="submit" class="search-button">Zoeken</button>
           </form>
         </div>
 
@@ -110,9 +107,9 @@
 
             <section class="modal-description">
               <h3 id="rarity" class="outfit-type">Rare Outfit</h3>
-              <img class="v-buck" src="/assets/one-v-buck-dpf.png" alt="vbuck" />
               <p class="outfit-price">
-                <span class="price">1,200</span>
+
+                <span class="price"><img class="v-buck" src="/assets/one-v-buck-dpf.png" alt="vbuck" />1,200</span>
               </p>
               <p id="description" class="outfit-description"></p>
               <hr />
@@ -181,17 +178,6 @@
         </div>
       </section>
     </article>
-
-    <!--<footer class="avatarfooter">
-    <p>
-      © 2024 <a href="https://www.ap.be" class="footer-link">AP hogeschool</a>
-    </p>
-    <ul class="socials">
-      <a href="https://www.instagram.com" class="social-link"><i class="bx bxl-instagram-alt"></i></a>
-      <a href="https://www.facebook.com" class="social-link"><i class="bx bxl-facebook-square"></i></a>
-      <a href="https://twitter.com" class="social-link"><i class="bx bxl-twitter"></i></a>
-    </ul>
-  </footer>-->
 
     <button onclick="topFunction()" id="myBtn" title="Go to top">
       <i class="bx bxs-up-arrow"></i>

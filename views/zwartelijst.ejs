@@ -4,34 +4,34 @@
     <!-- Nav -->
     <header class="navbar">
       <nav>
-        <section class="navContainer">
-          <section>
-            <img class="logo" src="/assets/_c329f736-c0ec-4f70-b64f-db3066f2d096.jpg" alt="logo" />
-            <p>DOUBLEPUMP</p>
+          <section class="navContainer">
+              <section>
+                  <img class="logo" src="/assets/_c329f736-c0ec-4f70-b64f-db3066f2d096.jpg" alt="logo" />
+                  <p>DOUBLEPUMP</p>
+              </section>
+              <ul class="navbar-nav">
+                  <li>
+                      <a href="/"><i class="bx bxs-home"></i> GameHub</a>
+                  </li>
+                  <li>
+                      <a href="/avatar"><i class="bx bx-male-female"></i> Personages</a>
+                  </li>
+                  <li>
+                      <a href="/favorieten"><i class="bx bxs-heart"></i> Favorieten</a>
+                  </li>
+                  <li>
+                      <a href="/zwartelijst"><i class="bx bxs-x-circle"></i> Zwarte lijst</a>
+                  </li>
+                  <li class="profile">
+                      <img src="<%= profilePicture %>" alt="Profile Picture" class="profile-picture-nav">
+                      <a class="active" href="/profiel">
+                          <%= username %>
+                      </a>
+                  </li>
+              </ul>
           </section>
-          <ul class="navbar-nav">
-            <li>
-              <a href="/"><i class="bx bxs-home"></i> GameHub</a>
-            </li>
-            <li>
-              <a href="/avatar"><i class="bx bx-male-female"></i> Personages</a>
-            </li>
-            <li>
-              <a href="/favorieten"><i class="bx bxs-heart"></i> Favorieten</a>
-            </li>
-            <li>
-              <a class="active" href="/zwartelijst"><i class="bx bxs-x-circle"></i> Zwarte lijst</a>
-            </li>
-            <li class="profile">
-              <img src="<%= profilePicture %>" alt="Profile Picture" class="profile-picture-nav">
-              <a href="/profiel"></i>
-                <%= username %>
-              </a>
-            </li>
-          </ul>
-        </section>
       </nav>
-    </header>
+  </header>
     <main>
 
       <% const fortniteTiers={ "Common" : "rgba(128, 128, 128, 1)" , "Uncommon" : "rgba(0, 128, 0, 1)" , "Rare"
@@ -42,6 +42,15 @@
         , "Lava Series" : "rgba(255, 140, 0, 1)" , "Star Wars Series" : "rgba(0, 0, 139, 1)" , "Shadow Series"
         : "rgba(0, 0, 0, 1)" , "Slurp Series" : "rgba(0, 139, 139, 1)" , "Gaming Legends Series" : "rgba(75, 0, 130, 1)"
         , }; %>
+
+        <div class="zwarte-search-container">
+          <form action="/zwartelijst" method="get" class="search-form">
+            <input type="text" name="avatarName" placeholder="Zoeken naar avatar " value="<%= avatarName %>"
+              class="search-input">
+            <button type="submit" class="search-button">Zoeken</button>
+          </form>
+        </div>
+
         <section class="avatars">
           <% for (let i=0; i < charactersBlack.length; i++) { %>
             <article class="avatar">
@@ -72,7 +81,7 @@
           <section class="modal-header">
             <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
           </section>
-          <section class="modal-body">
+          <section class="zwarteModal-body">
             <section>
               <h2 id="modal-title">Meowscles</h2>
               <video id="modal-video" width="450px" height="450px" loop autoplay playsline>
@@ -81,13 +90,13 @@
               </video>
             </section>
             <section id="modal-description">
-              <p>Reden van illiminatie:</p>
+              <p>Reden van Eliminatie:</p>
               <textarea id="input-text" rows="4" cols="50" placeholder="typ hier..."></textarea>
             </section>
           </section>
           <footer class="modal-footer">
-            <button type="button" class="btn btn-primary">Verwijderen</button>
-            <button type="button" class="btn btn-danger">Opslaan</button>
+            <button type="button" class="btn btn-primary">Opslaan</button>
+            <button type="button" class="btn btn-danger">Verwijderen</button>
           </footer>
         </article>
       </article>
