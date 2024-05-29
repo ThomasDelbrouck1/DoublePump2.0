@@ -330,6 +330,7 @@ footer {
   /* Darker background for dropdown */
 }
 
+
 #notes {
   border: #007bff solid 1px;
   border-radius: 15px;
@@ -421,7 +422,9 @@ footer {
   font-weight: 700;
   color: white;
   margin: 5px 0;
+
 }
+
 
 .avatar-info {
   display: flex;
@@ -469,6 +472,7 @@ footer {
   visibility: visible;
   opacity: 1;
 }
+
 
 /*profiel modale*/
 .avatarbody .modal,
@@ -629,11 +633,13 @@ footer {
   /* Ensures the button fills the dropdown area */
 }
 
+
 .dropdown-item-image {
   width: 200px;
   /* Breedte van de afbeelding */
   height: auto;
 }
+
 
 .dropdown-menu {
   display: none;
@@ -651,6 +657,7 @@ footer {
 }
 
 .dropdown-item-image {
+
   width: 50px;
   /* Stel de breedte in op 50px of een andere gewenste waarde */
   height: auto;
@@ -671,7 +678,9 @@ footer {
   /* Kleinere tekstgrootte voor de itemnamen */
   color: #353535;
   /* Stel in op gewenste tekstkleur */
+
 }
+
 
 .right-section {
   display: flex;
@@ -710,6 +719,16 @@ hr {
 }
 
 .avatarbody .bi {
+  font-size: 24px;
+}
+
+.avatarbody .blacklist-icon {
+  color: black;
+  font-size: 24px;
+}
+
+.avatarbody .blacklist-icon {
+  color: black;
   font-size: 24px;
 }
 
@@ -1061,6 +1080,7 @@ footer a {
   background-color: #777;
 }
 
+
 #new-username {
   width: 300px;
 }
@@ -1119,6 +1139,7 @@ footer a {
   border-radius: 8px;
   background-color: rgba(0, 0, 0, 0.8);
   color: white;
+
 }
 
 .register-main input[type=text],
@@ -1149,6 +1170,7 @@ footer a {
 .register-main input[type=submit]:hover {
   background-color: #863406;
   color: white;
+
 }
 
 .home-button {
@@ -1177,10 +1199,15 @@ footer a {
   background-color: red;
   /* Makes the button red */
   color: white;
+
   border: none;
+
   padding: 10px 20px;
+
   border-radius: 5px;
+
   cursor: pointer;
+
 }
 
 /* CSS to style the Dashboard button */
@@ -1216,151 +1243,540 @@ footer a {
 .search-input {
   color: white;
   border: 2px solid white;
-  border-radius: 5px;
+  border-radius: 15px;
   padding: 5px 10px;
+  text-align: center;
 }
 
 .search-button {
-  border: 2px solid white;
-  border-radius: 5px;
+  border: 2px solid #3939db;
+  background-color: #3939db;
+  border-radius: 15px;
   padding: 5px 10px;
   color: white;
+  text-align: center;
+}
+
+/* General styles */
+.hamburger {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.hamburger.active {
+  color: #ff9900;
+}
+
+.navContainer ul.active {
+  display: flex; /* Show the menu items when hamburger is active */
 }
 
 /* Media Queries */
-
-/* Max-width */
-@media (max-width: 1200px) {
-  .navContainer, .landingbody, .registratiebody, .avatarbody, .zwartelijstbody, .favobody {
+@media only screen and (max-width: 600px) {
+  .navbar {
     flex-direction: column;
-    font-size: 20px;
+    align-items: flex-start;
   }
 
-  .navContainer p, .landingbody h1, .landingbody p, .landingfooter, .register-main, .profile-header, .profile-picture, .profile-picture-nav {
-    font-size: 18px;
+  .navbar-nav a {
+    font-size: 10px;
+  }
+
+  nav a:hover {
+    background-color: rgb(57, 57, 219);
+  }
+
+  .navContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo-container {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .navbar-nav li {
     width: 100%;
     text-align: center;
+    margin: 5px 0;
   }
 
-  .games img, .avatar img, .favobody img, .avatar-info img, .modal-content, .modal-description, .modal-title, .dropdown-item-image {
+  .navbar-nav a {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .profile {
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .search-input {
+    width: 80%;
+  }
+
+  .search-button {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .avatar {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .avatar img {
     width: 100%;
     height: auto;
   }
 
-  .container, .tools, .avatars, .notes-section, .search-container {
-    padding: 10px;
-    gap: 10px;
-  }
-}
-
-/* Min-width */
-@media (min-width: 1201px) {
-  .navContainer, .landingbody, .registratiebody, .avatarbody, .zwartelijstbody, .favobody {
-    flex-direction: row;
-    font-size: 30px;
+  .modal-content {
+    width: 90%;
+    margin: auto;
+    max-height: 90vh; /* Ensure the modal doesn't exceed the viewport height */
+    overflow-y: auto; /* Enable scrolling within the modal if content overflows */
   }
 
-  .navContainer p, .landingbody h1, .landingbody p, .landingfooter, .register-main, .profile-header, .profile-picture, .profile-picture-nav {
-    font-size: 24px;
-    width: auto;
-    text-align: left;
-  }
-
-  .games img, .avatar img, .favobody img, .avatar-info img, .modal-content, .modal-description, .modal-title, .dropdown-item-image {
-    width: 450px;
-    height: 250px;
-  }
-
-  .container, .tools, .avatars, .notes-section, .search-container {
-    padding: 20px;
-    gap: 20px;
-  }
-}
-
-/* Orientation */
-@media (orientation: landscape) {
-  .navContainer, .landingbody, .registratiebody, .avatarbody, .zwartelijstbody, .favobody {
-    flex-direction: row;
-    font-size: 30px;
-  }
-
-  .navContainer p, .landingbody h1, .landingbody p, .landingfooter, .register-main, .profile-header, .profile-picture, .profile-picture-nav {
-    font-size: 24px;
-    width: auto;
-    text-align: left;
-  }
-
-  .games img, .avatar img, .favobody img, .avatar-info img, .modal-content, .modal-description, .modal-title, .dropdown-item-image {
-    width: 450px;
-    height: 250px;
-  }
-
-  .container, .tools, .avatars, .notes-section, .search-container {
-    padding: 20px;
-    gap: 20px;
-  }
-}
-
-@media (orientation: portrait) {
-  .navContainer, .landingbody, .registratiebody, .avatarbody, .zwartelijstbody, .favobody {
-    flex-direction: column;
-    font-size: 20px;
-  }
-
-  .navContainer p, .landingbody h1, .landingbody p, .landingfooter, .register-main, .profile-header, .profile-picture, .profile-picture-nav {
-    font-size: 18px;
-    width: 100%;
-    text-align: center;
-  }
-
-  .games img, .avatar img, .favobody img, .avatar-info img, .modal-content, .modal-description, .modal-title, .dropdown-item-image {
+  .modal-video {
     width: 100%;
     height: auto;
   }
 
-  .container, .tools, .avatars, .notes-section, .search-container {
+  .modal-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .modal-buttons .btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  /* Ensure 3 characters side by side on avatar, favorites, and blacklist pages */
+  .avatars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    row-gap: 1rem;
+    justify-content: center;
+    margin: 1rem 0;
+    justify-items: center;
+    margin-top: 60px;
+  }
+
+  .avatars .avatar {
+    width: 100%;
+    height: auto;
+  }
+
+  .avatars .avatar img {
+    width: 100%;
+    height: auto;
+  }
+
+  .search-container {
+    margin-top: 300px;
+  }
+
+  /* Adjust modal content for better visibility */
+  .modal-header, .modal-body, .modal-footer {
     padding: 10px;
-    gap: 10px;
+  }
+
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal-body img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .modal-description {
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+  }
+
+  /* Ensure the avatar section stays above the characters and is usable */
+  .avatarbody .modal-body,
+  .favobody .modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .avatarbody .modal-body .left-section,
+  .favobody .modal-body .left-section {
+    width: 100%;
+    text-align: center;
+  }
+
+  .avatarbody .modal-body .right-section,
+  .favobody .modal-body .right-section {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .avatarbody .search-container,
+  .favobody .search-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .avatarbody .search-form,
+  .favobody .search-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .avatarbody .search-input,
+  .favobody .search-input {
+    width: 80%;
+    margin-bottom: 10px;
+  }
+
+  .avatarbody .search-button,
+  .favobody .search-button {
+    width: 80%;
+  }
+
+  /* Center the nav.navbar on the profile page */
+  .profilebody nav.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .profilebody nav.navbar .navContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profilebody nav.navbar .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profilebody nav.navbar .navbar-nav li {
+    width: auto;
+    text-align: center;
+    margin: 5px 0;
+  }
+
+  .profilebody nav.navbar .navbar-nav a {
+    width: auto;
+    padding: 10px 0;
+  }
+
+  /* Ensure profile pic is above profile name in nav */
+  .profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-picture-nav {
+    margin-bottom: 10px;
+  }
+
+  .username {
+    margin-top: 0;
+  }
+
+
+  /* Ensure the right-section is below the left-section in the modal-body on the favorites page */
+  .avatarbody .modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .avatarbody .modal-body .right-section {
+    width: 100%;
+    margin-top: 20px;
   }
 }
 
-/* Resolution */
-@media (min-resolution: 2dppx) {
-  .navContainer, .landingbody, .registratiebody, .avatarbody, .zwartelijstbody, .favobody {
-    font-size: 32px;
+@media only screen and (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  .navContainer p, .landingbody h1, .landingbody p, .landingfooter, .register-main, .profile-header, .profile-picture, .profile-picture-nav {
-    font-size: 26px;
+  .navbar-nav a {
+    font-size: 13.4px;
   }
 
-  .games img, .avatar img, .favobody img, .avatar-info img, .modal-content, .modal-description, .modal-title, .dropdown-item-image {
-    width: 500px;
-    height: 300px;
+  .navContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  .container, .tools, .avatars, .notes-section, .search-container {
-    padding: 25px;
-    gap: 25px;
-  }
-}
-
-@media (max-resolution: 1.5dppx) {
-  .navContainer, .landingbody, .registratiebody, .avatarbody, .zwartelijstbody, .favobody {
-    font-size: 28px;
+  .logo-container {
+    justify-content: center;
+    width: 100%;
   }
 
-  .navContainer p, .landingbody h1, .landingbody p, .landingfooter, .register-main, .profile-header, .profile-picture, .profile-picture-nav {
-    font-size: 22px;
+  .navbar-nav {
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
   }
 
-  .games img, .avatar img, .favobody img, .avatar-info img, .modal-content, .modal-description, .modal-title, .dropdown-item-image {
-    width: 400px;
-    height: 220px;
+  .navbar-nav li {
+    width: 100%;
+    text-align: center;
+    margin: 5px 0;
   }
 
-  .container, .tools, .avatars, .notes-section, .search-container {
-    padding: 15px;
-    gap: 15px;
+  .navbar-nav a {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .profile {
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .search-input {
+    width: 80%;
+  }
+
+  .search-button {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .avatar {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .avatar img {
+    width: 100%;
+    height: auto;
+  }
+
+  .modal-content {
+    width: 100%;
+    height: 100vh; /* Ensure the modal takes full viewport height */
+    margin: 0; /* Remove default margin */
+    border-radius: 0; /* Remove border radius */
+    max-height: none; /* Remove max-height */
+    overflow-y: auto; /* Enable scrolling within the modal if content overflows */
+  }
+
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .left-section, .right-section {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .right-section {
+    margin-top: 20px;
+  }
+
+  .modal-header, .modal-footer {
+    width: 100%;
+  }
+
+  .modal-header {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .modal-footer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .modal-video {
+    width: 100%;
+    height: auto;
+  }
+
+  .modal-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .modal-buttons .btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .avatars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    row-gap: 1rem;
+    justify-content: center;
+    margin: 1rem 0;
+    justify-items: center;
+    margin-top: 60px;
+  }
+
+  .avatars .avatar {
+    width: 100%;
+    height: auto;
+  }
+
+  .avatars .avatar img {
+    width: 100%;
+    height: auto;
+  }
+
+  .search-container {
+    margin-top: 300px;
+  }
+
+  .modal-description {
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+  }
+
+  .avatarbody .modal-body,
+  .favobody .modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .avatarbody .modal-body .left-section,
+  .favobody .modal-body .left-section {
+    width: 100%;
+    text-align: center;
+  }
+
+  .avatarbody .modal-body .right-section,
+  .favobody .modal-body .right-section {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .avatarbody .search-container,
+  .favobody .search-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .avatarbody .search-form,
+  .favobody .search-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .avatarbody .search-input,
+  .favobody .search-input {
+    width: 80%;
+    margin-bottom: 10px;
+  }
+
+  .avatarbody .search-button,
+  .favobody .search-button {
+    width: 80%;
+  }
+
+  .profilebody nav.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .profilebody nav.navbar .navContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profilebody nav.navbar .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profilebody nav.navbar .navbar-nav li {
+    width: auto;
+    text-align: center;
+    margin: 5px 0;
+  }
+
+  .profilebody nav.navbar .navbar-nav a {
+    width: auto;
+    padding: 10px 0;
+  }
+
+  .profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-picture-nav {
+    margin-bottom: 10px;
+  }
+
+  .username {
+    margin-top: 0;
+  }
+
+  .navbar-nav a span {
+    display: none;
+  }
+
+  .navbar-nav a i {
+    display: inline-block;
+  }
+
+  .favobody .modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .favobody .modal-body .right-section {
+    width: 100%;
+    margin-top: 20px;
   }
 }
