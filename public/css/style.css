@@ -965,11 +965,7 @@ footer a {
   width: 30px;
   position: absolute;
   left: 68%;
-  display: flex;
-}
-.price{
-  display: flex;
-  align-items: center;
+  top: 10%;
 }
 
 #modal-image {
@@ -1196,6 +1192,88 @@ footer a {
 }
 
 /* Media Queries */
+
+@media only screen and (max-width: 375px) {
+  
+
+}
+
+@media screen and (max-width: 480px) {
+
+  .logo,
+  .avatar img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .games img {
+    height: 200px;
+  }
+
+  .avatarbody .container {
+    gap: 50px;
+  }
+
+  .favobody {
+    background-image: url("/assets/favo_portrait_img.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .favobody .container,
+  .zwartelijstbody .container,
+  .avatarbody .container {
+    gap: 40px;
+  }
+
+  .zwartelijstbody {
+    background-image: url("/assets/blacklist_portrait.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .logo,
+  .avatar img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .avatarbody .container {
+    gap: 50px;
+  }
+
+  .favobody .container {
+    gap: 50px;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 1400px) {
+
+  .landingbody,
+  .registratiebody,
+  .avatarbody,
+  .zwartelijstbody,
+  .favobody {
+    overflow: hidden;
+  }
+
+  .container {
+    gap: 30px;
+  }
+
+  .landingbody,
+  .registratiebody,
+  .avatarbody,
+  .zwartelijstbody,
+  .favobody {
+    overflow: visible;
+  }
+}
 
 /* CSS to style the Sign Out button */
 .sign-out {
