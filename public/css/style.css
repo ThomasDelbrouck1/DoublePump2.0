@@ -330,6 +330,8 @@ footer {
   /* Darker background for dropdown */
 }
 
+
+
 #notes {
   border: #007bff solid 1px;
   border-radius: 15px;
@@ -421,7 +423,9 @@ footer {
   font-weight: 700;
   color: white;
   margin: 5px 0;
+
 }
+
 
 .avatar-info {
   display: flex;
@@ -469,6 +473,7 @@ footer {
   visibility: visible;
   opacity: 1;
 }
+
 
 /*profiel modale*/
 .avatarbody .modal,
@@ -629,11 +634,13 @@ footer {
   /* Ensures the button fills the dropdown area */
 }
 
+
 .dropdown-item-image {
   width: 200px;
   /* Breedte van de afbeelding */
   height: auto;
 }
+
 
 .dropdown-menu {
   display: none;
@@ -651,6 +658,7 @@ footer {
 }
 
 .dropdown-item-image {
+
   width: 50px;
   /* Stel de breedte in op 50px of een andere gewenste waarde */
   height: auto;
@@ -671,7 +679,9 @@ footer {
   /* Kleinere tekstgrootte voor de itemnamen */
   color: #353535;
   /* Stel in op gewenste tekstkleur */
+
 }
+
 
 .right-section {
   display: flex;
@@ -710,6 +720,16 @@ hr {
 }
 
 .avatarbody .bi {
+  font-size: 24px;
+}
+
+.avatarbody .blacklist-icon {
+  color: black;
+  font-size: 24px;
+}
+
+.avatarbody .blacklist-icon {
+  color: black;
   font-size: 24px;
 }
 
@@ -943,11 +963,7 @@ footer a {
   width: 30px;
   position: absolute;
   left: 68%;
-  display: flex;
-}
-.price{
-  display: flex;
-  align-items: center;
+  top: 10%;
 }
 
 #modal-image {
@@ -1061,6 +1077,7 @@ footer a {
   background-color: #777;
 }
 
+
 #new-username {
   width: 300px;
 }
@@ -1119,6 +1136,7 @@ footer a {
   border-radius: 8px;
   background-color: rgba(0, 0, 0, 0.8);
   color: white;
+
 }
 
 .register-main input[type=text],
@@ -1149,6 +1167,7 @@ footer a {
 .register-main input[type=submit]:hover {
   background-color: #863406;
   color: white;
+
 }
 
 .home-button {
@@ -1172,15 +1191,102 @@ footer a {
 
 /* Media Queries */
 
+@media only screen and (max-width: 375px) {
+  
+
+}
+
+@media screen and (max-width: 480px) {
+
+  .logo,
+  .avatar img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .games img {
+    height: 200px;
+  }
+
+  .avatarbody .container {
+    gap: 50px;
+  }
+
+  .favobody {
+    background-image: url("/assets/favo_portrait_img.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .favobody .container,
+  .zwartelijstbody .container,
+  .avatarbody .container {
+    gap: 40px;
+  }
+
+  .zwartelijstbody {
+    background-image: url("/assets/blacklist_portrait.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .logo,
+  .avatar img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .avatarbody .container {
+    gap: 50px;
+  }
+
+  .favobody .container {
+    gap: 50px;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 1400px) {
+
+  .landingbody,
+  .registratiebody,
+  .avatarbody,
+  .zwartelijstbody,
+  .favobody {
+    overflow: hidden;
+  }
+
+  .container {
+    gap: 30px;
+  }
+
+  .landingbody,
+  .registratiebody,
+  .avatarbody,
+  .zwartelijstbody,
+  .favobody {
+    overflow: visible;
+  }
+}
+
 /* CSS to style the Sign Out button */
 .sign-out {
   background-color: red;
   /* Makes the button red */
   color: white;
+
   border: none;
+
   padding: 10px 20px;
+
   border-radius: 5px;
+
   cursor: pointer;
+
 }
 
 /* CSS to style the Dashboard button */
@@ -1227,140 +1333,39 @@ footer a {
   color: white;
 }
 
-/* Media Queries */
 
-/* Max-width */
-@media (max-width: 1200px) {
-  .navContainer, .landingbody, .registratiebody, .avatarbody, .zwartelijstbody, .favobody {
-    flex-direction: column;
-    font-size: 20px;
-  }
-
-  .navContainer p, .landingbody h1, .landingbody p, .landingfooter, .register-main, .profile-header, .profile-picture, .profile-picture-nav {
-    font-size: 18px;
-    width: 100%;
-    text-align: center;
-  }
-
-  .games img, .avatar img, .favobody img, .avatar-info img, .modal-content, .modal-description, .modal-title, .dropdown-item-image {
-    width: 100%;
-    height: auto;
-  }
-
-  .container, .tools, .avatars, .notes-section, .search-container {
-    padding: 10px;
-    gap: 10px;
+@media screen and (max-width: 480px) {
+  .avatarbody p {
+    font-size: 10px;
   }
 }
 
-/* Min-width */
-@media (min-width: 1201px) {
-  .navContainer, .landingbody, .registratiebody, .avatarbody, .zwartelijstbody, .favobody {
-    flex-direction: row;
-    font-size: 30px;
-  }
-
-  .navContainer p, .landingbody h1, .landingbody p, .landingfooter, .register-main, .profile-header, .profile-picture, .profile-picture-nav {
-    font-size: 24px;
-    width: auto;
-    text-align: left;
-  }
-
-  .games img, .avatar img, .favobody img, .avatar-info img, .modal-content, .modal-description, .modal-title, .dropdown-item-image {
-    width: 450px;
-    height: 250px;
-  }
-
-  .container, .tools, .avatars, .notes-section, .search-container {
-    padding: 20px;
-    gap: 20px;
+@media screen and (max-width: 315px) {
+  .avatarbody p {
+    font-size: 8px;
   }
 }
 
-/* Orientation */
-@media (orientation: landscape) {
-  .navContainer, .landingbody, .registratiebody, .avatarbody, .zwartelijstbody, .favobody {
-    flex-direction: row;
-    font-size: 30px;
-  }
-
-  .navContainer p, .landingbody h1, .landingbody p, .landingfooter, .register-main, .profile-header, .profile-picture, .profile-picture-nav {
-    font-size: 24px;
-    width: auto;
-    text-align: left;
-  }
-
-  .games img, .avatar img, .favobody img, .avatar-info img, .modal-content, .modal-description, .modal-title, .dropdown-item-image {
-    width: 450px;
-    height: 250px;
-  }
-
-  .container, .tools, .avatars, .notes-section, .search-container {
-    padding: 20px;
-    gap: 20px;
+@media screen and (max-width: 480px) {
+  .zwartelijstbody p {
+    font-size: 10px;
   }
 }
 
-@media (orientation: portrait) {
-  .navContainer, .landingbody, .registratiebody, .avatarbody, .zwartelijstbody, .favobody {
-    flex-direction: column;
-    font-size: 20px;
-  }
-
-  .navContainer p, .landingbody h1, .landingbody p, .landingfooter, .register-main, .profile-header, .profile-picture, .profile-picture-nav {
-    font-size: 18px;
-    width: 100%;
-    text-align: center;
-  }
-
-  .games img, .avatar img, .favobody img, .avatar-info img, .modal-content, .modal-description, .modal-title, .dropdown-item-image {
-    width: 100%;
-    height: auto;
-  }
-
-  .container, .tools, .avatars, .notes-section, .search-container {
-    padding: 10px;
-    gap: 10px;
+@media screen and (max-width: 315px) {
+  .zwartelijstbody p {
+    font-size: 8px;
   }
 }
 
-/* Resolution */
-@media (min-resolution: 2dppx) {
-  .navContainer, .landingbody, .registratiebody, .avatarbody, .zwartelijstbody, .favobody {
-    font-size: 32px;
-  }
-
-  .navContainer p, .landingbody h1, .landingbody p, .landingfooter, .register-main, .profile-header, .profile-picture, .profile-picture-nav {
-    font-size: 26px;
-  }
-
-  .games img, .avatar img, .favobody img, .avatar-info img, .modal-content, .modal-description, .modal-title, .dropdown-item-image {
-    width: 500px;
-    height: 300px;
-  }
-
-  .container, .tools, .avatars, .notes-section, .search-container {
-    padding: 25px;
-    gap: 25px;
+@media screen and (max-width: 480px) {
+  .favobody p {
+    font-size: 10px;
   }
 }
 
-@media (max-resolution: 1.5dppx) {
-  .navContainer, .landingbody, .registratiebody, .avatarbody, .zwartelijstbody, .favobody {
-    font-size: 28px;
-  }
-
-  .navContainer p, .landingbody h1, .landingbody p, .landingfooter, .register-main, .profile-header, .profile-picture, .profile-picture-nav {
-    font-size: 22px;
-  }
-
-  .games img, .avatar img, .favobody img, .avatar-info img, .modal-content, .modal-description, .modal-title, .dropdown-item-image {
-    width: 400px;
-    height: 220px;
-  }
-
-  .container, .tools, .avatars, .notes-section, .search-container {
-    padding: 15px;
-    gap: 15px;
+@media screen and (max-width: 315px) {
+  .favobody p {
+    font-size: 8px;
   }
 }
