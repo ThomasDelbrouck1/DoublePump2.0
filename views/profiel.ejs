@@ -1,15 +1,36 @@
 <%- include('partials/header.ejs') %>
 
 <body class="profilebody">
-    <header>
+    <header class="navbar">
         <nav>
             <section class="navContainer">
                 <section>
                     <img class="logo" src="/assets/_c329f736-c0ec-4f70-b64f-db3066f2d096.jpg" alt="logo" />
                     <p>DOUBLEPUMP</p>
                 </section>
-            </nav>
-        </header>
+                <ul class="navbar-nav">
+                    <li>
+                        <a href="/"><i class="bx bxs-home"></i> GameHub</a>
+                    </li>
+                    <li>
+                        <a href="/avatar"><i class="bx bx-male-female"></i> Personages</a>
+                    </li>
+                    <li>
+                        <a href="/favorieten"><i class="bx bxs-heart"></i> Favorieten</a>
+                    </li>
+                    <li>
+                        <a href="/zwartelijst"><i class="bx bxs-x-circle"></i> Zwarte lijst</a>
+                    </li>
+                    <li class="profile">
+                        <img src="<%= profilePicture %>" alt="Profile Picture" class="profile-picture-nav">
+                        <a class="active" href="/profiel">
+                            <%= username %>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </nav>
+    </header>
 
         <nav class="navbar">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
