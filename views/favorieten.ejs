@@ -11,9 +11,6 @@
           </section>
           <ul class="navbar-nav">
             <li>
-              <a href="/"><i class="bx bxs-home"></i> GameHub</a>
-            </li>
-            <li>
               <a href="/avatar"><i class="bx bx-male-female"></i> Personages</a>
             </li>
             <li>
@@ -34,9 +31,13 @@
     </header>
 
     <main>
-      <section class="search-bar">
-        <input type="text" class="search-input" placeholder="Zoeken..."
-          style="background-color: rgba(145, 142, 142, 0.564);">
+      <section class="search-container">
+        <form action="/favorieten" method="get" class="search-form">
+          <input type="text" name="avatarName" placeholder="Zoeken naar avatar " value="<%= avatarName %>"
+            class="search-input">
+          <button type="submit" class="search-button">Zoeken</button>
+        </form>
+         <!-- 
         <div class="sort-dropdown">
           <label for="sort-by">Sorteer op:</label>
           <select id="sort-by">
@@ -45,6 +46,7 @@
             <option value="popularity">Populariteit</option>
           </select>
         </div>
+          -->
       </section>
       <% const fortniteTiers={ "Common" : "rgba(128, 128, 128, 1)" , "Uncommon" : "rgba(0, 128, 0, 1)" , "Rare"
         : "rgba(0, 0, 255, 1)" , "Epic" : "rgba(128, 0, 128, 1)" , "Legendary" : "rgba(255, 165, 0, 1)" , "Mythic"

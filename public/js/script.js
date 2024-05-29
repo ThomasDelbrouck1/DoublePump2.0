@@ -53,4 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
     el.style.animationDuration = `${duration}s`;
   });
 });
-
+document.querySelector('.hamburger').addEventListener('click', function() {
+  this.classList.toggle('active');
+  document.querySelector('.navbar-nav').classList.toggle('active');
+});

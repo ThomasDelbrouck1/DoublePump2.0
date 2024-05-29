@@ -129,6 +129,7 @@ app.get("/avatar", cookieMiddleware, async (req, res) => {
   });
 });*/
 app.get("/favorieten", cookieMiddleware,  async (req, res) => {
+  const avatarName: any = req.query.avatarName ? req.query.avatarName : "";
   const usersFav = await client.db("wpl").collection("users").findOne({ _id: userId });
   const favCharacters: any = [];
   const profilePicture = res.locals.currentAvatar ? res.locals.currentAvatar : "/assets/popje1.jpeg";
@@ -152,6 +153,7 @@ app.get("/favorieten", cookieMiddleware,  async (req, res) => {
   res.render("favorieten", {
     title: "Favorieten",
     username,
+    avatarName,
     characters: favCharacters,
     profilePicture
   });
@@ -185,6 +187,7 @@ app.post('/registratiepagina', async (req, res) => {
 
 });
 app.get("/zwartelijst", cookieMiddleware,  async (req, res) => {
+  const avatarName: any = req.query.avatarName ? req.query.avatarName : "";
   const usersBlack = await client.db("wpl").collection("users").findOne({ _id: userId });
   const blackListCharacters: any = [];
   const profilePicture = res.locals.currentAvatar ? res.locals.currentAvatar : "/assets/popje1.jpeg";
@@ -209,11 +212,11 @@ app.get("/zwartelijst", cookieMiddleware,  async (req, res) => {
   res.render("zwartelijst", {
     title: "Zwartelijst",
     username,
+    avatarName,
     charactersBlack: blackListCharacters,
     profilePicture
   });
 });
-
 
 app.get("/profiel", cookieMiddleware,  (req, res) => {
   const profilePicture = res.locals.currentAvatar ? res.locals.currentAvatar : "/assets/popje1.jpeg";
@@ -224,7 +227,7 @@ app.get("/profiel", cookieMiddleware,  (req, res) => {
     profilePicture
   });
 });
-
+`
 app.get("/api/characters/:id", async (req, res) => {
   const id = req.params.id;
   await fetch(`https://fortniteapi.io/v2/items/get?id=${id}&lang=en`, {

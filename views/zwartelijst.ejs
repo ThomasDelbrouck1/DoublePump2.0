@@ -11,9 +11,6 @@
           </section>
           <ul class="navbar-nav">
             <li>
-              <a href="/"><i class="bx bxs-home"></i> GameHub</a>
-            </li>
-            <li>
               <a href="/avatar"><i class="bx bx-male-female"></i> Personages</a>
             </li>
             <li>
@@ -42,6 +39,15 @@
         , "Lava Series" : "rgba(255, 140, 0, 1)" , "Star Wars Series" : "rgba(0, 0, 139, 1)" , "Shadow Series"
         : "rgba(0, 0, 0, 1)" , "Slurp Series" : "rgba(0, 139, 139, 1)" , "Gaming Legends Series" : "rgba(75, 0, 130, 1)"
         , }; %>
+
+        <div class="search-container">
+          <form action="/zwartelijst" method="get" class="search-form">
+            <input type="text" name="avatarName" placeholder="Zoeken naar avatar " value="<%= avatarName %>"
+              class="search-input">
+            <button type="submit" class="search-button">Zoeken</button>
+          </form>
+        </div>
+
         <section class="avatars">
           <% for (let i=0; i < charactersBlack.length; i++) { %>
             <article class="avatar">
