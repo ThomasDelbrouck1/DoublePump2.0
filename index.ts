@@ -218,7 +218,6 @@ app.get("/zwartelijst", cookieMiddleware,  async (req, res) => {
   });
 });
 
-
 app.get("/profiel", cookieMiddleware,  (req, res) => {
   const profilePicture = res.locals.currentAvatar ? res.locals.currentAvatar : "/assets/popje1.jpeg";
 
@@ -228,7 +227,7 @@ app.get("/profiel", cookieMiddleware,  (req, res) => {
     profilePicture
   });
 });
-
+`
 app.get("/api/characters/:id", async (req, res) => {
   const id = req.params.id;
   await fetch(`https://fortniteapi.io/v2/items/get?id=${id}&lang=en`, {

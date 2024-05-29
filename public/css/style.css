@@ -362,15 +362,15 @@ footer {
 /* Avatar Page */
 
 .avatarbody header,
-.favobody header {
+.favobody header,
+.profilebody{
   grid-area: header;
   padding: 0;
   margin: 0;
 }
 
 .avatarbody main,
-.favobody header,
-.profilebody {
+.favobody header  {
   grid-area: main;
 }
 
@@ -503,8 +503,11 @@ footer {
   flex-direction: column;
   align-items: center;
   /*height: 900px;*/
+  
 }
-
+.avatarbody .modal-content p{
+  color: white;
+}
 .zwartelijstbody .modal-content {
   background-color: rgb(36, 35, 35);
   margin: 15% auto;
