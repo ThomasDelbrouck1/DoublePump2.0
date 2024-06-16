@@ -10,9 +10,6 @@
                 </section>
                 <ul class="navbar-nav">
                     <li>
-                        <a href="/"><i class="bx bxs-home"></i> GameHub</a>
-                    </li>
-                    <li>
                         <a href="/avatar"><i class="bx bx-male-female"></i> Personages</a>
                     </li>
                     <li>
@@ -65,8 +62,8 @@
                 <div class="profile-header">
                     <h2>Verander uw gebruikersnaam</h2>
                     <form action="/changeUsername" method="post">
-                        <input type="text" id="new-username" name="newUsername" required
-                            placeholder="Vul uw nieuwe gebruikersnaam in">
+                        <input type="text" class="form-control" id="new-username" name="newUsername" required
+                            placeholder="vul uw nieuwe gebruikersnaam in">
                         <button type="submit" id="save-username">Opslaan</button>
                     </form>
                     <form action="/deleteUser" method="post">
@@ -76,34 +73,7 @@
 
                     </form>
 
-    <section class="tab-content" id="myTabContent">
-        <section class="tab-pane fade show active" id="dashboard-tab-pane" role="tabpanel" aria-labelledby="dashboard-tab" tabindex="0">
-            <section class="profile-header">
-                <h1 class="username">
-                    <%= username %>
-                </h1>
-                <img src="<%= profilePicture %>" alt="Profile Picture" class="profile-picture">
-                <button class="change-avatar-button" data-bs-target="#myModal" data-bs-toggle="modal">Verander Avatar</button>
-                <section class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
-                    <section class="modal-dialog">
-                        <section class="modal-content">
-                            <section class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Kies een avatar</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </section>
-                            <section class="modal-body">
-                                <article class="avatar">
-                                    <a href="#" data-bs-target="#myModal" data-bs-toggle="modal">
-                                        <img src="/assets/popje3.webp" alt="Meowscles" />
-                                    </a>
-                                    <p>Meowscles</p>
-                                </article>
-                            </section>
-                        </section>
-                    </section>
-                </section>
-            </section>
-        </section>
+    
                     <div class="modal fade" id="myModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
                         aria-hidden="true">
                         <div class="modal-dialog">

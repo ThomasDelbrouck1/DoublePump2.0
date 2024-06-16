@@ -4,34 +4,31 @@
     <!-- Nav -->
     <header class="navbar">
       <nav>
-          <section class="navContainer">
-              <section>
-                  <img class="logo" src="/assets/_c329f736-c0ec-4f70-b64f-db3066f2d096.jpg" alt="logo" />
-                  <p>DOUBLEPUMP</p>
-              </section>
-              <ul class="navbar-nav">
-                  <li>
-                      <a href="/"><i class="bx bxs-home"></i> GameHub</a>
-                  </li>
-                  <li>
-                      <a href="/avatar"><i class="bx bx-male-female"></i> Personages</a>
-                  </li>
-                  <li>
-                      <a href="/favorieten"><i class="bx bxs-heart"></i> Favorieten</a>
-                  </li>
-                  <li>
-                      <a href="/zwartelijst"><i class="bx bxs-x-circle"></i> Zwarte lijst</a>
-                  </li>
-                  <li class="profile">
-                      <img src="<%= profilePicture %>" alt="Profile Picture" class="profile-picture-nav">
-                      <a class="active" href="/profiel">
-                          <%= username %>
-                      </a>
-                  </li>
-              </ul>
+        <section class="navContainer">
+          <section>
+            <img class="logo" src="/assets/_c329f736-c0ec-4f70-b64f-db3066f2d096.jpg" alt="logo" />
+            <p>DOUBLEPUMP</p>
           </section>
+          <ul class="navbar-nav">
+            <li>
+              <a class="active" href="/avatar"><i class="bx bx-male-female"></i> Personages</a>
+            </li>
+            <li>
+              <a href="/favorieten"><i class="bx bxs-heart"></i> Favorieten</a>
+            </li>
+            <li>
+              <a href="/zwartelijst"><i class="bx bxs-x-circle"></i> Zwarte lijst</a>
+            </li>
+            <li class="profile">
+              <img src="<%= profilePicture %>" alt="Profile Picture" class="profile-picture-nav">
+              <a href="/profiel">
+                <%= username %>
+              </a>
+            </li>
+          </ul>
+        </section>
       </nav>
-  </header>
+    </header>
 
     <main>
       <% const fortniteTiers={ "Common" : "rgba(128, 128, 128, 1)" , "Uncommon" : "rgba(0, 128, 0, 1)" , "Rare"
@@ -51,43 +48,33 @@
         </div>
 
         <section class="avatars">
-          <% for (let i=0; i < characters.length; i++) { %>
+          <% for (let i = 0; i < characters.length; i++) { %>
             <article class="avatar">
-              <a href="#" data-bs-target="#myModal" data-bs-toggle="modal"
-                onclick="getCharacterDetails('<%= characters[i].id %>')">
+              <a href="#" data-bs-target="#myModal" data-bs-toggle="modal" onclick="getCharacterDetails('<%= characters[i].id %>')">
                 <% if (characters[i].series && characters[i].series.id) { %>
-                  <img src="<%= characters[i].images.icon %>"
-                    style="background-image: url('https://media.fortniteapi.io/images/textures/<%= characters[i].series.id %>.png'); background-position: center; background-size: contain; background-repeat: no-repeat;"
-                    alt="<%= characters[i].name %>" />
-                  <% } else { %>
-                    <img src="<%= characters[i].images.icon %>"
-                      style="background-color: <%= fortniteTiers[characters[i].rarity.id] %>;background-position: center;"
-                      alt="<%= characters[i].name %>" />
-                    <% } %>
+                  <img src="<%= characters[i].images.icon %>" style="background-image: url('https://media.fortniteapi.io/images/textures/<%= characters[i].series.id %>.png'); background-position: center; background-size: contain; background-repeat: no-repeat;" alt="<%= characters[i].name %>" />
+                <% } else { %>
+                  <img src="<%= characters[i].images.icon %>" style="background-color: <%= fortniteTiers[characters[i].rarity.id] %>;background-position: center;" alt="<%= characters[i].name %>" />
+                <% } %>
               </a>
-
-              <p>
-                <%= characters[i].name %>
-              </p>
+              <p><%= characters[i].name %></p>
               <div class="character-actions">
                 <button class="favorite-btn" onclick="markAsFavorite('<%= characters[i].id %>')">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart"
-                    viewBox="0 0 16 16">
-                    <path
-                      d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
-                  </svg>
+                  <% if (usersFav.includes(characters[i].id)) { %>
+                    <i class="fa-solid fa-heart"></i>
+                  <% } else { %>
+                    <i class="fa-regular fa-heart"></i>
+                  <% } %>
                 </button>
                 <button class="dislike-btn" onclick="markAsDislike('<%= characters[i].id %>')">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    class="bi bi-ban blacklist-icon" viewBox="0 0 16 16">
-                    <path
-                      d="M15 8a6.97 6.97 0 0 0-1.71-4.584l-9.874 9.875A7 7 0 0 0 15 8M2.71 12.584l9.874-9.875a7 7 0 0 0-9.874 9.874ZM16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0" />
-                  </svg>
+                  <i class="fa-solid fa-ban"></i>
                 </button>
               </div>
             </article>
-            <% } %>
+          <% } %>
         </section>
+        
+        
     </main>
 
     <section class="modal fade" id="myModal" tabindex="-1" aria-labelledby="loginLabel" aria-hidden="true">

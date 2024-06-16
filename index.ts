@@ -109,6 +109,7 @@ app.get("/avatar", cookieMiddleware, async (req, res) => {
   const avatarName: any = req.query.avatarName ? req.query.avatarName : "";
   let filteredCharacters: any[] = characters;
   const profilePicture = res.locals.currentAvatar ? res.locals.currentAvatar : "/assets/popje1.jpeg";
+  const usersFav = await client.db("wpl").collection("users").findOne({ _id: userId });
 
   if (avatarName === '') {
     res.render("avatar", {
@@ -116,7 +117,8 @@ app.get("/avatar", cookieMiddleware, async (req, res) => {
       characters: filteredCharacters,
       username,
       avatarName,
-      profilePicture
+      profilePicture,
+      usersFav
     });
     return;
   }
@@ -130,7 +132,8 @@ app.get("/avatar", cookieMiddleware, async (req, res) => {
       characters: filteredCharacters,
       username,
       avatarName,
-      profilePicture
+      profilePicture,
+      usersFav
     });
 
     return;
@@ -141,7 +144,8 @@ app.get("/avatar", cookieMiddleware, async (req, res) => {
     characters,
     username,
     avatarName,
-    profilePicture
+    profilePicture,
+    usersFav
   });
 });
 
