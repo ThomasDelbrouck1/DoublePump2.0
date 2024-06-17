@@ -4,31 +4,31 @@
     <!-- Nav -->
     <header class="navbar">
       <nav>
-          <section class="navContainer">
-              <section>
-                  <img class="logo" src="/assets/_c329f736-c0ec-4f70-b64f-db3066f2d096.jpg" alt="logo" />
-                  <p>DOUBLEPUMP</p>
-              </section>
-              <ul class="navbar-nav">
-                  <li>
-                      <a href="/avatar"><i class="bx bx-male-female"></i> Personages</a>
-                  </li>
-                  <li>
-                      <a class="active" href="/favorieten"><i class="bx bxs-heart"></i> Favorieten</a>
-                  </li>
-                  <li>
-                      <a href="/zwartelijst"><i class="bx bxs-x-circle"></i> Zwarte lijst</a>
-                  </li>
-                  <li class="profile">
-                      <img src="<%= profilePicture %>" alt="Profile Picture" class="profile-picture-nav">
-                      <a href="/profiel">
-                          <%= username %>
-                      </a>
-                  </li>
-              </ul>
+        <section class="navContainer">
+          <section>
+            <img class="logo" src="/assets/_c329f736-c0ec-4f70-b64f-db3066f2d096.jpg" alt="logo" />
+            <p>DOUBLEPUMP</p>
           </section>
+          <ul class="navbar-nav">
+            <li>
+              <a href="/avatar"><i class="bx bx-male-female"></i> Personages</a>
+            </li>
+            <li>
+              <a class="active" href="/favorieten"><i class="bx bxs-heart"></i> Favorieten</a>
+            </li>
+            <li>
+              <a href="/zwartelijst"><i class="bx bxs-x-circle"></i> Zwarte lijst</a>
+            </li>
+            <li class="profile">
+              <img src="<%= profilePicture %>" alt="Profile Picture" class="profile-picture-nav">
+              <a href="/profiel">
+                <%= username %>
+              </a>
+            </li>
+          </ul>
+        </section>
       </nav>
-  </header>
+    </header>
 
     <main>
       <section class="search-container">
@@ -37,7 +37,7 @@
             class="search-input">
           <button type="submit" class="search-button">Zoeken</button>
         </form>
-         <!-- 
+        <!-- 
         <div class="sort-dropdown">
           <label for="sort-by">Sorteer op:</label>
           <select id="sort-by">
@@ -97,12 +97,12 @@
             </section>
 
             <section class="right-section">
-              <h3 class="outfit-type">Rare Outfit</h3>
+              <h3 id="rarity" class="outfit-type">Rare Outfit</h3>
               <img class="v-buck" src="/assets/one-v-buck-dpf.png" alt="vbuck" />
               <p class="outfit-price">
                 <span class="price">1,200</span>
               </p>
-              <p class="outfit-description">Venture beyond the ninth life.</p>
+              <p id="description" class="outfit-description"></p>
               <hr />
               <ul class="row">
                 <li class="col">
@@ -225,9 +225,52 @@
         await fetch(`/api/characters/${id}`)
           .then(response => response.json())
           .then(data => {
+            document.getElementById('modal-title').innerText = data.item.name;
             document.getElementById('modal-video').src = data.item.previewVideos[0].url;
+            // Set description if available
+            if (data.item.description) {
+              document.getElementById('description').innerText = data.item.description;
+            }
+            else {
+              document.getElementById('description').innerText = 'No description available.';
+            }
+            if (data.item.series && data.item.series.id) {
+              document.getElementById('rarity').innerText = data.item.series.name;
+            }
+            else {
+              document.getElementById('rarity').innerText = data.item.rarity.name;
+            }
           });
       }
+
+      function increaseWins() {
+        var winsCount = document.getElementById("wins-count");
+        var currentWins = parseInt(winsCount.innerText);
+        winsCount.innerText = currentWins + 1;
+      }
+
+      function decreaseWins() {
+        var winsCount = document.getElementById("wins-count");
+        var currentWins = parseInt(winsCount.innerText);
+        if (currentWins > 0) {
+          winsCount.innerText = currentWins - 1;
+        }
+      }
+
+      function increaseLosses() {
+        var lossesCount = document.getElementById("losses-count");
+        var currentLosses = parseInt(lossesCount.innerText);
+        lossesCount.innerText = currentLosses + 1;
+      }
+
+      function decreaseLosses() {
+        var lossesCount = document.getElementById("losses-count");
+        var currentLosses = parseInt(lossesCount.innerText);
+        if (currentLosses > 0) {
+          lossesCount.innerText = currentLosses - 1;
+        }
+      }
+
     </script>
   </body>
 

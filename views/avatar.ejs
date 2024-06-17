@@ -48,33 +48,37 @@
         </div>
 
         <section class="avatars">
-          <% for (let i = 0; i < characters.length; i++) { %>
+          <% for (let i=0; i < characters.length; i++) { %>
             <article class="avatar">
-              <a href="#" data-bs-target="#myModal" data-bs-toggle="modal" onclick="getCharacterDetails('<%= characters[i].id %>')">
+              <a href="#" data-bs-target="#myModal" data-bs-toggle="modal"
+                onclick="getCharacterDetails('<%= characters[i].id %>')">
                 <% if (characters[i].series && characters[i].series.id) { %>
-                  <img src="<%= characters[i].images.icon %>" style="background-image: url('https://media.fortniteapi.io/images/textures/<%= characters[i].series.id %>.png'); background-position: center; background-size: contain; background-repeat: no-repeat;" alt="<%= characters[i].name %>" />
-                <% } else { %>
-                  <img src="<%= characters[i].images.icon %>" style="background-color: <%= fortniteTiers[characters[i].rarity.id] %>;background-position: center;" alt="<%= characters[i].name %>" />
-                <% } %>
+                  <img src="<%= characters[i].images.icon %>"
+                    style="background-image: url('https://media.fortniteapi.io/images/textures/<%= characters[i].series.id %>.png'); background-position: center; background-size: contain; background-repeat: no-repeat;"
+                    alt="<%= characters[i].name %>" />
+                  <% } else { %>
+                    <img src="<%= characters[i].images.icon %>"
+                      style="background-color: <%= fortniteTiers[characters[i].rarity.id] %>;background-position: center;"
+                      alt="<%= characters[i].name %>" />
+                    <% } %>
               </a>
-              <p><%= characters[i].name %></p>
+              <p>
+                <%= characters[i].name %>
+              </p>
               <div class="character-actions">
                 <button class="favorite-btn" onclick="markAsFavorite('<%= characters[i].id %>')">
-                  <% if (usersFav.includes(characters[i].id)) { %>
-                    <i class="fa-solid fa-heart"></i>
-                  <% } else { %>
-                    <i class="fa-regular fa-heart"></i>
-                  <% } %>
+                  <i class="fa-solid fa-heart"></i>
+                  <i class="fa-regular fa-heart"></i>
                 </button>
                 <button class="dislike-btn" onclick="markAsDislike('<%= characters[i].id %>')">
                   <i class="fa-solid fa-ban"></i>
                 </button>
               </div>
             </article>
-          <% } %>
+            <% } %>
         </section>
-        
-        
+
+
     </main>
 
     <section class="modal fade" id="myModal" tabindex="-1" aria-labelledby="loginLabel" aria-hidden="true">

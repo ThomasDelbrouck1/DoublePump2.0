@@ -4,31 +4,31 @@
     <!-- Nav -->
     <header class="navbar">
       <nav>
-          <section class="navContainer">
-              <section>
-                  <img class="logo" src="/assets/_c329f736-c0ec-4f70-b64f-db3066f2d096.jpg" alt="logo" />
-                  <p>DOUBLEPUMP</p>
-              </section>
-              <ul class="navbar-nav">
-                  <li>
-                      <a href="/avatar"><i class="bx bx-male-female"></i> Personages</a>
-                  </li>
-                  <li>
-                      <a href="/favorieten"><i class="bx bxs-heart"></i> Favorieten</a>
-                  </li>
-                  <li>
-                      <a class="active" href="/zwartelijst"><i class="bx bxs-x-circle"></i> Zwarte lijst</a>
-                  </li>
-                  <li class="profile">
-                      <img src="<%= profilePicture %>" alt="Profile Picture" class="profile-picture-nav">
-                      <a href="/profiel">
-                          <%= username %>
-                      </a>
-                  </li>
-              </ul>
+        <section class="navContainer">
+          <section>
+            <img class="logo" src="/assets/_c329f736-c0ec-4f70-b64f-db3066f2d096.jpg" alt="logo" />
+            <p>DOUBLEPUMP</p>
           </section>
+          <ul class="navbar-nav">
+            <li>
+              <a href="/avatar"><i class="bx bx-male-female"></i> Personages</a>
+            </li>
+            <li>
+              <a href="/favorieten"><i class="bx bxs-heart"></i> Favorieten</a>
+            </li>
+            <li>
+              <a class="active" href="/zwartelijst"><i class="bx bxs-x-circle"></i> Zwarte lijst</a>
+            </li>
+            <li class="profile">
+              <img src="<%= profilePicture %>" alt="Profile Picture" class="profile-picture-nav">
+              <a href="/profiel">
+                <%= username %>
+              </a>
+            </li>
+          </ul>
+        </section>
       </nav>
-  </header>
+    </header>
     <main>
 
       <% const fortniteTiers={ "Common" : "rgba(128, 128, 128, 1)" , "Uncommon" : "rgba(0, 128, 0, 1)" , "Rare"
@@ -80,7 +80,7 @@
           </section>
           <section class="zwarteModal-body">
             <section>
-              <h2 id="modal-title">Meowscles</h2>
+              <h2 id="modal-title"></h2>
               <video id="modal-video" width="450px" height="450px" loop autoplay playsline>
                 <!-- Voeg 'controls' als attribuut om bv te kunnen pauzeren -->
                 <source src="">
@@ -111,6 +111,7 @@
         await fetch(`/api/characters/${id}`)
           .then(response => response.json())
           .then(data => {
+            document.getElementById('modal-title').innerText = data.item.name;
             document.getElementById('modal-video').src = data.item.previewVideos[0].url;
           });
       }
