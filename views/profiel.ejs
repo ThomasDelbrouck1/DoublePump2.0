@@ -26,26 +26,9 @@
                         </li>
                     </ul>
                 </section>
-                <ul class="navbar-nav">
-                    <li>
-                        <a href="/avatar"><i class="bx bx-male-female"></i> Personages</a>
-                    </li>
-                    <li>
-                        <a href="/favorieten"><i class="bx bxs-heart"></i> Favorieten</a>
-                    </li>
-                    <li>
-                        <a href="/zwartelijst"><i class="bx bxs-x-circle"></i> Zwarte lijst</a>
-                    </li>
-                    <li class="profile">
-                        <img src="<%= profilePicture %>" alt="Profile Picture" class="profile-picture-nav">
-                        <a class="active" href="/profiel">
-                            <%= username %>
-                        </a>
-                    </li>
-                </ul>
-            </section>
-        </nav>
-    </header>
+                </section>
+            </nav>
+        </header>
 
         <nav class="navbar">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -89,7 +72,7 @@
                         <button type="submit" id="delete" data-bs-target="#myModal1" data-bs-toggle="modal">Verwijder
                             account</button>
 
-                    </form>    
+                    </form>
                     <div class="modal fade" id="myModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
                         aria-hidden="true">
                         <div class="modal-dialog">
@@ -113,14 +96,15 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="logout-tab-pane" role="tabpanel" aria-labelledby="logout-tab"
+                    tabindex="0">
+                    <div class="profile-header">
+                        <a href="/logout"><button type="button" id="logout">Log uit</button></a>
+                    </div>
                 </div>
             </div>
-            <div class="tab-pane fade" id="logout-tab-pane" role="tabpanel" aria-labelledby="logout-tab" tabindex="0">
-                <div class="profile-header">
-                    <a href="/logout"><button type="button" id="logout">Log uit</button></a>
-                </div>
-            </div>
-        </div>
 
     </body>
 
