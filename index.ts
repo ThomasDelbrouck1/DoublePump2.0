@@ -109,6 +109,7 @@ app.get("/avatar", cookieMiddleware, async (req, res) => {
   const avatarName: any = req.query.avatarName ? req.query.avatarName : "";
   let filteredCharacters: any[] = characters;
   const profilePicture = res.locals.currentAvatar ? res.locals.currentAvatar : "/assets/popje1.jpeg";
+  const usersFav = await client.db("wpl").collection("users").findOne({ _id: userId });
 
   if (avatarName === '') {
     res.render("avatar", {
@@ -116,7 +117,8 @@ app.get("/avatar", cookieMiddleware, async (req, res) => {
       characters: filteredCharacters,
       username,
       avatarName,
-      profilePicture
+      profilePicture,
+      usersFav
     });
     return;
   }
@@ -130,7 +132,8 @@ app.get("/avatar", cookieMiddleware, async (req, res) => {
       characters: filteredCharacters,
       username,
       avatarName,
-      profilePicture
+      profilePicture,
+      usersFav
     });
 
     return;
@@ -141,7 +144,8 @@ app.get("/avatar", cookieMiddleware, async (req, res) => {
     characters,
     username,
     avatarName,
-    profilePicture
+    profilePicture,
+    usersFav
   });
 });
 
@@ -158,6 +162,35 @@ app.get("/favorieten", cookieMiddleware,  async (req, res) => {
   const usersFav = await client.db("wpl").collection("users").findOne({ _id: userId });
   const favCharacters: any = [];
   const profilePicture = res.locals.currentAvatar ? res.locals.currentAvatar : "/assets/popje1.jpeg";
+
+  if (avatarName !== "") {
+    for (let i = 0; i < usersFav?.favorieten.length; i++) {
+      const character = await fetch(`https://fortniteapi.io/v2/items/get?id=${usersFav?.favorieten[i]}&lang=en`, {
+        method: 'GET',
+        headers: {
+          'Authorization': apiKey as string,
+        }
+      })
+        .then(response => response.json())
+        .then((data: any) => {
+          return data;
+        })
+        .catch(error => {
+          console.log(error);
+        });
+      if (character.item.name.toLowerCase().includes(avatarName.toString().toLowerCase())) {
+        favCharacters.push(character);
+      }
+    }
+    res.render("favorieten", {
+      title: "Favorieten",
+      username,
+      avatarName,
+      characters: favCharacters,
+      profilePicture
+    });
+    return;
+  }
 
   for (let i = 0; i < usersFav?.favorieten.length; i++) {
     const character = await fetch(`https://fortniteapi.io/v2/items/get?id=${usersFav?.favorieten[i]}&lang=en`, {
@@ -218,6 +251,35 @@ app.get("/zwartelijst", cookieMiddleware,  async (req, res) => {
   const blackListCharacters: any = [];
   const profilePicture = res.locals.currentAvatar ? res.locals.currentAvatar : "/assets/popje1.jpeg";
 
+  if (avatarName !== "") {
+    for (let i = 0; i < usersBlack?.zwartelijst.length; i++) {
+      const character = await fetch(`https://fortniteapi.io/v2/items/get?id=${usersBlack?.zwartelijst[i].characterId}&lang=en`, {
+        method: 'GET',
+        headers: {
+          'Authorization': apiKey as string,
+        }
+      })
+        .then(response => response.json())
+        .then((data: any) => {
+          return data;
+        })
+        .catch(error => {
+          console.log(error);
+        });
+      if (character.item.name.toLowerCase().includes(avatarName.toString().toLowerCase())) {
+        blackListCharacters.push(character);
+      }
+    }
+    res.render("zwartelijst", {
+      title: "Zwartelijst",
+      username,
+      avatarName,
+      charactersBlack: blackListCharacters,
+      profilePicture
+    });
+    return;
+  }
+
   for (let i = 0; i < usersBlack?.zwartelijst.length; i++) {
     const character = await fetch(`https://fortniteapi.io/v2/items/get?id=${usersBlack?.zwartelijst[i].characterId}&lang=en`, {
       method: 'GET',
@@ -254,7 +316,7 @@ app.get("/profiel", cookieMiddleware,  (req, res) => {
   });
 });
 
-app.get("/api/characters/:id", async (req, res) => {
+app.get("/api/items/:id", async (req, res) => {
   const id = req.params.id;
   await fetch(`https://fortniteapi.io/v2/items/get?id=${id}&lang=en`, {
     method: 'GET',
