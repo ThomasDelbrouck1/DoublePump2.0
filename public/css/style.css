@@ -495,15 +495,14 @@ footer {
 .favobody .modal-content {
   background-color: rgb(36, 35, 35);
   margin: 15% auto;
+  margin-left: -13rem;
   padding: 20px;
   border: 1px solid #888;
   width: 1000px;
-  /*max-width: 1800px;*/
+  max-width: 1800px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /*height: 900px;*/
-
 }
 
 .avatarbody .modal-content p {
@@ -1181,13 +1180,12 @@ footer a {
   border-radius: 8px;
   background-color: rgba(0, 0, 0, 0.8);
   color: white;
-
 }
 
 .register-main input[type=text],
 .register-main input[type=email],
 .register-main input[type=password] {
-  width: 100%;
+  width: 500px;
   padding: 12px;
   margin: 8px 0;
   display: inline-block;
@@ -1198,7 +1196,7 @@ footer a {
 }
 
 .register-main input[type=submit] {
-  width: 100%;
+  width: 500px;
   background-color: #DA874B;
   color: black;
   padding: 14px 20px;
@@ -1217,7 +1215,8 @@ footer a {
 
 .home-button {
   display: block;
-  width: 100%;
+
+  width: 500px;
   padding: 10px;
   margin: 10px 0;
   color: black;
@@ -1227,6 +1226,7 @@ footer a {
   font-size: 16px;
   border-radius: 4px;
   cursor: pointer;
+  margin: 0 auto;
 }
 
 .home-button:hover {
@@ -1339,6 +1339,13 @@ footer a {
     justify-content: center;
     align-items: center;
 }
+.fav-search-container {
+  margin-top: 14.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
   .search-form {
     flex-direction: column;
     gap: 5px;
@@ -1363,14 +1370,13 @@ footer a {
     width: 100%;
     text-align: right;
     display: flex;
-
+flex-direction: row-reverse;
   }
 
   .navbar-nav li a {
-    width: 100%;
     padding: 10px;
     font-size: 18px;
-    margin-right: -1rem;
+    margin-right: 1rem;
   }
 
   .profile {
@@ -1404,28 +1410,30 @@ footer a {
     max-width: none;
   }
 
-  .modal-content {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 250px;
-    color: var(--bs-modal-color);
-    pointer-events: auto;
-    background-color: var(--bs-modal-bg);
-    background-clip: padding-box;
-    border: var(--bs-modal-border-width) solid var(--bs-modal-border-color);
-    border-radius: var(--bs-modal-border-radius);
-    outline: 0;
-  }
-  #modal-description{
+  .avatarbody .modal-content,
+.zwartelijstbody .modal-content,
+.favobody .modal-content {
+  background-color: rgb(36, 35, 35);
+  margin: 15% auto;
+  margin-left: 3rem;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 600px;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+  .modal-description{
     width: 300px;
     display: flex;
     align-content: center;
   }
   .modal-body {
-    width: 100%;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
+ 
   }
 
   .left-section,
@@ -1505,9 +1513,9 @@ footer a {
 }
 
 @media only screen and (min-width: 768px) {
-  .search-container {
+  .fav-search-container {
     flex-direction: row;
-    margin-top: 20.5rem;
+    margin-top: 10rem;
 }
 .zwarte-search-container{
   margin-top: 10rem;
@@ -1580,24 +1588,27 @@ footer a {
     width: auto;
   }
 
-  .modal-content {
+  .avatarbody .modal-content,
+.zwartelijstbody .modal-content,
+.favobody .modal-content {
     position: relative;
     display: flex;
     flex-direction: column;
-    width: 500px;
+    width: 700px;
     color: var(--bs-modal-color);
     pointer-events: auto;
-    background-color: var(--bs-modal-bg);
     background-clip: padding-box;
     border: var(--bs-modal-border-width) solid var(--bs-modal-border-color);
     border-radius: var(--bs-modal-border-radius);
     outline: 0;
+
   }
 
   .modal-body {
     width: 100%;
     display: flex;
     flex-direction: row;
+    margin-left: 3rem;
   }
 
   .left-section,

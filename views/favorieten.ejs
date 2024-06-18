@@ -4,52 +4,42 @@
     <!-- Nav -->
     <header class="navbar">
       <nav>
-          <section class="navContainer">
-              <section>
-                  <img class="logo" src="/assets/_c329f736-c0ec-4f70-b64f-db3066f2d096.jpg" alt="logo" />
-                  <p>DOUBLEPUMP</p>
-              </section>
-              <ul class="navbar-nav">
-                  <li>
-                      <a href="/"><i class="bx bxs-home"></i> GameHub</a>
-                  </li>
-                  <li>
-                      <a href="/avatar"><i class="bx bx-male-female"></i> Personages</a>
-                  </li>
-                  <li>
-                      <a href="/favorieten"><i class="bx bxs-heart"></i> Favorieten</a>
-                  </li>
-                  <li>
-                      <a href="/zwartelijst"><i class="bx bxs-x-circle"></i> Zwarte lijst</a>
-                  </li>
-                  <li class="profile">
-                      <img src="<%= profilePicture %>" alt="Profile Picture" class="profile-picture-nav">
-                      <a class="active" href="/profiel">
-                          <%= username %>
-                      </a>
-                  </li>
-              </ul>
+        <section class="navContainer">
+          <section>
+            <img class="logo" src="/assets/_c329f736-c0ec-4f70-b64f-db3066f2d096.jpg" alt="logo" />
+            <p>DOUBLEPUMP</p>
           </section>
+          <ul class="navbar-nav">
+            <li>
+              <a href="/"><i class="bx bxs-home"></i> GameHub</a>
+            </li>
+            <li>
+              <a href="/avatar"><i class="bx bx-male-female"></i> Personages</a>
+            </li>
+            <li>
+              <a href="/favorieten"><i class="bx bxs-heart"></i> Favorieten</a>
+            </li>
+            <li>
+              <a href="/zwartelijst"><i class="bx bxs-x-circle"></i> Zwarte lijst</a>
+            </li>
+            <li class="profile">
+              <img src="<%= profilePicture %>" alt="Profile Picture" class="profile-picture-nav">
+              <a class="active" href="/profiel">
+                <%= username %>
+              </a>
+            </li>
+          </ul>
+        </section>
       </nav>
-  </header>
+    </header>
 
     <main>
-      <section class="search-container">
+      <section class="fav-search-container">
         <form action="/favorieten" method="get" class="search-form">
           <input type="text" name="avatarName" placeholder="Zoeken naar avatar " value="<%= avatarName %>"
             class="search-input">
           <button type="submit" class="search-button">Zoeken</button>
         </form>
-         <!-- 
-        <div class="sort-dropdown">
-          <label for="sort-by">Sorteer op:</label>
-          <select id="sort-by">
-            <option value="relevance">Relevantie</option>
-            <option value="date">Datum</option>
-            <option value="popularity">Populariteit</option>
-          </select>
-        </div>
-          -->
       </section>
       <% const fortniteTiers={ "Common" : "rgba(128, 128, 128, 1)" , "Uncommon" : "rgba(0, 128, 0, 1)" , "Rare"
         : "rgba(0, 0, 255, 1)" , "Epic" : "rgba(128, 0, 128, 1)" , "Legendary" : "rgba(255, 165, 0, 1)" , "Mythic"
