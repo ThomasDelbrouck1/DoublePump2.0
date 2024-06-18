@@ -111,34 +111,8 @@
                       data-bs-toggle="dropdown" aria-expanded="false">
                       Selecteer rugzak
                     </button>
-                    <ul class="dropdown-menu" aria-labelledby="backpackDropdown">
-                      <li>
-                        <label class="dropdown-item">
-                          <input type="checkbox" id="modal1" class="modal-toggle" />
-                          <img src="/assets/_40ee15ba-8b35-49a9-b94a-cc0830f40257.jpg" alt="Rugzak 1"
-                            class="dropdown-item-image" />
-                          <span class="item-name">Rugzak 1</span>
-                          <div class="modal" id="modal1-content">
-                            <div class="modal-content">
-                              <label for="modal1" class="modal-overlay"></label>
-                              <img src="/assets/_40ee15ba-8b35-49a9-b94a-cc0830f40257.jpg" alt="Rugzak 1" />
-                            </div>
-                          </div>
-                        </label>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="#">
-                          <img src="/assets/_c329f736-c0ec-4f70-b64f-db3066f2d096.jpg" alt="Rugzak 2"
-                            class="dropdown-item-image" />
-                          <span class="item-name">Rugzak 2</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="#">
-                          <img src="/assets/popje8.jpeg" alt="Rugzak 3" class="dropdown-item-image" />
-                          <span class="item-name">Rugzak 3</span>
-                        </a>
-                      </li>
+                    <ul class="dropdown-menu" aria-labelledby="backpackDropdown" id="character_backpacks">
+                      
                     </ul>
                   </section>
                 </li>
@@ -148,25 +122,8 @@
                       data-bs-toggle="dropdown" aria-expanded="false">
                       Selecteer wapen
                     </button>
-                    <ul class="dropdown-menu" aria-labelledby="pickaxeDropdown">
-                      <li>
-                        <a class="dropdown-item" href="#">
-                          <img src="/assets/_40ee15ba-8b35-49a9-b94a-cc0830f40257.jpg" class="dropdown-item-image" />
-                          <span class="item-name">wapen 1</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="#">
-                          <img src="/assets/_c329f736-c0ec-4f70-b64f-db3066f2d096.jpg" class="dropdown-item-image" />
-                          <span class="item-name">wapen 2</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="#">
-                          <img src="/assets/popje8.jpeg" class="dropdown-item-image" />
-                          <span class="item-name">wapen 3</span>
-                        </a>
-                      </li>
+                    <ul class="dropdown-menu" aria-labelledby="pickaxeDropdown" id="character_weapons">
+
                     </ul>
                   </section>
                 </li>
@@ -222,9 +179,9 @@
         // Reset modal fields
         document.getElementById('modal-video').src = '';
         // Fetch character details
-        await fetch(`/api/characters/${id}`)
+        await fetch(`/api/items/${id}`)
           .then(response => response.json())
-          .then(data => {
+          .then( async (data) => {
             document.getElementById('modal-title').innerText = data.item.name;
             document.getElementById('modal-video').src = data.item.previewVideos[0].url;
             // Set description if available
@@ -240,6 +197,32 @@
             else {
               document.getElementById('rarity').innerText = data.item.rarity.name;
             }
+
+            await fetch (`/api/items/${data.item.grants[0].id}`)
+              .then(response => response.json())
+              .then(data => {
+                document.getElementById('character_backpacks').innerHTML = ''; // Reset backpacks
+                document.getElementById('character_backpacks').innerHTML = 
+                `<li>
+                  <a class="dropdown-item" href="#">
+                    <img src="${data.item.images.background}" class="dropdown-item-image" />
+                    <span class="item-name">${data.item.name}</span>
+                  </a>
+                </li>`; // Add backpack
+            });
+
+            await fetch (`/api/items/${data.item.grants[1].id}`)
+              .then(response => response.json())
+              .then(data => {
+                document.getElementById('character_weapons').innerHTML = ''; // Reset weapons
+                document.getElementById('character_weapons').innerHTML = 
+                `<li>
+                  <a class="dropdown-item" href="#">
+                    <img src="${data.item.images.background}" class="dropdown-item-image" />
+                    <span class="item-name">${data.item.name}</span>
+                  </a>
+                </li>`; // Add weapon
+              });
           });
       }
 

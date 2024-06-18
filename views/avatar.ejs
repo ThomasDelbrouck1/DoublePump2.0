@@ -67,7 +67,7 @@
               </p>
               <div class="character-actions">
                 <button class="favorite-btn" onclick="markAsFavorite('<%= characters[i].id %>')">
-                  <i class="fa-solid fa-heart"></i>
+                  <!--<i class="fa-solid fa-heart"></i>-->
                   <i class="fa-regular fa-heart"></i>
                 </button>
                 <button class="dislike-btn" onclick="markAsDislike('<%= characters[i].id %>')">
@@ -185,7 +185,7 @@
         document.getElementById('introduction').innerHTML = '';
         document.getElementById('date').innerHTML = '';
         // Fetch character details
-        await fetch(`/api/characters/${id}`)
+        await fetch(`/api/items/${id}`)
           .then(response => response.json())
           .then(data => {
             document.getElementById('modal-title').innerText = data.item.name;
