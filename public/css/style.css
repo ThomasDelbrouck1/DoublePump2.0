@@ -842,11 +842,6 @@ nav a:hover {
   padding: 5px;
 }
 
-nav li:nth-child(1) a:hover {
-  background-color: #ff9900;
-  color: black;
-}
-
 .navbar-nav li a.active {
   background-color: rgb(57, 57, 219);
   color: white;
