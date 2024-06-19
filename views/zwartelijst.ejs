@@ -108,7 +108,7 @@
         // Reset modal fields
         document.getElementById('modal-video').src = '';
         // Fetch character details
-        await fetch(`/api/characters/${id}`)
+        await fetch(`/api/items/${id}`)
           .then(response => response.json())
           .then(data => {
             document.getElementById('modal-title').innerText = data.item.name;

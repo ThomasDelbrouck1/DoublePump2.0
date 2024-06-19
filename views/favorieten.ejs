@@ -98,35 +98,63 @@
 
             <section class="right-section">
               <h3 id="rarity" class="outfit-type">Rare Outfit</h3>
-              <img class="v-buck" src="/assets/one-v-buck-dpf.png" alt="vbuck" />
+              
               <p class="outfit-price">
-                <span class="price">1,200</span>
+                <img class="v-buck" src="/assets/one-v-buck-dpf.png" alt="vbuck" />
+                <span class="price" id="price">1,200</span>
               </p>
               <p id="description" class="outfit-description"></p>
               <hr />
               <ul class="row">
-                <li class="col">
-                  <section class="dropdown1">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="backpackDropdown"
-                      data-bs-toggle="dropdown" aria-expanded="false">
-                      Selecteer rugzak
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="backpackDropdown" id="character_backpacks">
-                      
-                    </ul>
-                  </section>
-                </li>
-                <li class="col">
-                  <section class="dropdown2">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="pickaxeDropdown"
-                      data-bs-toggle="dropdown" aria-expanded="false">
-                      Selecteer wapen
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="pickaxeDropdown" id="character_weapons">
-
-                    </ul>
-                  </section>
-                </li>
+                <div>
+                  <p>Selecteer uw rugzak</p>
+                  <div class="items" style="display: flex; justify-content: center; align-items: center;">
+                      <li style="">
+                        <a class="dropdown-item" href="#">
+                          <img
+                            src="https://media.fortniteapi.io/images/04fc8306cd700955107671c1bf95a5a2/transparent.png"
+                            class="dropdown-item-image" />
+                        </a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#">
+                          <img
+                            src="https://media.fortniteapi.io/images/93034d5f7506cb1948c1209b9aa49926/transparent.png"
+                            class="dropdown-item-image" />
+                        </a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#">
+                          <img
+                            src="https://media.fortniteapi.io/images/11c7efade13a22f63b3a271b4765f757/transparent.png"
+                            class="dropdown-item-image" />
+                        </a>
+                      </li>
+                    </div>
+                </div>
+                <div>
+                  <p>Selecteer uw wapen</p>
+                  <div class="items" style="display: flex; justify-content: center; align-items: center;">
+                    <li>
+                    <a class="dropdown-item" href="#">
+                      <img src="https://media.fortniteapi.io/images/a878d66544d205e4c0e64e8382ebece3/transparent.png"
+                        class="dropdown-item-image" />
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <img src="https://media.fortniteapi.io/images/f299e40b7e4315ba430a6f7661454cfc/transparent.png"
+                        class="dropdown-item-image" />
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <img src="https://media.fortniteapi.io/images/f1420a90a55a046b8495bd5497c0ce40/transparent.png"
+                        class="dropdown-item-image" />
+                    </a>
+                  </li>
+                  </div>
+                </div>
               </ul>
               <form action="/saveStats" method="post">
                 <ul class="row mt-3">
@@ -181,7 +209,7 @@
         // Fetch character details
         await fetch(`/api/items/${id}`)
           .then(response => response.json())
-          .then( async (data) => {
+          .then(async (data) => {
             document.getElementById('modal-title').innerText = data.item.name;
             document.getElementById('modal-video').src = data.item.previewVideos[0].url;
             // Set description if available
@@ -197,32 +225,7 @@
             else {
               document.getElementById('rarity').innerText = data.item.rarity.name;
             }
-
-            await fetch (`/api/items/${data.item.grants[0].id}`)
-              .then(response => response.json())
-              .then(data => {
-                document.getElementById('character_backpacks').innerHTML = ''; // Reset backpacks
-                document.getElementById('character_backpacks').innerHTML = 
-                `<li>
-                  <a class="dropdown-item" href="#">
-                    <img src="${data.item.images.background}" class="dropdown-item-image" />
-                    <span class="item-name">${data.item.name}</span>
-                  </a>
-                </li>`; // Add backpack
-            });
-
-            await fetch (`/api/items/${data.item.grants[1].id}`)
-              .then(response => response.json())
-              .then(data => {
-                document.getElementById('character_weapons').innerHTML = ''; // Reset weapons
-                document.getElementById('character_weapons').innerHTML = 
-                `<li>
-                  <a class="dropdown-item" href="#">
-                    <img src="${data.item.images.background}" class="dropdown-item-image" />
-                    <span class="item-name">${data.item.name}</span>
-                  </a>
-                </li>`; // Add weapon
-              });
+            document.getElementById('price').innerText = data.item.price;
           });
       }
 
